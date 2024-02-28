@@ -1,0 +1,10 @@
+.env
+node_modules/
+build/
+public
+.env*
+.DS_store
+tailwind.config.js
+**/*.test.tsx
+**/__mocks__/*
+**/*.stories.tsx

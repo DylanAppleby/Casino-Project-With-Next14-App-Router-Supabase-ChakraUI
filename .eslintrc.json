@@ -1,3 +1,152 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:prettier/recommended"]
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:prettier/recommended",
+    "plugin:jsx-a11y/recommended",
+    "next/core-web-vitals"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "project": [
+      "./tsconfig.json"
+    ]
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "jsx-a11y",
+    "simple-import-sort",
+    "react-hooks"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    }
+  },
+  "rules": {
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          [
+            "^react"
+          ],
+          [
+            "^\\u0000"
+          ],
+          [
+            "^\\w"
+          ],
+          [
+            "^@?\\w"
+          ],
+          [
+            "^"
+          ],
+          [
+            "^\\."
+          ]
+        ]
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "variableLike",
+        "format": [
+          "camelCase"
+        ]
+      },
+      {
+        "selector": "variable",
+        "format": [
+          "UPPER_CASE",
+          "PascalCase",
+          "camelCase"
+        ],
+        "modifiers": [
+          "const",
+          "global"
+        ]
+      },
+      {
+        "selector": "function",
+        "format": [
+          "PascalCase",
+          "camelCase"
+        ]
+      },
+      {
+        "selector": "interface",
+        "format": [
+          "PascalCase"
+        ]
+      },
+      {
+        "selector": "enum",
+        "format": [
+          "PascalCase"
+        ]
+      },
+      {
+        "selector": "enumMember",
+        "format": [
+          "PascalCase",
+          "UPPER_CASE"
+        ]
+      },
+      {
+        "selector": "variable",
+        "types": [
+          "boolean"
+        ],
+        "format": [
+          "PascalCase"
+        ],
+        "prefix": [
+          "is",
+          "should",
+          "has",
+          "can",
+          "did",
+          "will",
+          "show",
+          "only",
+          "allow",
+          "prevent",
+          "does",
+          "remove",
+          "include",
+          "needs",
+          "current"
+        ]
+      }
+    ]
+  }
 }
