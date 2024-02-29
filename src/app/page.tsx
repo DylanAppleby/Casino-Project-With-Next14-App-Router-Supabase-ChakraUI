@@ -1,3 +1,4 @@
+import UserModal from '@/components/auth/UserModal'
 export default function Home() {
-  return <>This is page to implement other Component</>
+  return <UserModal />
 }
