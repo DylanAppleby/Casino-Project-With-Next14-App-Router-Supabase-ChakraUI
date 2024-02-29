@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ChakraProvider } from '@chakra-ui/react'
-// import theme from './theme'
 
-import Header from '@/components/Header/Header'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -23,6 +24,7 @@ export default function RootLayout({
           <div>
             <Header />
             {children}
+            <Footer />
           </div>
         </ChakraProvider>
       </body>

@@ -1,3 +1,3 @@
 export default function Home() {
-  return <></>
+  return <>This is page to implement other Component</>
 }
