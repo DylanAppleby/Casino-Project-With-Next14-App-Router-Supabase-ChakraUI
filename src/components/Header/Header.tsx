@@ -3,22 +3,32 @@
 import {
   Box,
   Flex,
-  Text,
+  Image,
   IconButton,
   Button,
   Stack,
   Collapse,
+  Center,
   useColorModeValue,
-  useBreakpointValue,
+  useColorMode,
   useDisclosure,
+  Menu,
+  MenuItem,
+  MenuButton,
+  MenuList,
+  MenuDivider,
+  Avatar,
 } from '@chakra-ui/react'
+
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
+import { MoonIcon, SunIcon } from '@chakra-ui/icons'
+
 import DesktopNav from './DesktopNav'
 import MobileNav from './MoblieNav'
-// import { IoMoon, IoSunny } from 'react-icons/io5'
 
 const Header = () => {
   const { isOpen, onToggle } = useDisclosure()
+  const { colorMode, toggleColorMode } = useColorMode()
 
   return (
     <Box>
@@ -46,15 +56,16 @@ const Header = () => {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <Text
-            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-            fontFamily={'heading'}
-            color={useColorModeValue('gray.800', 'white')}
-          >
-            Logo
-          </Text>
+          <Box p={4} bg="darkgray.500" display="flex">
+            <Image
+              src="assets/images/logo.png"
+              alt="Your Logo"
+              width="108px"
+              height="18px"
+            />
+          </Box>
 
-          <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+          <Flex display={{ base: 'none', md: 'flex' }} ml={10} align={'center'}>
             <DesktopNav />
           </Flex>
         </Flex>
@@ -65,23 +76,74 @@ const Header = () => {
           direction={'row'}
           spacing={6}
         >
-          <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href={'#'}>
-            Sign In
+          <Button
+            as={'a'}
+            display={{ base: 'none', md: 'inline-flex' }}
+            fontSize={'sm'}
+            fontWeight={400}
+            color={'white'}
+            bg="#2f3236"
+            borderRadius="20px"
+            href={'#'}
+            _hover={{
+              bg: '#3a3e42',
+            }}
+          >
+            Login
           </Button>
           <Button
             as={'a'}
             display={{ base: 'none', md: 'inline-flex' }}
             fontSize={'sm'}
-            fontWeight={600}
+            fontWeight={400}
             color={'white'}
-            bg={'pink.400'}
+            bg="#5195de"
+            borderRadius="20px"
             href={'#'}
             _hover={{
-              bg: 'pink.300',
+              bg: '#6aa2f8',
             }}
           >
-            Sign Up
+            Register
           </Button>
+        </Stack>
+        <Stack direction={'row'} spacing={7}>
+          <Button onClick={toggleColorMode}>
+            {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+          </Button>
+
+          <Menu>
+            <MenuButton
+              as={Button}
+              rounded={'full'}
+              variant={'link'}
+              cursor={'pointer'}
+              minW={0}
+            >
+              <Avatar
+                size={'sm'}
+                src={'https://avatars.dicebear.com/api/male/username.svg'}
+              />
+            </MenuButton>
+            <MenuList alignItems={'center'}>
+              <br />
+              <Center>
+                <Avatar
+                  size={'2xl'}
+                  src={'https://avatars.dicebear.com/api/male/username.svg'}
+                />
+              </Center>
+              <br />
+              <Center>
+                <p>Username</p>
+              </Center>
+              <br />
+              <MenuDivider />
+              <MenuItem>Your Servers</MenuItem>
+              <MenuItem>Account Settings</MenuItem>
+              <MenuItem>Logout</MenuItem>
+            </MenuList>
+          </Menu>
         </Stack>
       </Flex>
 

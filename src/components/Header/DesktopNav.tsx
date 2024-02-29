@@ -2,6 +2,7 @@ import {
   Box,
   Flex,
   Text,
+  Tag,
   Stack,
   Icon,
   Popover,
@@ -20,15 +21,15 @@ const DesktopNav = () => {
 
   return (
     <Stack direction={'row'} spacing={4}>
-      {NAV_ITEMS.map((navItem) => (
+      {NAV_ITEMS.map((navItem, index) => (
         <Box key={navItem.label}>
           <Popover trigger={'hover'} placement={'bottom-start'}>
             <PopoverTrigger>
               <Box
                 as="a"
-                p={2}
+                p={3}
                 href={navItem.href ?? '#'}
-                fontSize={'sm'}
+                fontSize={'md'}
                 fontWeight={500}
                 color={linkColor}
                 _hover={{
@@ -37,6 +38,19 @@ const DesktopNav = () => {
                 }}
               >
                 {navItem.label}
+                {index === 3 ? (
+                  <Tag
+                    size={'sm'}
+                    bg={useColorModeValue('yellow.100', 'yellow.500')}
+                    ml={2}
+                    color={'black'}
+                    borderRadius="10px"
+                  >
+                    New
+                  </Tag>
+                ) : (
+                  ''
+                )}
               </Box>
             </PopoverTrigger>
 
