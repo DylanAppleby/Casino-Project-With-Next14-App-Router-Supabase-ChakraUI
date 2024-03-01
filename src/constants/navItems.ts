@@ -16,5 +16,6 @@ export const NAV_ITEMS: Array<NavItem> = [
   {
     label: 'Rewards',
     href: '/rewards',
+    isNew: true,
   },
 ]

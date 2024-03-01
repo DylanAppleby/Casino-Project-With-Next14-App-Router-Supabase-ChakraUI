@@ -1,4 +1,3 @@
-import UserModal from '@/components/auth/UserModal'
 export default function Home() {
-  return <UserModal />
+  return <div>Home</div>
 }

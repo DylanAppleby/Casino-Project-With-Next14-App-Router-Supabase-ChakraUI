@@ -44,55 +44,55 @@ const Footer = () => {
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
           <Stack align={'flex-start'}>
             <ListHeader>About</ListHeader>
-            <Box as="a" href={'#'}>
+            <Box as="a" href={'#'} color="#75728c">
               All Sports
             </Box>
-            <Box as="a" href={'#'}>
+            <Box as="a" href={'#'} color="#75728c">
               Support
             </Box>
-            <Box as="a" href={'#'}>
+            <Box as="a" href={'#'} color="#75728c">
               About Us
             </Box>
-            <Box as="a" href={'#'}>
+            <Box as="a" href={'#'} color="#75728c">
               FAQ's
             </Box>
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Social Casino</ListHeader>
-            <Box as="a" href={'#'}>
+            <Box as="a" href={'#'} color="#75728c">
               Games
             </Box>
-            <Box as="a" href={'#'}>
+            <Box as="a" href={'#'} color="#75728c">
               VIP Club
             </Box>
-            <Box as="a" href={'#'}>
+            <Box as="a" href={'#'} color="#75728c">
               Affiliate Program
             </Box>
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Community</ListHeader>
-            <Box as="a" href={'#'}>
+            <Box as="a" href={'#'} color="#75728c">
               Twitter
             </Box>
-            <Box as="a" href={'#'}>
+            <Box as="a" href={'#'} color="#75728c">
               instagram
             </Box>
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Support</ListHeader>
-            <Box as="a" href={'#'}>
+            <Box as="a" href={'#'} color="#75728c">
               Fairness
             </Box>
-            <Box as="a" href={'#'}>
+            <Box as="a" href={'#'} color="#75728c">
               Affiliate
             </Box>
-            <Box as="a" href={'#'}>
+            <Box as="a" href={'#'} color="#75728c">
               Addicted to Gaming?
             </Box>
-            <Box as="a" href={'#'}>
+            <Box as="a" href={'#'} color="#75728c">
               Live Support
             </Box>
-            <Box as="a" href={'#'}>
+            <Box as="a" href={'#'} color="#75728c">
               Help Center
             </Box>
           </Stack>

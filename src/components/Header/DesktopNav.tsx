@@ -5,6 +5,7 @@ import {
   Tag,
   Stack,
   Icon,
+  Button,
   Popover,
   PopoverTrigger,
   PopoverContent,
@@ -15,43 +16,44 @@ import { NavItem } from '@/types/navItem'
 import { NAV_ITEMS } from '@/constants/navItems'
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue('gray.600', 'gray.200')
   const linkHoverColor = useColorModeValue('gray.800', 'white')
   const popoverContentBgColor = useColorModeValue('white', 'gray.800')
 
   return (
-    <Stack direction={'row'} spacing={4}>
+    <Stack direction={'row'} spacing={{ base: 0, md: 2, lg: 4 }}>
       {NAV_ITEMS.map((navItem, index) => (
         <Box key={navItem.label}>
           <Popover trigger={'hover'} placement={'bottom-start'}>
             <PopoverTrigger>
-              <Box
+              <Button
                 as="a"
-                p={2}
+                px={{ md: 2, lg: 4 }}
                 href={navItem.href ?? '#'}
-                fontSize={'md'}
+                fontSize={{ md: 'md', lg: 'lg' }}
                 fontWeight={500}
-                color={linkColor}
+                color={useColorModeValue('gray.600', 'gray.200')}
+                bgColor={useColorModeValue('white', 'gray.800')}
                 _hover={{
                   textDecoration: 'none',
-                  color: linkHoverColor,
+                  color: useColorModeValue('gray.800', 'gray.50'),
+                  bgColor: useColorModeValue('gray.200', 'gray.900'),
                 }}
               >
                 {navItem.label}
-                {index === 3 ? (
+                {navItem.isNew ? (
                   <Tag
                     size={'sm'}
-                    bg={useColorModeValue('yellow.100', 'yellow.500')}
+                    bg={useColorModeValue('yellow.300', 'yellow.500')}
                     ml={2}
-                    color={'black'}
-                    borderRadius="10px"
+                    color={'gray.800'}
+                    rounded="full"
                   >
                     New
                   </Tag>
                 ) : (
                   ''
                 )}
-              </Box>
+              </Button>
             </PopoverTrigger>
 
             {navItem.children && (
