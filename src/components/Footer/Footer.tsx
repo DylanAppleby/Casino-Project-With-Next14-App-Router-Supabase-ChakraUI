@@ -8,6 +8,8 @@ import {
   Text,
   Flex,
   useColorModeValue,
+  Divider,
+  AbsoluteCenter,
 } from '@chakra-ui/react'
 import { ReactNode } from 'react'
 
@@ -36,93 +38,93 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 
 const Footer = () => {
   return (
-    <Box
+    <Flex
+      direction="column"
+      alignItems="center"
       bg={useColorModeValue('gray.50', 'gray.900')}
       color={useColorModeValue('gray.700', 'gray.200')}
+      width="full"
     >
-      <Container as={Stack} maxW={'6xl'} py={10}>
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
-          <Stack align={'flex-start'}>
-            <ListHeader>About</ListHeader>
-            <Box as="a" href={'#'} color="#75728c">
-              All Sports
-            </Box>
-            <Box as="a" href={'#'} color="#75728c">
-              Support
-            </Box>
-            <Box as="a" href={'#'} color="#75728c">
-              About Us
-            </Box>
-            <Box as="a" href={'#'} color="#75728c">
-              FAQ's
-            </Box>
-          </Stack>
-          <Stack align={'flex-start'}>
-            <ListHeader>Social Casino</ListHeader>
-            <Box as="a" href={'#'} color="#75728c">
-              Games
-            </Box>
-            <Box as="a" href={'#'} color="#75728c">
-              VIP Club
-            </Box>
-            <Box as="a" href={'#'} color="#75728c">
-              Affiliate Program
-            </Box>
-          </Stack>
-          <Stack align={'flex-start'}>
-            <ListHeader>Community</ListHeader>
-            <Box as="a" href={'#'} color="#75728c">
-              Twitter
-            </Box>
-            <Box as="a" href={'#'} color="#75728c">
-              instagram
-            </Box>
-          </Stack>
-          <Stack align={'flex-start'}>
-            <ListHeader>Support</ListHeader>
-            <Box as="a" href={'#'} color="#75728c">
-              Fairness
-            </Box>
-            <Box as="a" href={'#'} color="#75728c">
-              Affiliate
-            </Box>
-            <Box as="a" href={'#'} color="#75728c">
-              Addicted to Gaming?
-            </Box>
-            <Box as="a" href={'#'} color="#75728c">
-              Live Support
-            </Box>
-            <Box as="a" href={'#'} color="#75728c">
-              Help Center
-            </Box>
-          </Stack>
-        </SimpleGrid>
-      </Container>
-      <Box py={10}>
-        <Flex
-          align={'center'}
-          _before={{
-            content: '""',
-            borderBottom: '1px solid',
-            borderColor: useColorModeValue('gray.200', 'gray.700'),
-            flexGrow: 1,
-            mr: 8,
-          }}
-          _after={{
-            content: '""',
-            borderBottom: '1px solid',
-            borderColor: useColorModeValue('gray.200', 'gray.700'),
-            flexGrow: 1,
-            ml: 8,
-          }}
-        >
-          <Logo />
-        </Flex>
-        <Text pt={6} fontSize={'sm'} textAlign={'center'}>
-          © Wincrate | All rights reserved
-        </Text>
-      </Box>
-    </Box>
+      <Flex
+        direction="column"
+        maxWidth="1440px"
+        width="full"
+        px={{ base: 4, md: 6, lg: 10 }}
+      >
+        <Container maxWidth="6xl" as={Stack} py={10} px={0}>
+          <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
+            <Stack align={'flex-start'}>
+              <ListHeader>About</ListHeader>
+              <Box as="a" href={'#'} color="#75728c">
+                All Sports
+              </Box>
+              <Box as="a" href={'#'} color="#75728c">
+                Support
+              </Box>
+              <Box as="a" href={'#'} color="#75728c">
+                About Us
+              </Box>
+              <Box as="a" href={'#'} color="#75728c">
+                FAQ's
+              </Box>
+            </Stack>
+            <Stack align={'flex-start'}>
+              <ListHeader>Social Casino</ListHeader>
+              <Box as="a" href={'#'} color="#75728c">
+                Games
+              </Box>
+              <Box as="a" href={'#'} color="#75728c">
+                VIP Club
+              </Box>
+              <Box as="a" href={'#'} color="#75728c">
+                Affiliate Program
+              </Box>
+            </Stack>
+            <Stack align={'flex-start'}>
+              <ListHeader>Community</ListHeader>
+              <Box as="a" href={'#'} color="#75728c">
+                Twitter
+              </Box>
+              <Box as="a" href={'#'} color="#75728c">
+                instagram
+              </Box>
+            </Stack>
+            <Stack align={'flex-start'}>
+              <ListHeader>Support</ListHeader>
+              <Box as="a" href={'#'} color="#75728c">
+                Fairness
+              </Box>
+              <Box as="a" href={'#'} color="#75728c">
+                Affiliate
+              </Box>
+              <Box as="a" href={'#'} color="#75728c">
+                Addicted to Gaming?
+              </Box>
+              <Box as="a" href={'#'} color="#75728c">
+                Live Support
+              </Box>
+              <Box as="a" href={'#'} color="#75728c">
+                Help Center
+              </Box>
+            </Stack>
+          </SimpleGrid>
+        </Container>
+        <Box py={10} width="full">
+          <Box position="relative" width="full">
+            <Divider
+              orientation="horizontal"
+              bgColor={useColorModeValue('gray.300', 'gray.700')}
+            />
+            <AbsoluteCenter bg={useColorModeValue('white', 'gray.900')} px="4">
+              <Logo />
+            </AbsoluteCenter>
+          </Box>
+          <Text pt={6} fontSize={'sm'} textAlign={'center'}>
+            © {new Date().getFullYear()} Wincrate | All rights reserved
+          </Text>
+        </Box>
+      </Flex>
+    </Flex>
   )
 }
 

@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import { NavItem } from '@/types/navItem'
-import { NAV_ITEMS } from '@/constants/navItems'
+import { NAV_ITEMS } from '@/constants/mock'
 
 const MobileNav = () => {
   return (

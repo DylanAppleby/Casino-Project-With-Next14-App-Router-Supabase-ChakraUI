@@ -21,7 +21,6 @@ import {
 } from '@chakra-ui/react'
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 import { FcGoogle } from 'react-icons/fc'
-import { Urbanist } from 'next/font/google'
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false)
@@ -58,7 +57,7 @@ const Register = () => {
             </Text>
           </Flex>
         </Flex>
-        <Box position="relative" mt="0.5rem" pt="1rem" pb="0.5rem" width="full">
+        <Flex position="relative" direction="column" mt="1rem" py="0.5rem" width="full">
           <Divider
             orientation="horizontal"
             bgColor={useColorModeValue('gray.300', 'gray.700')}
@@ -66,7 +65,7 @@ const Register = () => {
           <AbsoluteCenter bg={useColorModeValue('white', 'gray.700')} px="4">
             Or
           </AbsoluteCenter>
-        </Box>
+        </Flex>
       </Flex>
       <Box width="382px">
         <Flex direction="column">

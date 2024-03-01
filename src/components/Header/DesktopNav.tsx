@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { NavItem } from '@/types/navItem'
-import { NAV_ITEMS } from '@/constants/navItems'
+import { NAV_ITEMS } from '@/constants/mock'
 
 const DesktopNav = () => {
   const linkHoverColor = useColorModeValue('gray.800', 'white')
