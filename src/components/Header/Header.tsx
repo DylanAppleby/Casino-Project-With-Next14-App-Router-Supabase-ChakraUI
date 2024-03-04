@@ -82,7 +82,7 @@ const Header = () => {
                 href="/"
               >
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_SITE_URL}/assets/images/logo.webp`}
+                  src={`/assets/images/logo.webp`}
                   alt="Wincrate Logo"
                   width="128"
                   height="23"

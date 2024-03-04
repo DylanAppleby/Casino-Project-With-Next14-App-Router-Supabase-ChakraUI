@@ -22,7 +22,7 @@ const GiftVouncher = ({ image, labelHeader, labelContent, price }: IGiftVouncher
       <Flex gap={2}>
         <Box>
           <Image
-            src={`${process.env.NEXT_PUBLIC_SITE_URL}${image}`}
+            src={`${image}`}
             alt={labelHeader}
             width={40}
             height={40}

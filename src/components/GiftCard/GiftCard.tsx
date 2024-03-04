@@ -10,7 +10,7 @@ const GiftCard = ({ image, label }: IGiftCard) => {
   return (
     <Box>
       <Image
-        src={`${process.env.NEXT_PUBLIC_SITE_URL}${image}`}
+        src={`${image}`}
         alt={label}
         width={247}
         height={318}

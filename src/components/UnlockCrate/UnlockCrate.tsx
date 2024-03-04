@@ -101,7 +101,7 @@ const UnlockCrate = () => {
         minHeight={100}
       >
         <Image
-          src={`${process.env.NEXT_PUBLIC_SITE_URL}/assets/images/unlockcrate.webp`}
+          src={`/assets/images/unlockcrate.webp`}
           alt="crate.webp"
           width={400}
           height={150}
