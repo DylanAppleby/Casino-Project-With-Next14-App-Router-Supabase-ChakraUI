@@ -22,20 +22,17 @@ const UnlockCrate = () => {
         md: 'transparent',
         lg: useColorModeValue('white', '#313030'),
       }}
-      margin={10}
       borderRadius={30}
       justifyContent="center"
       alignItems="center"
-      borderWidth={{ base: 0, sm: 0, md: 0, lg: 2 }}
-      borderColor="white"
-      gap={2}
       direction={{ base: 'column', sm: 'column', md: 'column', lg: 'row' }}
+      mt={3}
     >
       <Flex
         direction="column"
         gap="8"
-        px={{ base: 0, sm: 5, md: 10, lg: 20 }}
-        py={{ base: 0, sm: 5, md: 10, lg: 10 }}
+        px={{ base: 0, md: 10, lg: 20 }}
+        py={{ base: 0, md: 10, lg: 10 }}
       >
         <Flex direction="column">
           <Heading fontFamily="ClashGrotesk" fontSize={{ base: 28, sm: 32, md: 40 }}>
@@ -78,9 +75,33 @@ const UnlockCrate = () => {
             </Slider>
           </Box>
           <Flex width="full" justifyContent="space-between">
-            <Text>LVL 0</Text>
+            <Flex gap={2}>
+              <Box>
+                <Image
+                  src="/assets/images/rectangle.webp"
+                  alt="crown icon"
+                  width={16}
+                  height={16}
+                  style={{ width: '100%', height: '100%' }}
+                />
+              </Box>
+              <Text fontWeight="bold" fontStyle={'italic'}>
+                LVL 0
+              </Text>
+            </Flex>
             <Text>Your VIP Progress</Text>
-            <Text>LVL 1 UNLOCKED</Text>
+            <Flex gap={5}>
+              <Text>LVL 1 UNLOCKED</Text>
+              <Box>
+                <Image
+                  src="/assets/images/rectangle.webp"
+                  alt="crown icon"
+                  width={16}
+                  height={16}
+                  style={{ width: '100%', height: '100%' }}
+                />
+              </Box>
+            </Flex>
           </Flex>
         </Flex>
         <Button
@@ -92,19 +113,13 @@ const UnlockCrate = () => {
           Register
         </Button>
       </Flex>
-      <Flex
-        padding={10}
-        alignItems="center"
-        justifyContent="center"
-        mr={{ base: 10, sm: 10, md: 10, lg: 20 }}
-        minWidth={350}
-        minHeight={100}
-      >
+      <Flex padding={10} alignItems="center" justifyContent="center">
         <Image
           src={`/assets/images/unlockcrate.webp`}
           alt="crate.webp"
           width={400}
           height={150}
+          style={{ width: '100%', height: '100%' }}
         />
       </Flex>
     </Flex>

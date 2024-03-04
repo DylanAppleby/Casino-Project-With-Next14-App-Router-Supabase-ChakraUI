@@ -4,7 +4,7 @@ import SearchBar from '@/components/SearchBar'
 import GiftCardContainer from '@/components/container/GiftCardContainer'
 import GiftVouncherContainer from '@/components/container/GiftVouncherContainer'
 import UnlockCrate from '@/components/UnlockCrate'
-
+import FunctionCardContainer from '@/components/container/FunctionCardContainer'
 export default function Home() {
   return (
     <Flex direction={'column'} maxWidth="1440px" width="full">
@@ -25,7 +25,16 @@ export default function Home() {
           </Flex>
         </Flex>
       </Flex>
-      <UnlockCrate />
+      <Flex
+        width="full"
+        direction="column"
+        px={{ base: 4, md: 6, lg: 10 }}
+        gap={10}
+        mb={20}
+      >
+        <UnlockCrate />
+        <FunctionCardContainer />
+      </Flex>
     </Flex>
   )
 }
