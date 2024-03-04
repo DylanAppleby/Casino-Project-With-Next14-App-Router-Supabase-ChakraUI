@@ -31,20 +31,25 @@ const UnlockCrate = () => {
       gap={2}
       direction={{ base: 'column', sm: 'column', md: 'column', lg: 'row' }}
     >
-      <Flex direction="column" gap="8" px={20} py={10}>
+      <Flex
+        direction="column"
+        gap="8"
+        px={{ base: 0, sm: 5, md: 10, lg: 20 }}
+        py={{ base: 0, sm: 5, md: 10, lg: 10 }}
+      >
         <Flex direction="column">
-          <Heading fontFamily="ClashGrotesk" fontSize={{ base: 32, md: 40 }}>
+          <Heading fontFamily="ClashGrotesk" fontSize={{ base: 28, sm: 32, md: 40 }}>
             Unlock a crates with
           </Heading>
-          <Heading fontFamily="ClashGrotesk" fontSize={{ base: 32, md: 40 }}>
+          <Heading fontFamily="ClashGrotesk" fontSize={{ base: 28, sm: 32, md: 40 }}>
             higher odds as you go
           </Heading>
         </Flex>
         <Box>
-          <Text fontSize={{ base: 20, md: 24 }}>
+          <Text fontSize={{ base: 16, sm: 20, md: 24 }}>
             Every few packs opened, you unlock a crate...
           </Text>
-          <Text fontSize={{ base: 20, md: 24 }}>
+          <Text fontSize={{ base: 16, sm: 20, md: 24 }}>
             The Ultimate prize one can get with 99% higher odds
           </Text>
         </Box>
