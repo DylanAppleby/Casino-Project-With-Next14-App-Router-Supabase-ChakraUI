@@ -38,7 +38,7 @@ const SearchBar = () => {
         >
           <Box height="1.25rem" minWidth="0.8125rem">
             <Image
-              src="/assets/images/flash.png"
+              src="/assets/images/flash.webp"
               alt="flash"
               width="13"
               height="18"
@@ -65,7 +65,7 @@ const SearchBar = () => {
         >
           <Box height="1.25rem" minWidth="0.8125rem">
             <Image
-              src="/assets/images/flame.png"
+              src="/assets/images/flame.webp"
               alt="flame"
               width="13"
               height="18"
@@ -92,7 +92,7 @@ const SearchBar = () => {
         >
           <Box height="1.25rem" minWidth="1rem">
             <Image
-              src="/assets/images/arrow-down.png"
+              src="/assets/images/arrow-down.webp"
               alt="arrow-down"
               width="13"
               height="18"

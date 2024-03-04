@@ -5,51 +5,51 @@ import { GiftVouncher } from '@/types/giftVouncher'
 export const GIFT_CARDS: Array<GiftCard> = [
   {
     label: 'GiftCard1',
-    image: '/assets/images/giftcard/giftcard1.png',
+    image: '/assets/images/giftcard/giftcard1.webp',
   },
   {
     label: 'GiftCard2',
-    image: '/assets/images/giftcard/giftcard2.png',
+    image: '/assets/images/giftcard/giftcard2.webp',
   },
   {
     label: 'GiftCard3',
-    image: '/assets/images/giftcard/giftcard3.png',
+    image: '/assets/images/giftcard/giftcard3.webp',
   },
   {
     label: 'GiftCard4',
-    image: '/assets/images/giftcard/giftcard4.png',
+    image: '/assets/images/giftcard/giftcard1.webp',
   },
   {
     label: 'GiftCard5',
-    image: '/assets/images/giftcard/giftcard5.png',
+    image: '/assets/images/giftcard/giftcard2.webp',
   },
   {
     label: 'GiftCard6',
-    image: '/assets/images/giftcard/giftcard6.png',
+    image: '/assets/images/giftcard/giftcard3.webp',
   },
   {
     label: 'GiftCard7',
-    image: '/assets/images/giftcard/giftcard7.png',
+    image: '/assets/images/giftcard/giftcard1.webp',
   },
   {
     label: 'GiftCard8',
-    image: '/assets/images/giftcard/giftcard8.png',
+    image: '/assets/images/giftcard/giftcard2.webp',
   },
   {
     label: 'GiftCard9',
-    image: '/assets/images/giftcard/giftcard9.png',
+    image: '/assets/images/giftcard/giftcard3.webp',
   },
   {
     label: 'GiftCard10',
-    image: '/assets/images/giftcard/giftcard10.png',
+    image: '/assets/images/giftcard/giftcard1.webp',
   },
   {
     label: 'GiftCard11',
-    image: '/assets/images/giftcard/giftcard11.png',
+    image: '/assets/images/giftcard/giftcard2.webp',
   },
   {
     label: 'GiftCard12',
-    image: '/assets/images/giftcard/giftcard12.png',
+    image: '/assets/images/giftcard/giftcard3.webp',
   },
 ]
 
@@ -75,55 +75,55 @@ export const NAV_ITEMS: Array<NavItem> = [
 
 export const GIFT_VOUNCHERS: Array<GiftVouncher> = [
   {
-    image: '/assets/images/giftvouncher/vouncherwatch.png',
+    image: '/assets/images/giftvouncher/vouncherwatch.webp',
     labelHeader: 'Audemars Patek',
     labelContent: 'Royal Oak',
     price: '38450',
   },
   {
-    image: '/assets/images/giftvouncher/vounchermodel.png',
+    image: '/assets/images/giftvouncher/vounchermodel.webp',
     labelHeader: 'Vouncher',
     labelContent: 'Wincrate',
     price: '5.00',
   },
   {
-    image: '/assets/images/giftvouncher/vounchermodel.png',
+    image: '/assets/images/giftvouncher/vounchermodel.webp',
     labelHeader: 'Vouncher',
     labelContent: 'Wincrate',
     price: '0.02',
   },
   {
-    image: '/assets/images/giftvouncher/vounchermodel.png',
+    image: '/assets/images/giftvouncher/vounchermodel.webp',
     labelHeader: 'Vouncher',
     labelContent: 'Wincrate',
     price: '1.00',
   },
   {
-    image: '/assets/images/giftvouncher/vounchermodel.png',
+    image: '/assets/images/giftvouncher/vounchermodel.webp',
     labelHeader: 'Vouncher',
     labelContent: 'Wincrate',
     price: '0.10',
   },
   {
-    image: '/assets/images/giftvouncher/vounchermodel.png',
+    image: '/assets/images/giftvouncher/vounchermodel.webp',
     labelHeader: 'Vouncher',
     labelContent: 'Wincrate',
     price: '0.05',
   },
   {
-    image: '/assets/images/giftvouncher/vounchermodel.png',
+    image: '/assets/images/giftvouncher/vounchermodel.webp',
     labelHeader: 'Vouncher',
     labelContent: 'Wincrate',
     price: '0.50',
   },
   {
-    image: '/assets/images/giftvouncher/vounchermodel.png',
+    image: '/assets/images/giftvouncher/vounchermodel.webp',
     labelHeader: 'Vouncher',
     labelContent: 'Wincrate',
     price: '10.00',
   },
   {
-    image: '/assets/images/giftvouncher/vounchermodel.png',
+    image: '/assets/images/giftvouncher/vounchermodel.webp',
     labelHeader: 'Vouncher',
     labelContent: 'Wincrate',
     price: '3.00',

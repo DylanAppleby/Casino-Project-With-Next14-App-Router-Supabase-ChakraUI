@@ -1,9 +1,9 @@
 'use client'
+import Image from 'next/image'
 
 import {
   Box,
   Flex,
-  Image,
   IconButton,
   Collapse,
   useColorModeValue,
@@ -81,7 +81,12 @@ const Header = () => {
                 as="a"
                 href="/"
               >
-                <Image src="assets/images/logo.png" alt="Your Logo" width="full" />
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_SITE_URL}/assets/images/logo.webp`}
+                  alt="Wincrate Logo"
+                  width="128"
+                  height="23"
+                />
               </Flex>
 
               <Box display={{ base: 'none', md: 'flex' }}>
