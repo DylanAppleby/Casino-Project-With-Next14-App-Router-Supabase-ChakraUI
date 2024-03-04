@@ -40,7 +40,7 @@ const Header = () => {
     <Box width="full" height="3.75rem">
       <Flex
         height="full"
-        bg={useColorModeValue('white', 'gray.800')}
+        bg={useColorModeValue('white', '#1f1f1f')}
         color={useColorModeValue('gray.600', 'white')}
         justifyContent="center"
         borderBottom={1}

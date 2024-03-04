@@ -11,7 +11,7 @@ interface IGiftVouncher {
 const GiftVouncher = ({ image, labelHeader, labelContent, price }: IGiftVouncher) => {
   return (
     <Flex
-      bg={useColorModeValue('gray.100', 'gray.700')}
+      bg={useColorModeValue('gray.100', '#313030')}
       borderRadius={15}
       width="full"
       px={5}

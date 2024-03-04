@@ -16,13 +16,12 @@ import { NavItem } from '@/types/navItem'
 import { NAV_ITEMS } from '@/constants/mock'
 
 const DesktopNav = () => {
-  const linkHoverColor = useColorModeValue('gray.800', 'white')
   const popoverContentBgColor = useColorModeValue('white', 'gray.800')
 
   return (
     <Stack direction={'row'} spacing={{ base: 0, md: 2, lg: 4 }}>
       {NAV_ITEMS.map((navItem, index) => (
-        <Box key={navItem.label}>
+        <Box key={navItem.label + index}>
           <Popover trigger={'hover'} placement={'bottom-start'}>
             <PopoverTrigger>
               <Button
@@ -32,7 +31,7 @@ const DesktopNav = () => {
                 fontSize={{ md: 'md', lg: 'lg' }}
                 fontWeight={500}
                 color={useColorModeValue('gray.600', 'gray.200')}
-                bgColor={useColorModeValue('white', 'gray.800')}
+                bgColor={useColorModeValue('white', '#1f1f1f')}
                 _hover={{
                   textDecoration: 'none',
                   color: useColorModeValue('gray.800', 'gray.50'),

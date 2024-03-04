@@ -41,7 +41,7 @@ const Footer = () => {
     <Flex
       direction="column"
       alignItems="center"
-      bg={useColorModeValue('gray.50', 'gray.900')}
+      bg={useColorModeValue('white', '#1f1f1f')}
       color={useColorModeValue('gray.700', 'gray.200')}
       width="full"
     >
