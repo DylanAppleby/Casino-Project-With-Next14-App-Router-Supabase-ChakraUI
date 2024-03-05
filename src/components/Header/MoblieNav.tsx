@@ -9,13 +9,13 @@ import {
 } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import { NavItem } from '@/types/navItem'
-import { NAV_ITEMS } from '@/constants/mock'
+import { HEADER_NAV_ITEMS } from '@/constants/navItems'
 
 const MobileNav = () => {
   return (
     <Stack bg={useColorModeValue('white', 'gray.800')} p={4} display={{ md: 'none' }}>
-      {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
+      {HEADER_NAV_ITEMS.map((headerNavItem, index) => (
+        <MobileNavItem key={headerNavItem.label + index} {...headerNavItem} />
       ))}
     </Stack>
   )

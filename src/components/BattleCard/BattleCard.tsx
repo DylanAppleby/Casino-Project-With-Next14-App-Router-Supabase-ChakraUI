@@ -17,7 +17,9 @@ const BattleCard = () => {
         rounded={'lg'}
         p={6}
       >
-        <Button w="100%">Join Battle</Button>
+        <Button w="100%" as={'a'} href="/account">
+          Join Battle
+        </Button>
       </Container>
     </Flex>
   )

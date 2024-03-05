@@ -1,5 +1,4 @@
 import { GiftCard } from '@/types/giftCard'
-import { NavItem } from '@/types/navItem'
 import { GiftVouncher } from '@/types/giftVouncher'
 
 export const GIFT_CARDS: Array<GiftCard> = [
@@ -50,26 +49,6 @@ export const GIFT_CARDS: Array<GiftCard> = [
   {
     label: 'GiftCard12',
     image: '/assets/images/giftcard/giftcard3.webp',
-  },
-]
-
-export const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: 'Packs',
-    href: '/packs',
-  },
-  {
-    label: 'Battles',
-    href: '/battles',
-  },
-  {
-    label: 'Race',
-    href: '/race',
-  },
-  {
-    label: 'Rewards',
-    href: '/rewards',
-    isNew: true,
   },
 ]
 

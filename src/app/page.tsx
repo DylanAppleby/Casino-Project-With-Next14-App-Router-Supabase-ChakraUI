@@ -7,8 +7,13 @@ import UnlockCrate from '@/components/UnlockCrate'
 import FunctionCardContainer from '@/components/container/FunctionCardContainer'
 export default function Home() {
   return (
-    <Flex direction={'column'} maxWidth="1440px" width="full">
-      <Flex width="full" px={{ base: 4, md: 6, lg: 10 }} gap={7}>
+    <Flex
+      direction={'column'}
+      maxWidth="1440px"
+      width="full"
+      px={{ base: 4, md: 6, lg: 10 }}
+    >
+      <Flex width="full" gap={7}>
         <Flex direction="column" width="full" minHeight={1000}>
           <SearchBar />
           <GiftCardContainer />
@@ -25,13 +30,7 @@ export default function Home() {
           </Flex>
         </Flex>
       </Flex>
-      <Flex
-        width="full"
-        direction="column"
-        px={{ base: 4, md: 6, lg: 10 }}
-        gap={10}
-        mb={20}
-      >
+      <Flex width="full" direction="column" gap={10} mb={20}>
         <UnlockCrate />
         <FunctionCardContainer />
       </Flex>
