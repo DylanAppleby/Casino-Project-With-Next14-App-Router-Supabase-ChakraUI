@@ -3,10 +3,10 @@ import FunctionCard from '@/components/FunctionCard'
 import { FUNCTION_CARDS } from '@/constants/functionCard'
 const FunctionCardContainer = () => {
   return (
-    <Flex width={{ lg: 'full' }} mx={{ base: -4, md: -6, lg: 0 }}>
+    <Flex width={{ lg: 'full' }} mx={{ base: -4, lg: 0 }}>
       <Flex
         gap={4}
-        overflowX={{ base: 'hidden', md: 'auto', lg: 'auto' }}
+        overflowX={'auto'}
         px={{ base: 4, md: 6, lg: 0 }}
         css={{
           msOverflowStyle: 'none',

@@ -43,10 +43,10 @@ const UnlockCrate = () => {
           </Heading>
         </Flex>
         <Box>
-          <Text fontSize={{ base: 16, sm: 20, md: 24 }}>
+          <Text fontSize={{ base: 15, sm: 18, md: 21 }} whiteSpace={'nowrap'}>
             Every few packs opened, you unlock a crate...
           </Text>
-          <Text fontSize={{ base: 16, sm: 20, md: 24 }}>
+          <Text fontSize={{ base: 15, sm: 18, md: 21 }} whiteSpace={'nowrap'}>
             The Ultimate prize one can get with 99% higher odds
           </Text>
         </Box>
@@ -85,13 +85,13 @@ const UnlockCrate = () => {
                   style={{ width: '100%', height: '100%' }}
                 />
               </Box>
-              <Text fontWeight="bold" fontStyle={'italic'}>
+              <Text whiteSpace={'nowrap'} fontWeight="bold" fontStyle={'italic'}>
                 LVL 0
               </Text>
             </Flex>
-            <Text>Your VIP Progress</Text>
+            <Text whiteSpace={'nowrap'}>Your VIP Progress</Text>
             <Flex gap={5}>
-              <Text>LVL 1 UNLOCKED</Text>
+              <Text whiteSpace={'nowrap'}>LVL 1 UNLOCKED</Text>
               <Box>
                 <Image
                   src="/assets/images/rectangle.webp"

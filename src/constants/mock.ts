@@ -1,5 +1,6 @@
 import { GiftCard } from '@/types/giftCard'
 import { GiftVouncher } from '@/types/giftVouncher'
+import { CryptoData } from '@/types/cryptoData'
 
 export const GIFT_CARDS: Array<GiftCard> = [
   {
@@ -106,5 +107,29 @@ export const GIFT_VOUNCHERS: Array<GiftVouncher> = [
     labelHeader: 'Vouncher',
     labelContent: 'Wincrate',
     price: '3.00',
+  },
+]
+
+export const CRYPTO_DATAS: Array<CryptoData> = [
+  {
+    header: '.22 BTC',
+    transactionID: '802655171961',
+    amountUSD: '$8303.20',
+    status: 'PROCESSED',
+    image: '/assets/images/cryptoicon/BTC.webp',
+  },
+  {
+    header: '2.5 ETH',
+    transactionID: '802655171961',
+    amountUSD: '$5345.32',
+    status: 'PROCESSED',
+    image: '/assets/images/cryptoicon/ETH.webp',
+  },
+  {
+    header: '0.4 ETH',
+    transactionID: '802655171961',
+    amountUSD: '$1266.78',
+    status: 'PROCESSED',
+    image: '/assets/images/cryptoicon/ETH.webp',
   },
 ]

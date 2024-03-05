@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Urbanist } from 'next/font/google'
-import { ChakraProvider, Flex } from '@chakra-ui/react'
+import { ChakraProvider, Container, Flex } from '@chakra-ui/react'
 
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -22,7 +22,11 @@ const RootLayout = ({ children }: Readonly<IRootLayout>) => (
     <body className={urbanist.className}>
       <ChakraProvider>
         <Header />
-        <Flex justifyContent="center">{children}</Flex>
+        <main>
+          <Container maxW={'container.xl'}>
+            <Flex justifyContent="center">{children}</Flex>
+          </Container>
+        </main>
         <Footer />
       </ChakraProvider>
     </body>

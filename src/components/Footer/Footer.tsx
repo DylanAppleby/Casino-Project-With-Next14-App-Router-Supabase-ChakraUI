@@ -38,93 +38,88 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 
 const Footer = () => {
   return (
-    <Flex
-      direction="column"
-      alignItems="center"
-      bg={useColorModeValue('white', '#1f1f1f')}
-      color={useColorModeValue('gray.700', 'gray.200')}
-      width="full"
-    >
-      <Flex
-        direction="column"
-        maxWidth="1440px"
-        width="full"
-        px={{ base: 4, md: 6, lg: 10 }}
+    <footer>
+      <Box
+        bg={useColorModeValue('white', '#1f1f1f')}
+        color={useColorModeValue('gray.700', 'gray.200')}
+        pt={4}
       >
-        <Container maxWidth="6xl" as={Stack} py={10} px={0}>
-          <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
-            <Stack align={'flex-start'}>
-              <ListHeader>About</ListHeader>
-              <Box as="a" href={'#'} color="#75728c">
-                All Sports
+        <Container maxW={'container.xl'}>
+          <Flex direction="column">
+            <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
+              <Stack align={'flex-start'}>
+                <ListHeader>About</ListHeader>
+                <Box as="a" href={'#'} color="#75728c">
+                  All Sports
+                </Box>
+                <Box as="a" href={'#'} color="#75728c">
+                  Support
+                </Box>
+                <Box as="a" href={'#'} color="#75728c">
+                  About Us
+                </Box>
+                <Box as="a" href={'#'} color="#75728c">
+                  FAQ's
+                </Box>
+              </Stack>
+              <Stack align={'flex-start'}>
+                <ListHeader>Social Casino</ListHeader>
+                <Box as="a" href={'#'} color="#75728c">
+                  Games
+                </Box>
+                <Box as="a" href={'#'} color="#75728c">
+                  VIP Club
+                </Box>
+                <Box as="a" href={'#'} color="#75728c">
+                  Affiliate Program
+                </Box>
+              </Stack>
+              <Stack align={'flex-start'}>
+                <ListHeader>Community</ListHeader>
+                <Box as="a" href={'#'} color="#75728c">
+                  Twitter
+                </Box>
+                <Box as="a" href={'#'} color="#75728c">
+                  instagram
+                </Box>
+              </Stack>
+              <Stack align={'flex-start'}>
+                <ListHeader>Support</ListHeader>
+                <Box as="a" href={'#'} color="#75728c">
+                  Fairness
+                </Box>
+                <Box as="a" href={'#'} color="#75728c">
+                  Affiliate
+                </Box>
+                <Box as="a" href={'#'} color="#75728c">
+                  Addicted to Gaming?
+                </Box>
+                <Box as="a" href={'#'} color="#75728c">
+                  Live Support
+                </Box>
+                <Box as="a" href={'#'} color="#75728c">
+                  Help Center
+                </Box>
+              </Stack>
+            </SimpleGrid>
+            <Box py={10} width="full">
+              <Box position="relative" width="full">
+                <Divider
+                  orientation="horizontal"
+                  bgColor={useColorModeValue('gray.300', 'gray.700')}
+                />
+                <AbsoluteCenter bg={useColorModeValue('white', 'gray.900')} px="4">
+                  <Logo />
+                </AbsoluteCenter>
               </Box>
-              <Box as="a" href={'#'} color="#75728c">
-                Support
-              </Box>
-              <Box as="a" href={'#'} color="#75728c">
-                About Us
-              </Box>
-              <Box as="a" href={'#'} color="#75728c">
-                FAQ's
-              </Box>
-            </Stack>
-            <Stack align={'flex-start'}>
-              <ListHeader>Social Casino</ListHeader>
-              <Box as="a" href={'#'} color="#75728c">
-                Games
-              </Box>
-              <Box as="a" href={'#'} color="#75728c">
-                VIP Club
-              </Box>
-              <Box as="a" href={'#'} color="#75728c">
-                Affiliate Program
-              </Box>
-            </Stack>
-            <Stack align={'flex-start'}>
-              <ListHeader>Community</ListHeader>
-              <Box as="a" href={'#'} color="#75728c">
-                Twitter
-              </Box>
-              <Box as="a" href={'#'} color="#75728c">
-                instagram
-              </Box>
-            </Stack>
-            <Stack align={'flex-start'}>
-              <ListHeader>Support</ListHeader>
-              <Box as="a" href={'#'} color="#75728c">
-                Fairness
-              </Box>
-              <Box as="a" href={'#'} color="#75728c">
-                Affiliate
-              </Box>
-              <Box as="a" href={'#'} color="#75728c">
-                Addicted to Gaming?
-              </Box>
-              <Box as="a" href={'#'} color="#75728c">
-                Live Support
-              </Box>
-              <Box as="a" href={'#'} color="#75728c">
-                Help Center
-              </Box>
-            </Stack>
-          </SimpleGrid>
+              <Text pt={6} fontSize={'sm'} textAlign={'center'}>
+                © {new Date().getFullYear()} Wincrate | All rights reserved
+              </Text>
+            </Box>
+          </Flex>
         </Container>
-        <Box py={10} width="full">
-          <Box position="relative" width="full">
-            <Divider
-              orientation="horizontal"
-              bgColor={useColorModeValue('gray.300', 'gray.700')}
-            />
-            <AbsoluteCenter bg={useColorModeValue('white', 'gray.900')} px="4">
-              <Logo />
-            </AbsoluteCenter>
-          </Box>
-          <Text pt={6} fontSize={'sm'} textAlign={'center'}>
-            © {new Date().getFullYear()} Wincrate | All rights reserved
-          </Text>
-        </Box>
-      </Flex>
-    </Flex>
+      </Box>
+    </footer>
   )
 }
 

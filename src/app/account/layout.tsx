@@ -7,9 +7,7 @@ interface IAccountLayout {
 
 const AccountLayout = ({ children }: Readonly<IAccountLayout>) => (
   <Flex
-    maxWidth="1440px"
     width="full"
-    px={{ base: 4, md: 6, lg: 10 }}
     mt={6}
     mb={16}
     gap={10}

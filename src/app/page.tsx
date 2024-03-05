@@ -7,12 +7,7 @@ import UnlockCrate from '@/components/UnlockCrate'
 import FunctionCardContainer from '@/components/container/FunctionCardContainer'
 export default function Home() {
   return (
-    <Flex
-      direction={'column'}
-      maxWidth="1440px"
-      width="full"
-      px={{ base: 4, md: 6, lg: 10 }}
-    >
+    <Flex width="full" direction={'column'}>
       <Flex width="full" gap={7}>
         <Flex direction="column" width="full" minHeight={1000}>
           <SearchBar />
