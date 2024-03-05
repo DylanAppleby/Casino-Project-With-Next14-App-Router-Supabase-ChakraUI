@@ -3,7 +3,7 @@ import { NavItem } from '@/types/navItem'
 export const HEADER_NAV_ITEMS: Array<NavItem> = [
   {
     label: 'Packs',
-    href: '/packs',
+    href: '/',
     isNew: false,
   },
   {
