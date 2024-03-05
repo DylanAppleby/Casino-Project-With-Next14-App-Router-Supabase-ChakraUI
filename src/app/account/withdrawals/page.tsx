@@ -1,16 +1,17 @@
 'use client'
 import { Flex } from '@chakra-ui/react'
-import CryptoContainer from '@/components/container/CryptoContainer'
+import WithdrawalsContainer from '@/components/container/WithdrawalsContainer'
 import PaginationButton from '@/components/PaginationButton'
-const CryptoDeposits = () => {
+
+const Withdrawals = () => {
   return (
     <Flex width={'full'} direction={'column'} justifyContent={'center'}>
       <Flex direction={'column'} gap={6}>
         <PaginationButton />
-        <CryptoContainer />
+        <WithdrawalsContainer />
       </Flex>
     </Flex>
   )
 }
 
-export default CryptoDeposits
+export default Withdrawals
