@@ -133,3 +133,27 @@ export const CRYPTO_DATAS: Array<CryptoData> = [
     image: '/assets/images/cryptoicon/ETH.webp',
   },
 ]
+
+export const FIAT_DATAS: Array<CryptoData> = [
+  {
+    header: '15 USD',
+    transactionID: '802655171961',
+    amountUSD: '$15.00',
+    status: 'PROCESSED',
+    image: '/assets/images/cryptoicon/coin.webp',
+  },
+  {
+    header: '15 USD',
+    transactionID: '802655171961',
+    amountUSD: '$15.00',
+    status: 'PROCESSED',
+    image: '/assets/images/cryptoicon/coin.webp',
+  },
+  {
+    header: '15 USD',
+    transactionID: '802655171961',
+    amountUSD: '$15.00',
+    status: 'PROCESSED',
+    image: '/assets/images/cryptoicon/coin.webp',
+  },
+]

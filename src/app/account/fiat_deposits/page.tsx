@@ -1,12 +1,12 @@
 'use client'
 import { Flex } from '@chakra-ui/react'
-import CryptoContainer from '@/components/container/CryptoContainer'
-const CryptoDeposits = () => {
+import FiatContainer from '@/components/container/FiatContainer'
+const FiatDeposits = () => {
   return (
     <Flex width={'full'} direction={'column'} justifyContent={'center'}>
-      <CryptoContainer />
+      <FiatContainer />
     </Flex>
   )
 }
 
-export default CryptoDeposits
+export default FiatDeposits
