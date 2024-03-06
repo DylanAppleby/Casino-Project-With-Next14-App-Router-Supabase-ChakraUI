@@ -10,7 +10,6 @@ import {
   Flex,
   useColorModeValue,
   Divider,
-  AbsoluteCenter,
 } from '@chakra-ui/react'
 import Image from 'next/image'
 
@@ -29,7 +28,7 @@ const Footer = () => {
       <Box
         bg={useColorModeValue('white', '#1f1f1f')}
         color={useColorModeValue('gray.700', 'gray.200')}
-        pt={6}
+        pt={10}
       >
         <Container maxW={'container.xl'}>
           <Flex direction="column">
