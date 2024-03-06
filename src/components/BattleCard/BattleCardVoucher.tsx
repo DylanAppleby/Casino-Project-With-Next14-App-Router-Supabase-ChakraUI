@@ -1,5 +1,4 @@
 import Image from 'next/image'
-
 import { Box, Flex } from '@chakra-ui/react'
 
 import { CardType } from '@/types/battleCard'
@@ -35,7 +34,13 @@ const BattleCardVoucher = ({
       </Box>
       <Flex position="relative" alignItems="center" justifyContent="center">
         <Box position="relative" zIndex={2}>
-          <Image src={imageUrl} alt={`${cardType} card`} width={90} height={80} />
+          <Image
+            src={imageUrl}
+            alt={`${cardType} card`}
+            width={90}
+            height={80}
+            style={{ width: '100%', height: '100%' }}
+          />
         </Box>
         <Box position="absolute" width={5} height={5} boxShadow={'0 0 50px yellow'} />
       </Flex>
