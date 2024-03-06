@@ -5,8 +5,7 @@ import { GiftVouncher } from '@/types/giftVouncher'
 import { CryptoData } from '@/types/cryptoData'
 import { PackHistory } from '@/types/packHistory'
 import { AffiliateCard } from '@/types/affiliateCard'
-import Affiliate from '@/components/AffiliateCard'
-
+import { AffiliateInfor } from '@/types/affiliateInfor'
 export const GIFT_CARDS: Array<GiftCard> = [
   {
     label: 'GiftCard1',
@@ -60,35 +59,35 @@ export const GIFT_CARDS: Array<GiftCard> = [
 
 export const BATTLE_CARDS: Array<any> = [
   {
-    label: 'BattleCard1'
+    label: 'BattleCard1',
   },
   {
-    label: 'BattleCard2'
+    label: 'BattleCard2',
   },
   {
-    label: 'BattleCard3'
+    label: 'BattleCard3',
   },
   {
-    label: 'BattleCard4'
+    label: 'BattleCard4',
   },
   {
-    label: 'BattleCard5'
+    label: 'BattleCard5',
   },
   {
-    label: 'BattleCard6'
-  }
+    label: 'BattleCard6',
+  },
 ]
 
 export const BATTLE_CARDS_BIG: Array<any> = [
   {
-    label: 'BattleCard1'
+    label: 'BattleCard1',
   },
   {
-    label: 'BattleCard2'
+    label: 'BattleCard2',
   },
   {
-    label: 'BattleCard3'
-  }
+    label: 'BattleCard3',
+  },
 ]
 
 export const BATTLE_CARDS_MONEY_PIC_DOWN: Array<TBattleCardVoucher> = [
@@ -96,32 +95,32 @@ export const BATTLE_CARDS_MONEY_PIC_DOWN: Array<TBattleCardVoucher> = [
     imageUrl: '/assets/images/battles/vounchermodel.webp',
     percentage: 75.0006,
     cardType: CardType.VOUCHER,
-    price: 0.01
+    price: 0.01,
   },
   {
     imageUrl: '/assets/images/battles/vounchermodel.webp',
     percentage: 0,
     cardType: CardType.VOUCHER,
-    price: 0.01
+    price: 0.01,
   },
   {
     imageUrl: '/assets/images/battles/vounchermodel.webp',
     percentage: 0,
     cardType: CardType.VOUCHER,
-    price: 0.01
-  }
+    price: 0.01,
+  },
 ]
 
 export const BATTLE_CARDS_PIC: Array<TBattleCardPic> = [
   {
-    imageUrl: '/assets/images/battles/luxury.webp'
+    imageUrl: '/assets/images/battles/luxury.webp',
   },
   {
-    imageUrl: '/assets/images/battles/luxury.webp'
+    imageUrl: '/assets/images/battles/luxury.webp',
   },
   {
-    imageUrl: '/assets/images/battles/luxury.webp'
-  }
+    imageUrl: '/assets/images/battles/luxury.webp',
+  },
 ]
 
 export const GIFT_VOUNCHERS: Array<GiftVouncher> = [
@@ -310,6 +309,21 @@ export const AFFILIATECARDS: Array<AffiliateCard> = [
     value: 300.43,
     prefixSymbol: '$',
     color: 'default',
+  },
+]
+
+export const AFFILIATEINFORS: Array<AffiliateInfor> = [
+  {
+    user: 'Best_Gamer544',
+    deposited: '$460',
+    opened: '$321.83',
+    commision: '+ $45.83',
+  },
+  {
+    user: 'Best_Gamer544',
+    deposited: '$460',
+    opened: '$321.83',
+    commision: '+ $45.83',
   },
 ]
 
