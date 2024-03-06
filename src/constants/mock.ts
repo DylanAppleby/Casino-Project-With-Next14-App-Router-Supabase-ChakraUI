@@ -1,6 +1,7 @@
 import { GiftCard } from '@/types/giftCard'
 import { GiftVouncher } from '@/types/giftVouncher'
 import { CryptoData } from '@/types/cryptoData'
+import { PackHistory } from '@/types/packHistory'
 
 export const GIFT_CARDS: Array<GiftCard> = [
   {
@@ -181,3 +182,39 @@ export const WITHDRAWALS: Array<CryptoData> = [
     image: '/assets/images/cryptoicon/coin.webp',
   },
 ]
+
+export const PACK_HISTORYS: Array<PackHistory> = [
+  {
+    header: '$33549.43',
+    cardName: 'Luxury',
+    amountUSD: '$2346.48',
+    cardStatus: 'Won',
+    cardImage: '/assets/images/giftcard/giftcard1.webp',
+    presentImage: '/assets/images/giftvouncher/vouncherwatch.webp',
+  },
+  {
+    header: '$33549.43',
+    cardName: 'Luxury',
+    amountUSD: '$2346.48',
+    cardStatus: 'Won',
+    cardImage: '/assets/images/giftcard/giftcard1.webp',
+    presentImage: '/assets/images/giftvouncher/vouncherwatch.webp',
+  },
+  {
+    header: '$33549.43',
+    cardName: 'Luxury',
+    amountUSD: '$2346.48',
+    cardStatus: 'Won',
+    cardImage: '/assets/images/giftcard/giftcard1.webp',
+    presentImage: '/assets/images/giftvouncher/vouncherwatch.webp',
+  },
+  {
+    header: '$33549.43',
+    cardName: 'Luxury',
+    amountUSD: '$2346.48',
+    cardStatus: 'Won',
+    cardImage: '/assets/images/giftcard/giftcard1.webp',
+    presentImage: '/assets/images/giftvouncher/vouncherwatch.webp',
+  },
+]
+
