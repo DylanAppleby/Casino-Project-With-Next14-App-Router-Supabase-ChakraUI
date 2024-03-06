@@ -4,6 +4,8 @@ import type { TBattleCardVoucher, TBattleCardPic } from '@/types/battleCard'
 import { GiftVouncher } from '@/types/giftVouncher'
 import { CryptoData } from '@/types/cryptoData'
 import { PackHistory } from '@/types/packHistory'
+import { AffiliateCard } from '@/types/affiliateCard'
+import Affiliate from '@/components/AffiliateCard'
 
 export const GIFT_CARDS: Array<GiftCard> = [
   {
@@ -283,6 +285,31 @@ export const PACK_HISTORYS: Array<PackHistory> = [
     cardStatus: 'Won',
     cardImage: '/assets/images/giftcard/giftcard1.webp',
     presentImage: '/assets/images/giftvouncher/vouncherwatch.webp',
+  },
+]
+
+export const AFFILIATECARDS: Array<AffiliateCard> = [
+  {
+    label: 'Affiliate Code',
+    value: 3455433,
+    color: 'yellow',
+  },
+  {
+    label: 'Users',
+    value: 126,
+    color: 'default',
+  },
+  {
+    label: 'Total Earnings',
+    value: 43879.98,
+    prefixSymbol: '$',
+    color: 'default',
+  },
+  {
+    label: 'Unclaimed Earnings',
+    value: 300.43,
+    prefixSymbol: '$',
+    color: 'default',
   },
 ]
 

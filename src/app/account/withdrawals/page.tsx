@@ -1,4 +1,3 @@
-'use client'
 import { Flex } from '@chakra-ui/react'
 import WithdrawalsContainer from '@/components/container/WithdrawalsContainer'
 import PaginationButton from '@/components/PaginationButton'
