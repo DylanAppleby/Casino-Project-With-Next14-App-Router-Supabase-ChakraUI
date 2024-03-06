@@ -1,4 +1,6 @@
 import { GiftCard } from '@/types/giftCard'
+import { CardType } from '@/types/battleCard'
+import type { TBattleCardVoucher, TBattleCardPic } from '@/types/battleCard'
 import { GiftVouncher } from '@/types/giftVouncher'
 import { CryptoData } from '@/types/cryptoData'
 
@@ -51,6 +53,72 @@ export const GIFT_CARDS: Array<GiftCard> = [
     label: 'GiftCard12',
     image: '/assets/images/giftcard/giftcard3.webp',
   },
+]
+
+export const BATTLE_CARDS: Array<any> = [
+  {
+    label: 'BattleCard1'
+  },
+  {
+    label: 'BattleCard2'
+  },
+  {
+    label: 'BattleCard3'
+  },
+  {
+    label: 'BattleCard4'
+  },
+  {
+    label: 'BattleCard5'
+  },
+  {
+    label: 'BattleCard6'
+  }
+]
+
+export const BATTLE_CARDS_BIG: Array<any> = [
+  {
+    label: 'BattleCard1'
+  },
+  {
+    label: 'BattleCard2'
+  },
+  {
+    label: 'BattleCard3'
+  }
+]
+
+export const BATTLE_CARDS_MONEY_PIC_DOWN: Array<TBattleCardVoucher> = [
+  {
+    imageUrl: '/assets/images/battles/vounchermodel.webp',
+    percentage: 75.0006,
+    cardType: CardType.VOUCHER,
+    price: 0.01
+  },
+  {
+    imageUrl: '/assets/images/battles/vounchermodel.webp',
+    percentage: 0,
+    cardType: CardType.VOUCHER,
+    price: 0.01
+  },
+  {
+    imageUrl: '/assets/images/battles/vounchermodel.webp',
+    percentage: 0,
+    cardType: CardType.VOUCHER,
+    price: 0.01
+  }
+]
+
+export const BATTLE_CARDS_PIC: Array<TBattleCardPic> = [
+  {
+    imageUrl: '/assets/images/battles/luxury.webp'
+  },
+  {
+    imageUrl: '/assets/images/battles/luxury.webp'
+  },
+  {
+    imageUrl: '/assets/images/battles/luxury.webp'
+  }
 ]
 
 export const GIFT_VOUNCHERS: Array<GiftVouncher> = [
