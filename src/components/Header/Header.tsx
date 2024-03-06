@@ -38,7 +38,7 @@ const Header = () => {
   } = useDisclosure()
 
   return (
-    <header>
+    <header className="header">
       <Box
         width="full"
         height="3.75rem"
