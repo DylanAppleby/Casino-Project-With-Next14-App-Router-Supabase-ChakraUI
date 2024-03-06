@@ -1,15 +1,16 @@
-'use client'
-import { Box, Container, Flex, Tag, Avatar, CloseButton } from '@chakra-ui/react'
-import BattleCard from '@/components/BattleCard'
-import { ArrowBackIcon, LinkIcon, CheckCircleIcon } from '@chakra-ui/icons'
+import {
+  Box,
+  Flex,
+  Avatar,
+  ArrowBackIcon,
+  LinkIcon,
+  CheckCircleIcon,
+} from '@/components/ChakraUIComponents'
 import Image from 'next/image'
 import BattleCardContainer from '@/components/container/BattleCardContainer'
 
 export default function Battles() {
   return (
-    // <Flex maxWidth="1440px">
-    //   <BattleCard />
-    // </Flex>
     <Flex width={'full'} direction={'column'}>
       <Flex height={'100px'} alignItems={'center'} justifyContent={'space-between'}>
         <Box>
@@ -37,6 +38,7 @@ export default function Battles() {
             alt={''}
             width={250}
             height={500}
+            style={{ width: '100%', height: '100%' }}
           />
           <Box marginTop={'30px'}>$21.07</Box>
         </Box>
