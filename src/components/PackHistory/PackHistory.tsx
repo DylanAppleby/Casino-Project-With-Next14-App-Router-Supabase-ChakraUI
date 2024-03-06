@@ -25,14 +25,14 @@ const PackHistory = ({
         p={3}
       >
         <Flex gap={2} alignItems={'center'}>
-          <Text>
+          <Text whiteSpace={'nowrap'}>
             Value USD:{' '}
             <Text as={'span'} color={'#6dc898'}>
               {header}
             </Text>
           </Text>
         </Flex>
-        <Text>02-07-2024 09:04</Text>
+        <Text whiteSpace={'nowrap'}>02-07-2024 09:04</Text>
       </Flex>
       <Flex justifyContent={'space-between'} alignItems={'center'}>
         <Flex gap={3} p={6}>

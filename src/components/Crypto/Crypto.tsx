@@ -26,20 +26,22 @@ const Crypto = ({ header, transactionID, amountUSD, status, image }: ICrypto) =>
               style={{ width: '22px', height: '22px' }}
             />
           </Flex>
-          <Text>{header}</Text>
+          <Text whiteSpace={'nowrap'}>{header}</Text>
         </Flex>
-        <Text>02-07-2024 09:04</Text>
+        <Text whiteSpace={'nowrap'}>02-07-2024 09:04</Text>
       </Flex>
       <Flex gap={3} p={6}>
         <Flex direction={'column'} gap={3}>
-          <Text>Transaction ID:</Text>
-          <Text>Amount USD:</Text>
-          <Text>Satus:</Text>
+          <Text whiteSpace={'nowrap'}>Transaction ID:</Text>
+          <Text whiteSpace={'nowrap'}>Amount USD:</Text>
+          <Text whiteSpace={'nowrap'}>Satus:</Text>
         </Flex>
         <Flex direction={'column'} gap={3}>
-          <Text>{transactionID}</Text>
-          <Text>{amountUSD}</Text>
-          <Text color={'#6dc898'}>{status}</Text>
+          <Text whiteSpace={'nowrap'}>{transactionID}</Text>
+          <Text whiteSpace={'nowrap'}>{amountUSD}</Text>
+          <Text whiteSpace={'nowrap'} color={'#6dc898'}>
+            {status}
+          </Text>
         </Flex>
       </Flex>
     </Flex>
