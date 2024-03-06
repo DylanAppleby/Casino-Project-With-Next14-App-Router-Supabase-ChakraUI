@@ -23,6 +23,7 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 }
 
 const Footer = () => {
+  const thisYear = new Date().getFullYear()
   return (
     <footer>
       <Box
@@ -112,7 +113,7 @@ const Footer = () => {
                 />
               </Flex>
               <Text pt={6} fontSize={'sm'} textAlign={'center'}>
-                © {new Date().getFullYear()} Wincrate | All rights reserved
+                © {thisYear} Wincrate | All rights reserved
               </Text>
             </Box>
           </Flex>
