@@ -24,6 +24,7 @@ export {
   Checkbox,
   Grid,
   GridItem,
+  Tag,
 } from '@chakra-ui/react'
 
-export { ArrowBackIcon, LinkIcon, CheckCircleIcon } from '@chakra-ui/icons'
+export { ArrowBackIcon, LinkIcon, CheckCircleIcon, CopyIcon } from '@chakra-ui/icons'
