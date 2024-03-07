@@ -26,13 +26,13 @@ const UnlockCrate = () => {
       justifyContent="center"
       alignItems="center"
       direction={{ base: 'column', sm: 'column', md: 'column', lg: 'row' }}
-      mt={3}
     >
       <Flex
         direction="column"
         gap="8"
-        px={{ base: 0, md: 10, lg: 20 }}
+        px={{ base: 0, md: 10, lg: 10 }}
         py={{ base: 0, md: 10, lg: 10 }}
+        flex={1}
       >
         <Flex direction="column">
           <Heading fontFamily="ClashGrotesk" fontSize={{ base: 28, sm: 32, md: 40 }}>
@@ -74,12 +74,12 @@ const UnlockCrate = () => {
               />
             </Slider>
           </Box>
-          <Flex width="full" justifyContent="space-between">
+          <Flex width="full" justifyContent="space-between" alignItems={'center'}>
             <Flex gap={2}>
               <Box>
                 <Image
                   src="/assets/images/rectangle.webp"
-                  alt="crown icon"
+                  alt="rectangle icon"
                   width={16}
                   height={16}
                   style={{ width: '100%', height: '100%' }}
@@ -90,14 +90,16 @@ const UnlockCrate = () => {
               </Text>
             </Flex>
             <Text whiteSpace={'nowrap'}>Your VIP Progress</Text>
-            <Flex gap={5}>
-              <Text whiteSpace={'nowrap'}>LVL 1 UNLOCKED</Text>
+            <Flex gap={4}>
+              <Text whiteSpace={'nowrap'} fontStyle={'italic'}>
+                LVL 1 UNLOCKED
+              </Text>
               <Box>
                 <Image
                   src="/assets/images/rectangle.webp"
-                  alt="crown icon"
-                  width={16}
-                  height={16}
+                  alt="rectangle icon"
+                  width={14}
+                  height={14}
                   style={{ width: '100%', height: '100%' }}
                 />
               </Box>
@@ -113,7 +115,7 @@ const UnlockCrate = () => {
           Register
         </Button>
       </Flex>
-      <Flex padding={10} alignItems="center" justifyContent="center">
+      <Flex padding={10} alignItems="center" justifyContent="center" flex={1}>
         <Image
           src={`/assets/images/unlockcrate.webp`}
           alt="crate.webp"
