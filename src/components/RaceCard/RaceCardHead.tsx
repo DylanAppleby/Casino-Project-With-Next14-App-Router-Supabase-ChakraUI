@@ -26,7 +26,7 @@ const RaceCardHead = ({ avatar, timestamp }: IRaceCardHeadType) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-    <Flex align={'center'} direction={'column'} marginBottom={16}>
+    <Flex align={'center'} direction={'column'} marginBottom={{ base: 0, md: 0, lg: 16 }}>
       <Modal size={'xl'} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent paddingY={'24px'} textAlign={'center'}>
@@ -37,7 +37,7 @@ const RaceCardHead = ({ avatar, timestamp }: IRaceCardHeadType) => {
           </ModalBody>
         </ModalContent>
       </Modal>
-      <Text fontSize={28} fontWeight={800}>
+      <Text fontSize={{ base: 20, md: 28 }} fontWeight={800}>
         Daily 2.5K Race #140
       </Text>
       <Text fontSize={16} fontWeight={600}>
