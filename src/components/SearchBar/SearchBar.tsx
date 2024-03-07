@@ -23,7 +23,7 @@ const SearchBar = () => {
     >
       <Flex gap={2}>
         <Flex
-          rounded="full"
+          rounded={{ base: 9, md: 'full', lg: 'full' }}
           h={{ base: '2.5rem' }}
           px={'0.75rem'}
           gap={3}
@@ -50,7 +50,7 @@ const SearchBar = () => {
           </Box>
         </Flex>
         <Flex
-          rounded="full"
+          rounded={{ base: 9, md: 'full', lg: 'full' }}
           h={{ base: '2.5rem' }}
           px={'0.75rem'}
           gap={3}
@@ -77,7 +77,7 @@ const SearchBar = () => {
           </Box>
         </Flex>
         <Flex
-          rounded="full"
+          rounded={{ base: 9, md: 'full', lg: 'full' }}
           h={{ base: '2.5rem' }}
           px={'0.75rem'}
           gap={3}

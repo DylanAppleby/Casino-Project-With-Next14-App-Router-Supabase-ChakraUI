@@ -16,6 +16,7 @@ const BattleDetailCardVoucher = ({
   cardType,
   price,
 }: IBattleDetailCardVoucher) => {
+  console.log({ imageUrl })
   return (
     <Flex
       direction="column"

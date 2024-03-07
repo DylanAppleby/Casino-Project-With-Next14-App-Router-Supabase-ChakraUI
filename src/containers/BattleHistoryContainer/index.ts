@@ -1,3 +1,3 @@
-import BattleHistory from '@/components/BattleHistory'
+import BattleHistoryContainer from './BattleHistoryContainer'
 
-export default BattleHistory
+export default BattleHistoryContainer

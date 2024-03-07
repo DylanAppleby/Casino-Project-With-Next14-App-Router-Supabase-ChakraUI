@@ -11,41 +11,44 @@ const FunctionCard = ({ label, header, content }: IGiftCard) => {
   return (
     <Flex
       direction="column"
-      rounded={16}
+      rounded={14}
       width={{ base: '20.5rem', lg: 'full' }}
       minWidth={{ base: '20.5rem', lg: '0rem' }}
       maxWidth={'20.5rem'}
       bg={useColorModeValue('yellow.300', 'yellow.500')}
-      padding={1.5}
+      px={1}
+      pb={1}
     >
       <Flex px={3} gap={1} py={2} alignItems={'center'}>
         <Box mb={1}>
           <Image
             src="/assets/images/crown.webp"
             alt="crown icon"
-            width={18}
-            height={18}
-            style={{ width: 'auto', height: 'auto' }}
+            width={16}
+            height={16}
+            style={{ width: '100%', height: '100%' }}
           />
         </Box>
-        <Text color={'#01000d'} fontWeight={'bold'} fontSize={18}>
+        <Text color={'#01000d'} fontWeight={'bold'} fontSize={16}>
           {label}
         </Text>
       </Flex>
       <Flex
         direction="column"
-        rounded={12}
+        rounded={11}
         bg={'#151618'}
-        px={8}
-        pb={6}
+        px={4}
+        pb={4}
         pt={4}
-        gap={1}
         height="full"
+        gap={2}
       >
-        <Text fontSize={20} fontWeight={'bold'}>
+        <Text fontSize={18} fontWeight={'bold'}>
           {header}
         </Text>
-        <Text fontSize={12}>{content}</Text>
+        <Text fontSize={11} color={'#969ca6'} fontWeight={'bold'}>
+          {content}
+        </Text>
       </Flex>
     </Flex>
   )

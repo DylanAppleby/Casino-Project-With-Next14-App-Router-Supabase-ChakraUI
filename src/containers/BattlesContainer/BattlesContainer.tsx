@@ -1,5 +1,4 @@
 import BattleCard from '@/components/BattleCard'
-import BattleCard1 from '@/components/BattleCard'
 import { BattleOption, BattleType } from '@/components/BattleCard/BattleCard'
 
 const BattlesContainer = () => {
