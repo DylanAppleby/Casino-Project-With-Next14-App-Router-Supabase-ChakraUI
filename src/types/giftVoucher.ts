@@ -1,4 +1,4 @@
-export interface GiftVouncher {
+export interface GiftVoucher {
   image: string
   labelHeader: string
   labelContent: string

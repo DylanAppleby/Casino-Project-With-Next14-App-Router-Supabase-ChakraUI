@@ -1,18 +1,20 @@
+'use client'
+import { ReactNode } from 'react'
+import { usePathname } from 'next/navigation'
 import { Flex, Box, Text } from '@chakra-ui/react'
-
-import SearchBar from '@/components/SearchBar'
-import GiftCardContainer from '@/components/container/GiftCardContainer'
-import GiftVouncherContainer from '@/components/container/GiftVouncherContainer'
+import GiftVoucherContainer from '@/components/container/GiftVoucherContainer'
 import UnlockCrate from '@/components/UnlockCrate'
 import FunctionCardContainer from '@/components/container/FunctionCardContainer'
-export default function Home() {
+
+interface IWithLiveOpens {
+  children: ReactNode
+}
+const WithLiveOpens = ({ children }: Readonly<IWithLiveOpens>) => {
+  const path = usePathname()
   return (
     <Flex width="full" direction={'column'}>
-      <Flex width="full" gap={7}>
-        <Flex direction="column" width="full" minHeight={1000}>
-          <SearchBar />
-          <GiftCardContainer />
-        </Flex>
+      <Flex width={'full'} gap={7} my={18}>
+        {children}
         <Flex width="full" display={{ base: 'none', lg: 'flex' }} maxWidth={80}>
           <Flex direction="column" width="full">
             <Flex gap={2} alignItems="center" textAlign="center" my="2.5rem">
@@ -25,14 +27,20 @@ export default function Home() {
               />
               <Text fontSize={'lg'}>Live Opens</Text>
             </Flex>
-            <GiftVouncherContainer />
+            <GiftVoucherContainer />
           </Flex>
         </Flex>
       </Flex>
-      <Flex width="full" direction="column" gap={10} mb={20}>
-        <UnlockCrate />
-        <FunctionCardContainer />
-      </Flex>
+      {path === '/' ? (
+        <Flex width="full" direction="column" gap={10} mb={20}>
+          <UnlockCrate />
+          <FunctionCardContainer />
+        </Flex>
+      ) : (
+        ''
+      )}
     </Flex>
   )
 }
+
+export default WithLiveOpens
