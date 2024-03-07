@@ -2,13 +2,13 @@
 import Image from 'next/image'
 import { Box, Flex, Text, useColorModeValue } from '@chakra-ui/react'
 
-interface IGiftVouncher {
+interface IGiftVoucher {
   image: string
   labelHeader: string
   labelContent: string
   price: string
 }
-const GiftVouncher = ({ image, labelHeader, labelContent, price }: IGiftVouncher) => {
+const GiftVoucher = ({ image, labelHeader, labelContent, price }: IGiftVoucher) => {
   return (
     <Flex
       bg={useColorModeValue('gray.100', '#313030')}
@@ -41,4 +41,4 @@ const GiftVouncher = ({ image, labelHeader, labelContent, price }: IGiftVouncher
   )
 }
 
-export default GiftVouncher
+export default GiftVoucher

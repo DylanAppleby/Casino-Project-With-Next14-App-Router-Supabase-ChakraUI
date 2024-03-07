@@ -1,11 +1,12 @@
 import { GiftCard } from '@/types/giftCard'
 import { CardType } from '@/types/battleCard'
 import type { TBattleCardVoucher, TBattleCardPic } from '@/types/battleCard'
-import { GiftVouncher } from '@/types/giftVouncher'
+import { GiftVoucher } from '@/types/giftVoucher'
 import { CryptoData } from '@/types/cryptoData'
 import { PackHistory } from '@/types/packHistory'
 import { AffiliateCard } from '@/types/affiliateCard'
 import { AffiliateInfor } from '@/types/affiliateInfor'
+import { LevelCard } from '@/types/levelCard'
 export const GIFT_CARDS: Array<GiftCard> = [
   {
     label: 'GiftCard1',
@@ -92,19 +93,19 @@ export const BATTLE_CARDS_BIG: Array<any> = [
 
 export const BATTLE_CARDS_MONEY_PIC_DOWN: Array<TBattleCardVoucher> = [
   {
-    imageUrl: '/assets/images/battles/vounchermodel.webp',
+    imageUrl: '/assets/images/battles/vouchermodel.webp',
     percentage: 75.0006,
     cardType: CardType.VOUCHER,
     price: 0.01,
   },
   {
-    imageUrl: '/assets/images/battles/vounchermodel.webp',
+    imageUrl: '/assets/images/battles/vouchermodel.webp',
     percentage: 0,
     cardType: CardType.VOUCHER,
     price: 0.01,
   },
   {
-    imageUrl: '/assets/images/battles/vounchermodel.webp',
+    imageUrl: '/assets/images/battles/vouchermodel.webp',
     percentage: 0,
     cardType: CardType.VOUCHER,
     price: 0.01,
@@ -123,58 +124,58 @@ export const BATTLE_CARDS_PIC: Array<TBattleCardPic> = [
   },
 ]
 
-export const GIFT_VOUNCHERS: Array<GiftVouncher> = [
+export const GIFT_VOUCHERS: Array<GiftVoucher> = [
   {
-    image: '/assets/images/giftvouncher/vouncherwatch.webp',
+    image: '/assets/images/giftvoucher/voucherwatch.webp',
     labelHeader: 'Audemars Patek',
     labelContent: 'Royal Oak',
     price: '38450',
   },
   {
-    image: '/assets/images/giftvouncher/vounchermodel.webp',
-    labelHeader: 'Vouncher',
+    image: '/assets/images/giftvoucher/vouchermodel.webp',
+    labelHeader: 'Voucher',
     labelContent: 'Wincrate',
     price: '5.00',
   },
   {
-    image: '/assets/images/giftvouncher/vounchermodel.webp',
-    labelHeader: 'Vouncher',
+    image: '/assets/images/giftvoucher/vouchermodel.webp',
+    labelHeader: 'Voucher',
     labelContent: 'Wincrate',
     price: '0.02',
   },
   {
-    image: '/assets/images/giftvouncher/vounchermodel.webp',
-    labelHeader: 'Vouncher',
+    image: '/assets/images/giftvoucher/vouchermodel.webp',
+    labelHeader: 'Voucher',
     labelContent: 'Wincrate',
     price: '1.00',
   },
   {
-    image: '/assets/images/giftvouncher/vounchermodel.webp',
-    labelHeader: 'Vouncher',
+    image: '/assets/images/giftvoucher/vouchermodel.webp',
+    labelHeader: 'Voucher',
     labelContent: 'Wincrate',
     price: '0.10',
   },
   {
-    image: '/assets/images/giftvouncher/vounchermodel.webp',
-    labelHeader: 'Vouncher',
+    image: '/assets/images/giftvoucher/vouchermodel.webp',
+    labelHeader: 'Voucher',
     labelContent: 'Wincrate',
     price: '0.05',
   },
   {
-    image: '/assets/images/giftvouncher/vounchermodel.webp',
-    labelHeader: 'Vouncher',
+    image: '/assets/images/giftvoucher/vouchermodel.webp',
+    labelHeader: 'Voucher',
     labelContent: 'Wincrate',
     price: '0.50',
   },
   {
-    image: '/assets/images/giftvouncher/vounchermodel.webp',
-    labelHeader: 'Vouncher',
+    image: '/assets/images/giftvoucher/vouchermodel.webp',
+    labelHeader: 'Voucher',
     labelContent: 'Wincrate',
     price: '10.00',
   },
   {
-    image: '/assets/images/giftvouncher/vounchermodel.webp',
-    labelHeader: 'Vouncher',
+    image: '/assets/images/giftvoucher/vouchermodel.webp',
+    labelHeader: 'Voucher',
     labelContent: 'Wincrate',
     price: '3.00',
   },
@@ -259,7 +260,7 @@ export const PACK_HISTORYS: Array<PackHistory> = [
     amountUSD: '$2346.48',
     cardStatus: 'Won',
     cardImage: '/assets/images/giftcard/giftcard1.webp',
-    presentImage: '/assets/images/giftvouncher/vouncherwatch.webp',
+    presentImage: '/assets/images/giftvoucher/voucherwatch.webp',
   },
   {
     header: '$33549.43',
@@ -267,7 +268,7 @@ export const PACK_HISTORYS: Array<PackHistory> = [
     amountUSD: '$2346.48',
     cardStatus: 'Won',
     cardImage: '/assets/images/giftcard/giftcard1.webp',
-    presentImage: '/assets/images/giftvouncher/vouncherwatch.webp',
+    presentImage: '/assets/images/giftvoucher/voucherwatch.webp',
   },
   {
     header: '$33549.43',
@@ -275,7 +276,7 @@ export const PACK_HISTORYS: Array<PackHistory> = [
     amountUSD: '$2346.48',
     cardStatus: 'Won',
     cardImage: '/assets/images/giftcard/giftcard1.webp',
-    presentImage: '/assets/images/giftvouncher/vouncherwatch.webp',
+    presentImage: '/assets/images/giftvoucher/voucherwatch.webp',
   },
   {
     header: '$33549.43',
@@ -283,7 +284,7 @@ export const PACK_HISTORYS: Array<PackHistory> = [
     amountUSD: '$2346.48',
     cardStatus: 'Won',
     cardImage: '/assets/images/giftcard/giftcard1.webp',
-    presentImage: '/assets/images/giftvouncher/vouncherwatch.webp',
+    presentImage: '/assets/images/giftvoucher/voucherwatch.webp',
   },
 ]
 
@@ -324,6 +325,64 @@ export const AFFILIATEINFORS: Array<AffiliateInfor> = [
     deposited: '$460',
     opened: '$321.83',
     commision: '+ $45.83',
+  },
+]
+
+export const LEVEL_CARDS: Array<LevelCard> = [
+  {
+    label: 'level2',
+    image: '/assets/images/levelcard/level2.webp',
+    caption: 'Free Level 2',
+  },
+  {
+    label: 'level10',
+    image: '/assets/images/levelcard/level10.webp',
+    caption: 'Free Level 10',
+  },
+  {
+    label: 'level20',
+    image: '/assets/images/levelcard/level20.webp',
+    caption: 'Free Level 20',
+  },
+  {
+    label: 'level30',
+    image: '/assets/images/levelcard/level30.webp',
+    caption: 'Free Level 30',
+  },
+  {
+    label: 'level40',
+    image: '/assets/images/levelcard/level40.webp',
+    caption: 'Free Level 40',
+  },
+  {
+    label: 'level50',
+    image: '/assets/images/levelcard/level50.webp',
+    caption: 'Free Level 50',
+  },
+  {
+    label: 'level60',
+    image: '/assets/images/levelcard/level60.webp',
+    caption: 'Free Level 60',
+  },
+  {
+    label: 'level70',
+    image: '/assets/images/levelcard/level70.webp',
+    caption: 'Free Level 70',
+  },
+  {
+    label: 'level80',
+    image: '/assets/images/levelcard/level80.webp',
+    caption: 'Free Level 80',
+  },
+  {
+    label: 'level90',
+    image: '/assets/images/levelcard/level90.webp',
+    caption: 'Free Level 90',
+  },
+  {
+    label: 'level100',
+    image: '/assets/images/levelcard/level100.webp',
+    caption: 'Free Level 100',
   },
 ]
 
