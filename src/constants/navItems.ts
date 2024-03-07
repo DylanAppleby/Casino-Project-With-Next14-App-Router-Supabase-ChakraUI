@@ -8,7 +8,7 @@ export const HEADER_NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: 'Battles',
-    href: '/battles',
+    href: '/battles/',
     isNew: false,
   },
   {

@@ -1,20 +1,19 @@
-import { Box, Tag, Flex } from '@chakra-ui/react'
-import Image from 'next/image'
+import { Box, Flex, Tag } from '@chakra-ui/react'
 
-interface IBattleCardBig {
+interface IBattleDetailCard {
   index: number
 }
 
-const BattleCardBig = ({ index }: IBattleCardBig) => {
+const BattleDetailCard = ({ index }: IBattleDetailCard) => {
   return (
     <Flex
       flexDirection="column"
       width="full"
       height="full"
-      alignItems="center"
-      justifyContent="center"
       bgColor="#e2e8f029"
       rounded="0.375rem"
+      alignItems="center"
+      justifyContent="center"
     >
       <Box textAlign="center">Round</Box>
       <Box textAlign="center">{`${index}`}</Box>
@@ -22,4 +21,4 @@ const BattleCardBig = ({ index }: IBattleCardBig) => {
   )
 }
 
-export default BattleCardBig
+export default BattleDetailCard

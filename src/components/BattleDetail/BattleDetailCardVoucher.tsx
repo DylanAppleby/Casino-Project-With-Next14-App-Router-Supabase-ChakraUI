@@ -3,19 +3,19 @@ import { Box, Flex } from '@chakra-ui/react'
 
 import { CardType } from '@/types/battleCard'
 
-interface IBattleCardVoucher {
+interface IBattleDetailCardVoucher {
   imageUrl: string
   percentage?: number
   cardType: CardType
   price: number
 }
 
-const BattleCardVoucher = ({
+const BattleDetailCardVoucher = ({
   imageUrl,
   percentage = 0,
   cardType,
   price,
-}: IBattleCardVoucher) => {
+}: IBattleDetailCardVoucher) => {
   return (
     <Flex
       direction="column"
@@ -58,4 +58,4 @@ const BattleCardVoucher = ({
   )
 }
 
-export default BattleCardVoucher
+export default BattleDetailCardVoucher

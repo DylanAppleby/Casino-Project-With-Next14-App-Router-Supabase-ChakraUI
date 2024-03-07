@@ -1,15 +1,18 @@
 import { Flex, Grid, GridItem } from '@chakra-ui/react'
 
 import {
+  BattleDetailCard,
+  BattleDetailCardBig,
+  BattleDetailCardPic,
+  BattleDetailCardVoucher,
+} from '@/components/BattleDetail'
+
+import {
   BATTLE_CARDS,
   BATTLE_CARDS_BIG,
   BATTLE_CARDS_MONEY_PIC_DOWN,
   BATTLE_CARDS_PIC,
 } from '@/constants/mock'
-import BattleCard from '@/components/BattleCard'
-import BattleCardBig from '@/components/BattleCard/BattleCardBig'
-import BattleCardPic from '@/components/BattleCard/BattleCardPic'
-import BattleCardVoucher from '@/components/BattleCard/BattleCardVoucher'
 
 const BattleCardContainer = () => {
   return (
@@ -28,7 +31,7 @@ const BattleCardContainer = () => {
           {BATTLE_CARDS_BIG.map((battleCard, index) => {
             return (
               <GridItem key={battleCard.label + index}>
-                <BattleCardBig index={index + 1} />
+                <BattleDetailCardBig index={index + 1} />
               </GridItem>
             )
           })}
@@ -39,7 +42,7 @@ const BattleCardContainer = () => {
           {BATTLE_CARDS.map((battleCard, index) => {
             return (
               <GridItem key={battleCard.label + index}>
-                <BattleCard index={index + 1} />
+                <BattleDetailCard index={index + 1} />
               </GridItem>
             )
           })}
@@ -50,13 +53,18 @@ const BattleCardContainer = () => {
           <Flex direction="column" rowGap={2}>
             {BATTLE_CARDS_MONEY_PIC_DOWN.map((battleCard, index: number) => {
               return (
-                <BattleCardVoucher key={battleCard.imageUrl + index} {...battleCard} />
+                <BattleDetailCardVoucher
+                  key={battleCard.imageUrl + index}
+                  {...battleCard}
+                />
               )
             })}
           </Flex>
           <Flex direction="column" rowGap={2}>
             {BATTLE_CARDS_PIC.map((battleCard, index: number) => {
-              return <BattleCardPic key={battleCard.imageUrl + index} {...battleCard} />
+              return (
+                <BattleDetailCardPic key={battleCard.imageUrl + index} {...battleCard} />
+              )
             })}
           </Flex>
         </Grid>
@@ -66,7 +74,7 @@ const BattleCardContainer = () => {
           {BATTLE_CARDS.map((battleCard, index) => {
             return (
               <GridItem key={battleCard.label + index}>
-                <BattleCard index={index + 1} />
+                <BattleDetailCard index={index + 1} />
               </GridItem>
             )
           })}
