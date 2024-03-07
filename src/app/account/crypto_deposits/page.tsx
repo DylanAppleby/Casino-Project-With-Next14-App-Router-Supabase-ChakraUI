@@ -1,6 +1,7 @@
 import { Flex } from '@chakra-ui/react'
-import CryptoContainer from '@/components/container/CryptoContainer'
+import CryptoContainer from '@/containers/CryptoContainer'
 import PaginationButton from '@/components/PaginationButton'
+
 const CryptoDeposits = () => {
   return (
     <Flex width={'full'} direction={'column'} justifyContent={'center'}>

@@ -1,4 +1,5 @@
 import { Flex, Text } from '@chakra-ui/react'
+
 const Stats = () => {
   return (
     <Flex width={'full'} gap={6} direction={{ base: 'column', md: 'column', lg: 'row' }}>

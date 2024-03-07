@@ -1,6 +1,7 @@
 import { Flex } from '@chakra-ui/react'
-import BattleHistoryContainer from '@/components/container/BattleHistoryContainer/BattleHistoryContainer'
+import BattleHistoryContainer from '@/containers/BattleHistoryContainer'
 import PaginationButton from '@/components/PaginationButton'
+
 const BattleHistory = () => {
   return (
     <Flex width={'full'} direction={'column'}>
