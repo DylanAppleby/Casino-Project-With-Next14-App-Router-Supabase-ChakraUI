@@ -6,6 +6,7 @@ import { Container, Flex } from '@chakra-ui/react'
 import LayoutProvider from '@/components/LayoutProvider'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import TopLoader from 'nextjs-toploader'
 
 interface IRootLayout {
   children: ReactNode
@@ -21,6 +22,17 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: Readonly<IRootLayout>) => (
   <html lang="en">
     <body className={urbanist.className}>
+    <TopLoader
+        color="#2299DD"
+        initialPosition={0.08}
+        crawlSpeed={200}
+        height={3}
+        crawl={true}
+        showSpinner={true}
+        easing="ease"
+        speed={200}
+        shadow="0 0 10px #2299DD,0 0 5px #2299DD"
+      />
       <LayoutProvider>
         <Header />
         <main>

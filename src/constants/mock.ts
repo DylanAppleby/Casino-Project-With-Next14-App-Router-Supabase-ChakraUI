@@ -6,6 +6,7 @@ import { CryptoData } from '@/types/cryptoData'
 import { PackHistory } from '@/types/packHistory'
 import { AffiliateCard } from '@/types/affiliateCard'
 import { AffiliateInfor } from '@/types/affiliateInfor'
+import { IRaceCardType } from '@/types/raceCard'
 import { LevelCard } from '@/types/levelCard'
 export const GIFT_CARDS: Array<GiftCard> = [
   {
@@ -386,3 +387,65 @@ export const LEVEL_CARDS: Array<LevelCard> = [
   },
 ]
 
+export const RaceCards : Array<IRaceCardType> = [
+  {
+    avatar : '/assets/images/battles/avatar3.webp',
+    name : 'Colins',
+    amount : 1230922,
+    reward : 1000
+  },
+  {
+    avatar : '/assets/images/battles/avatar1.webp',
+    name : 'James',
+    amount : 1230922,
+    reward : 500
+  },
+  {
+    avatar : '/assets/images/battles/avatar4.webp',
+    name : 'Robert',
+    amount : 1230922,
+    reward : 300
+  },
+  {
+    avatar : '/assets/images/battles/avatar2.webp',
+    name : 'Hellen',
+    amount : 1230922,
+    reward : 150
+  },
+  {
+    avatar : '/assets/images/battles/avatar1.webp',
+    name : 'Judy',
+    amount : 1230922,
+    reward : 100
+  },
+  {
+    avatar : '/assets/images/battles/avatar3.webp',
+    name : 'Andrey',
+    amount : 1230922,
+    reward : 100
+  },
+  {
+    avatar : '/assets/images/battles/avatar4.webp',
+    name : 'Dmitrije',
+    amount : 1230922,
+    reward : 100
+  },
+  {
+    avatar : '/assets/images/battles/avatar2.webp',
+    name : 'Jovan',
+    amount : 1230922,
+    reward : 100
+  },
+  {
+    avatar : '/assets/images/battles/avatar3.webp',
+    name : 'Alex',
+    amount : 1230922,
+    reward : 100
+  },
+  {
+    avatar : '/assets/images/battles/avatar1.webp',
+    name : 'Yuri',
+    amount : 1230922,
+    reward : 100
+  }
+]
