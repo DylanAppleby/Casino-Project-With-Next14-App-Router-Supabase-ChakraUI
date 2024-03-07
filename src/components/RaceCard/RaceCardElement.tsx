@@ -15,16 +15,16 @@ const RaceCardElement = ({ raceCards, winnerFlag }: IRaceCardElement) => {
     return (
       <Flex
         marginY={6}
-        width={'70%'}
+        width={{ base: '100%', lg: '70%' }}
         marginX={'auto'}
-        direction={'row'}
+        direction={{ base: 'column', md: 'row', lg: 'row' }}
         justifyContent={'space-between'}
       >
         {getWinnerArr(raceCards).map((RaceCard: any, index: number) => {
           return (
             <Center
               marginTop={index === 1 ? 0 : 10}
-              width={'30%'}
+              width={{ base: '100%', md: '30%', lg: '30%' }}
               backgroundColor={'rgba(255, 255, 255, 0.04)'}
               borderRadius={10}
               flexDirection={'column'}
@@ -85,10 +85,8 @@ const RaceCardElement = ({ raceCards, winnerFlag }: IRaceCardElement) => {
             <Center
               backgroundColor={'rgba(255, 255, 255, 0.04)'}
               borderRadius={10}
-              paddingTop={4}
-              paddingBottom={4}
-              paddingLeft={10}
-              paddingRight={10}
+              paddingY={{ base: 3, md: 4 }}
+              paddingX={{ base: 5, md: 10 }}
               margin={2}
               justifyContent={'space-between'}
               fontSize={16}
@@ -106,18 +104,19 @@ const RaceCardElement = ({ raceCards, winnerFlag }: IRaceCardElement) => {
               </Badge>
               <Center>
                 <Avatar width={10} height={10} marginRight={2} src={RaceCard.avatar} />
-                <Text>{RaceCard.name}</Text>
+                <Center flexDirection={'column'}>
+                  <Text>{RaceCard.name}</Text>
+                  <Text display={{ base: 'block', md: 'none' }}>${RaceCard.amount}</Text>
+                </Center>
               </Center>
-              <Center flexDirection={'column'}>
-                Opened
+              <Center flexDirection={'column'} display={{ base: 'none', md: 'block' }}>
+                <Text>Opened</Text>
                 <Text>${RaceCard.amount}</Text>
               </Center>
               <Badge borderRadius={6}>
                 <Text
-                  paddingTop={2}
-                  paddingBottom={2}
-                  paddingLeft={4}
-                  paddingRight={4}
+                  paddingY={{ base: 1, md: 2 }}
+                  paddingX={{ base: 2, md: 4 }}
                   fontSize={16}
                   color={'lightgreen'}
                   fontWeight={800}
