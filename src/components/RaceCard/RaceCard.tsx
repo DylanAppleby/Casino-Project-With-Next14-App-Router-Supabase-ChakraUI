@@ -1,5 +1,6 @@
+'use client'
 import { Flex } from '@chakra-ui/react'
-import { RaceCards, LimitRacerTIme } from '@/constants/mock'
+import { RaceCards } from '@/constants/mock'
 import RaceCardHead from '@/components/RaceCard/RaceCardHead'
 import RaceCardElement from '@/components/RaceCard/RaceCardElement'
 
