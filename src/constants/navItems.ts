@@ -4,17 +4,14 @@ export const HEADER_NAV_ITEMS: Array<NavItem> = [
   {
     label: 'Packs',
     href: '/',
-    isNew: false,
   },
   {
     label: 'Battles',
     href: '/battles/',
-    isNew: false,
   },
   {
     label: 'Race',
     href: '/race',
-    isNew: false,
   },
   {
     label: 'Rewards',

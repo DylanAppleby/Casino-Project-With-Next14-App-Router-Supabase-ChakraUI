@@ -7,7 +7,7 @@ import {
   CheckCircleIcon,
 } from '@/components/ChakraUIComponents'
 import Image from 'next/image'
-import BattleCardContainer from '@/components/container/BattleCardContainer'
+import BattleDetailContainer from '@/components/container/BattleDetailContainer'
 
 export default function Battles() {
   return (
@@ -144,7 +144,7 @@ export default function Battles() {
           Pack Bot 23
         </Flex>
       </Flex>
-      <BattleCardContainer />
+      <BattleDetailContainer />
     </Flex>
   )
 }

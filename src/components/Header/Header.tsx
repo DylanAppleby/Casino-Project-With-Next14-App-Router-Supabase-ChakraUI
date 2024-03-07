@@ -3,8 +3,11 @@ import Image from 'next/image'
 
 import {
   Box,
+  Stack,
   Flex,
   IconButton,
+  Text,
+  Tag,
   Collapse,
   useColorModeValue,
   useColorMode,
@@ -16,11 +19,84 @@ import {
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 
-import DesktopNav from './DesktopNav'
-import MobileNav from './MoblieNav'
 import UserModal from '../auth/UserModal'
 import Login from '../auth/Login'
 import Register from '../auth/Register'
+
+import { HEADER_NAV_ITEMS } from '@/constants/navItems'
+
+import { INavBar, TNavItem } from '@/types/navItem'
+
+const NavbarBgColor = '#1F1F1F'
+
+const DesktopNav = (props: INavBar) => {
+  const { navItems } = props
+
+  return (
+    <Stack direction={'row'} spacing={{ base: 0, md: 2, lg: 4 }}>
+      {navItems?.map((headerNavItem, index) => (
+        <Button
+          key={headerNavItem.label + index}
+          as="a"
+          px={{ md: 2, lg: 4 }}
+          href={headerNavItem.href ?? '#'}
+          fontSize={'md'}
+          fontWeight={600}
+          color={useColorModeValue('gray.600', 'gray.200')}
+          bgColor={useColorModeValue('white', NavbarBgColor)}
+          _hover={{
+            textDecoration: 'none',
+            color: useColorModeValue('gray.800', 'gray.50'),
+            bgColor: useColorModeValue('gray.200', '#FFFFFF05'),
+          }}
+        >
+          {headerNavItem.label}
+          {Boolean(headerNavItem.isNew) && (
+            <Tag
+              size="sm"
+              pt={0.5}
+              bg={useColorModeValue('yellow.300', 'yellow.500')}
+              ml={2}
+              color={'gray.800'}
+              rounded="full"
+            >
+              New
+            </Tag>
+          )}
+        </Button>
+      ))}
+    </Stack>
+  )
+}
+
+const MobileNavItem = ({ href, label }: TNavItem) => (
+  <Box
+    py={2}
+    as="a"
+    href={href ?? '#'}
+    justifyContent="space-between"
+    alignItems="center"
+    _hover={{
+      textDecoration: 'none',
+    }}
+  >
+    <Text fontWeight={600} color={useColorModeValue('gray.600', 'gray.200')}>
+      {label}
+    </Text>
+  </Box>
+)
+
+const MobileNav = (props: INavBar) => {
+  const { navItems } = props
+
+  return (
+    <Stack bg={useColorModeValue('white', 'gray.800')} p={4} display={{ md: 'none' }}>
+      {navItems?.map((headerNavItem, index) => (
+        <MobileNavItem key={headerNavItem.label + index} {...headerNavItem} />
+      ))}
+    </Stack>
+  )
+}
 
 const Header = () => {
   const { isOpen, onToggle } = useDisclosure()
@@ -42,7 +118,7 @@ const Header = () => {
       <Box
         width="full"
         height="3.75rem"
-        bg={useColorModeValue('white', '#1f1f1f')}
+        bg={useColorModeValue('white', NavbarBgColor)}
         color={useColorModeValue('gray.600', 'white')}
       >
         <Container maxW={'container.xl'} height={'full'}>
@@ -93,7 +169,7 @@ const Header = () => {
                   </Flex>
 
                   <Box display={{ base: 'none', md: 'flex' }}>
-                    <DesktopNav />
+                    <DesktopNav navItems={HEADER_NAV_ITEMS} />
                   </Box>
                 </Flex>
               </Flex>
@@ -169,7 +245,7 @@ const Header = () => {
         </Container>
 
         <Collapse in={isOpen} animateOpacity>
-          <MobileNav />
+          <MobileNav navItems={HEADER_NAV_ITEMS} />
         </Collapse>
         <UserModal isOpen={isOpenLogin} onClose={onCloseLogin}>
           <Login />
