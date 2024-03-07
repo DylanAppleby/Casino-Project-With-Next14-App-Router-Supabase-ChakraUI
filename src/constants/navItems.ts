@@ -1,6 +1,6 @@
-import { NavItem } from '@/types/navItem'
+import { TNavItem } from '@/types/navItem'
 
-export const HEADER_NAV_ITEMS: Array<NavItem> = [
+export const HEADER_NAV_ITEMS: Array<TNavItem> = [
   {
     label: 'Packs',
     href: '/',
@@ -20,7 +20,7 @@ export const HEADER_NAV_ITEMS: Array<NavItem> = [
   },
 ]
 
-export const ACCOUNT_SIDEBAR_ITEMS: Array<NavItem> = [
+export const ACCOUNT_SIDEBAR_ITEMS: Array<TNavItem> = [
   {
     label: 'Profile',
     href: '/account',
@@ -63,7 +63,7 @@ export const ACCOUNT_SIDEBAR_ITEMS: Array<NavItem> = [
   },
 ]
 
-export const SETTING_SIDEBAR_ITEMS: Array<NavItem> = [
+export const SETTING_SIDEBAR_ITEMS: Array<TNavItem> = [
   {
     label: 'Fairness',
     href: '/fairness',
