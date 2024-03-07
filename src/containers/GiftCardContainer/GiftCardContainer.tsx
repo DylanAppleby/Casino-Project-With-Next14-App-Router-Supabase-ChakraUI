@@ -1,7 +1,7 @@
 import { Grid, GridItem } from '@chakra-ui/react'
 
 import { GIFT_CARDS } from '@/constants/mock'
-import GiftCard from '../../GiftCard'
+import GiftCard from '@/components/GiftCard'
 
 const GiftCardContainer = () => {
   return (

@@ -1,6 +1,7 @@
 import { Flex } from '@chakra-ui/react'
-import FiatContainer from '@/components/container/FiatContainer'
+import FiatContainer from '@/containers/FiatContainer'
 import PaginationButton from '@/components/PaginationButton'
+
 const FiatDeposits = () => {
   return (
     <Flex width={'full'} direction={'column'} justifyContent={'center'}>

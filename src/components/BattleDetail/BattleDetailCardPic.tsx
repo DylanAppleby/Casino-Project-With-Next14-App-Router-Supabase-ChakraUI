@@ -2,11 +2,11 @@ import Image from 'next/image'
 
 import { Flex } from '@chakra-ui/react'
 
-interface IBattleCardPic {
+interface IBattleDetailCardPic {
   imageUrl: string
 }
 
-const BattleCardPic = ({ imageUrl }: IBattleCardPic) => {
+const BattleDetailCardPic = ({ imageUrl }: IBattleDetailCardPic) => {
   return (
     <Flex
       width="full"
@@ -27,4 +27,4 @@ const BattleCardPic = ({ imageUrl }: IBattleCardPic) => {
   )
 }
 
-export default BattleCardPic
+export default BattleDetailCardPic

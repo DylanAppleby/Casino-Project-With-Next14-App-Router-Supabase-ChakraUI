@@ -1,5 +1,5 @@
 import { Flex } from '@chakra-ui/react'
-import WithdrawalsContainer from '@/components/container/WithdrawalsContainer'
+import WithdrawalsContainer from '@/containers/WithdrawalsContainer'
 import PaginationButton from '@/components/PaginationButton'
 
 const Withdrawals = () => {

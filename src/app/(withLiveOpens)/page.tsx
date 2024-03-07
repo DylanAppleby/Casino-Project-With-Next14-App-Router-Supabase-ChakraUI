@@ -1,7 +1,8 @@
 import { Flex, Box, Text } from '@chakra-ui/react'
 
 import SearchBar from '@/components/SearchBar'
-import GiftCardContainer from '@/components/container/GiftCardContainer'
+import GiftCardContainer from '@/containers/GiftCardContainer'
+
 export default function Home() {
   return (
     <Flex width="full" direction={'column'}>

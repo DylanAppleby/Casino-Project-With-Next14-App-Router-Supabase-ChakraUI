@@ -7,7 +7,7 @@ import {
   CheckCircleIcon,
 } from '@/components/ChakraUIComponents'
 import Image from 'next/image'
-import BattleCardContainer from '@/components/container/BattleCardContainer'
+import BattleCardContainer from '@/containers/BattleCardContainer'
 
 export default function Battles() {
   return (
