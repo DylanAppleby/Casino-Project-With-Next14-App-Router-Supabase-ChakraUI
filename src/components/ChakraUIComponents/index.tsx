@@ -25,6 +25,12 @@ export {
   Grid,
   GridItem,
   Tag,
+  Slider,
+  SliderTrack,
+  SliderFilledTrack,
+  SliderThumb,
+  useColorModeValue,
+  Image,
 } from '@chakra-ui/react'
 
 export { ArrowBackIcon, LinkIcon, CheckCircleIcon, CopyIcon } from '@chakra-ui/icons'
