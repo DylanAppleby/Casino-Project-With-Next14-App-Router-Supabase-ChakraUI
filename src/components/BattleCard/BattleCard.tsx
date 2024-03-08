@@ -179,7 +179,7 @@ const BattleCard: FC<IBattleCard> = (props) => {
           })}
         </Flex>
         <Flex width={200} margin={5}>
-          <Button colorScheme="twitter">Join Battle</Button>
+          <Button bgColor=" #FABD2D">Join Battle</Button>
         </Flex>
       </Flex>
       <Flex
