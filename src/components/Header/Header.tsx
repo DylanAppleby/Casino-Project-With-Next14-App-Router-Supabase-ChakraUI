@@ -26,6 +26,7 @@ import Register from '../auth/Register'
 import { HEADER_NAV_ITEMS } from '@/constants/navItems'
 
 import { INavBar, TNavItem } from '@/types/navItem'
+import Link from 'next/link'
 
 const NavbarBgColor = '#1F1F1F'
 
@@ -35,35 +36,34 @@ const DesktopNav = (props: INavBar) => {
   return (
     <Stack direction={'row'} spacing={{ base: 0, md: 2, lg: 4 }}>
       {navItems?.map((headerNavItem, index) => (
-        <Button
-          key={headerNavItem.label + index}
-          as="a"
-          px={{ md: 2, lg: 4 }}
-          href={headerNavItem.href ?? '#'}
-          fontSize={'md'}
-          fontWeight={600}
-          color={useColorModeValue('gray.600', 'gray.200')}
-          bgColor={useColorModeValue('white', NavbarBgColor)}
-          _hover={{
-            textDecoration: 'none',
-            color: useColorModeValue('gray.800', 'gray.50'),
-            bgColor: useColorModeValue('gray.200', '#FFFFFF05'),
-          }}
-        >
-          {headerNavItem.label}
-          {Boolean(headerNavItem.isNew) && (
-            <Tag
-              size="sm"
-              pt={0.5}
-              bg={useColorModeValue('yellow.300', 'yellow.500')}
-              ml={2}
-              color={'gray.800'}
-              rounded="full"
-            >
-              New
-            </Tag>
-          )}
-        </Button>
+        <Link href={headerNavItem.href ?? '#'} key={headerNavItem.label + index}>
+          <Button
+            px={{ md: 2, lg: 4 }}
+            fontSize={'md'}
+            fontWeight={600}
+            color={useColorModeValue('gray.600', 'gray.200')}
+            bgColor={useColorModeValue('white', NavbarBgColor)}
+            _hover={{
+              textDecoration: 'none',
+              color: useColorModeValue('gray.800', 'gray.50'),
+              bgColor: useColorModeValue('gray.200', '#FFFFFF05'),
+            }}
+          >
+            {headerNavItem.label}
+            {Boolean(headerNavItem.isNew) && (
+              <Tag
+                size="sm"
+                pt={0.5}
+                bg={useColorModeValue('yellow.300', 'yellow.500')}
+                ml={2}
+                color={'gray.800'}
+                rounded="full"
+              >
+                New
+              </Tag>
+            )}
+          </Button>
+        </Link>
       ))}
     </Stack>
   )
@@ -72,8 +72,6 @@ const DesktopNav = (props: INavBar) => {
 const MobileNavItem = ({ href, label }: TNavItem) => (
   <Box
     py={2}
-    as="a"
-    href={href ?? '#'}
     justifyContent="space-between"
     alignItems="center"
     _hover={{
@@ -90,9 +88,17 @@ const MobileNav = (props: INavBar) => {
   const { navItems } = props
 
   return (
-    <Stack bg={useColorModeValue('white', 'gray.800')} p={4} display={{ md: 'none' }}>
+    <Stack
+      position={'relative'}
+      zIndex={999}
+      bg={useColorModeValue('white', 'gray.800')}
+      p={4}
+      display={{ md: 'none' }}
+    >
       {navItems?.map((headerNavItem, index) => (
-        <MobileNavItem key={headerNavItem.label + index} {...headerNavItem} />
+        <Link href={headerNavItem.href ?? '#'} key={headerNavItem.label + index}>
+          <MobileNavItem {...headerNavItem} />
+        </Link>
       ))}
     </Stack>
   )
