@@ -16,14 +16,15 @@ const RaceCardElement = ({ raceCards, winnerFlag }: IRaceCardElement) => {
       <>
         <Flex
           marginY={6}
-          width={'70%'}
+          width={{ base: '100%', lg: '70%' }}
           marginX={'auto'}
-          direction={'row'}
+          direction={{ base: 'column', md: 'row', lg: 'row' }}
           justifyContent={'space-between'}
         >
           {getWinnerArr(raceCards).map((RaceCard: any, index: number) => {
             return (
               <Center
+                key={index}
                 marginTop={index === 1 ? 0 : 10}
                 width={'30%'}
                 backgroundColor={'rgba(255, 255, 255, 0.04)'}
@@ -35,7 +36,6 @@ const RaceCardElement = ({ raceCards, winnerFlag }: IRaceCardElement) => {
                 fontWeight={600}
                 position={'relative'}
                 display={{ base: 'none', md: 'none', lg: 'block' }}
-                key={index}
               >
                 <Center
                   top={-3}
@@ -81,7 +81,7 @@ const RaceCardElement = ({ raceCards, winnerFlag }: IRaceCardElement) => {
         </Flex>
         <Flex
           marginY={6}
-          width={{ base: '100%', lg: '70%' }}
+          width={'100%'}
           marginX={'auto'}
           direction={'column'}
           justifyContent={'space-between'}
@@ -90,8 +90,9 @@ const RaceCardElement = ({ raceCards, winnerFlag }: IRaceCardElement) => {
           {raceCards.slice(0, 3).map((RaceCard: any, index: number) => {
             return (
               <Center
+                key={index}
+                marginTop={10}
                 width={'100%'}
-                marginTop={6}
                 backgroundColor={'rgba(255, 255, 255, 0.04)'}
                 borderRadius={10}
                 flexDirection={'column'}
@@ -100,7 +101,6 @@ const RaceCardElement = ({ raceCards, winnerFlag }: IRaceCardElement) => {
                 fontSize={16}
                 fontWeight={600}
                 position={'relative'}
-                key={index}
               >
                 <Center
                   top={-3}
@@ -152,6 +152,7 @@ const RaceCardElement = ({ raceCards, winnerFlag }: IRaceCardElement) => {
         {raceCards.slice(3).map((RaceCard: any, index: number) => {
           return (
             <Center
+              key={index}
               backgroundColor={'rgba(255, 255, 255, 0.04)'}
               borderRadius={10}
               paddingY={{ base: 3, md: 4 }}
@@ -161,7 +162,6 @@ const RaceCardElement = ({ raceCards, winnerFlag }: IRaceCardElement) => {
               fontSize={16}
               fontWeight={600}
               position={'relative'}
-              key={index}
             >
               <Badge
                 left={-8}
