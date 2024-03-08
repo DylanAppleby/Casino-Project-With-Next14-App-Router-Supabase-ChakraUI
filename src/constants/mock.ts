@@ -497,3 +497,66 @@ export const RaceCards : Array<IRaceCardType> = [
     reward : 100
   }
 ]
+
+export const RECOMMNEDED_BOXS: Array<GiftCard> = [
+  {
+    label: 'GiftCard1',
+    image: '/assets/images/giftcard/giftcard1.webp',
+  },
+  {
+    label: 'GiftCard2',
+    image: '/assets/images/giftcard/giftcard2.webp',
+  },
+  {
+    label: 'GiftCard3',
+    image: '/assets/images/giftcard/giftcard1.webp',
+  },
+  {
+    label: 'GiftCard4',
+    image: '/assets/images/giftcard/giftcard2.webp',
+  },
+  {
+    label: 'GiftCard5',
+    image: '/assets/images/giftcard/giftcard1.webp',
+  },
+  {
+    label: 'GiftCard6',
+    image: '/assets/images/giftcard/giftcard2.webp',
+  },
+  {
+    label: 'GiftCard7',
+    image: '/assets/images/giftcard/giftcard1.webp',
+  },
+  {
+    label: 'GiftCard8',
+    image: '/assets/images/giftcard/giftcard2.webp',
+  },
+  {
+    label: 'GiftCard9',
+    image: '/assets/images/giftcard/giftcard1.webp',
+  },
+  {
+    label: 'GiftCard10',
+    image: '/assets/images/giftcard/giftcard2.webp',
+  },
+  {
+    label: 'GiftCard11',
+    image: '/assets/images/giftcard/giftcard1.webp',
+  },
+  {
+    label: 'GiftCard12',
+    image: '/assets/images/giftcard/giftcard2.webp',
+  },
+  {
+    label: 'GiftCard13',
+    image: '/assets/images/giftcard/giftcard1.webp',
+  },
+  {
+    label: 'GiftCard14',
+    image: '/assets/images/giftcard/giftcard2.webp',
+  },
+  {
+    label: 'GiftCard15',
+    image: '/assets/images/giftcard/giftcard1.webp',
+  },
+]
