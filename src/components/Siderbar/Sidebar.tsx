@@ -17,6 +17,7 @@ import {
 } from '@chakra-ui/react'
 import { ACCOUNT_SIDEBAR_ITEMS } from '@/constants/navItems'
 import { SETTING_SIDEBAR_ITEMS } from '@/constants/navItems'
+import Link from 'next/link'
 
 const Sidebar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -84,32 +85,29 @@ const NavItem = ({ url, label, ...rest }: NavItemProps) => {
 
   const isActive = path === url
   return (
-    <Box
-      as="a"
-      href={url}
-      style={{ textDecoration: 'none' }}
-      _focus={{ boxShadow: 'none' }}
-    >
-      <Flex
-        align="center"
-        py="2"
-        px="3"
-        whiteSpace={'nowrap'}
-        rounded={'full'}
-        width={'232px'}
-        cursor="pointer"
-        _hover={{
-          bg: useColorModeValue('gray.50', '#34383c'),
-          color: 'white',
-        }}
-        bg={isActive ? useColorModeValue('gray.50', '#34383c') : 'transparent'}
-        color={isActive ? 'white' : 'inherit'}
-        {...rest}
-        fontWeight={'bold'}
-      >
-        {label}
-      </Flex>
-    </Box>
+    <Link href={url}>
+      <Box style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+        <Flex
+          align="center"
+          py="2"
+          px="3"
+          whiteSpace={'nowrap'}
+          rounded={'full'}
+          width={'232px'}
+          cursor="pointer"
+          _hover={{
+            bg: useColorModeValue('gray.50', '#34383c'),
+            color: 'white',
+          }}
+          bg={isActive ? useColorModeValue('gray.50', '#34383c') : 'transparent'}
+          color={isActive ? 'white' : 'inherit'}
+          {...rest}
+          fontWeight={'bold'}
+        >
+          {label}
+        </Flex>
+      </Box>
+    </Link>
   )
 }
 
