@@ -92,6 +92,54 @@ export const BATTLE_CARDS_BIG: Array<any> = [
   },
 ]
 
+export const CRATES_PAGE: Array<any> = [
+  {
+    label: 'CratesPage1',
+  },
+  {
+    label: 'CratesPage2',
+  },
+  {
+    label: 'CratesPage3',
+  },
+  {
+    label: 'CratesPage4',
+  },
+  {
+    label: 'CratesPage5',
+  },
+  {
+    label: 'CratesPage6',
+  },
+  {
+    label: 'CratesPage7',
+  },
+  {
+    label: 'CratesPage8',
+  },
+  {
+    label: 'CratesPage9',
+  },
+  {
+    label: 'CratesPage10',
+  },
+  {
+    label: 'CratesPage11',
+  },
+  {
+    label: 'CratesPage12',
+  },
+  {
+    label: 'CratesPage13',
+  },
+  {
+    label: 'CratesPage14',
+  },
+  {
+    label: 'CratesPage15',
+  },
+]
+
 export const BATTLE_CARDS_MONEY_PIC_DOWN: Array<TBattleCardVoucher> = [
   {
     imageUrl: '/assets/images/battles/vouchermodel.webp',
