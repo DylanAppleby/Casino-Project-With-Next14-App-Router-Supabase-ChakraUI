@@ -39,6 +39,7 @@ const RaceCardElement = ({ raceCards, winnerFlag }: IRaceCardElement) => {
               >
                 <Center
                   top={-3}
+                  left={'38%'}
                   position={'absolute'}
                   bgColor="#48BB78"
                   borderRadius={6}
