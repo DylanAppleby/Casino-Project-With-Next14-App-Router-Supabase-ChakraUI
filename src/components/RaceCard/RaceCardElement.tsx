@@ -16,7 +16,7 @@ const RaceCardElement = ({ raceCards, winnerFlag }: IRaceCardElement) => {
       <>
         <Flex
           marginY={6}
-          width={{ base: '100%', lg: '70%' }}
+          width={{ base: '100%', lg: '90%' }}
           marginX={'auto'}
           direction={{ base: 'column', md: 'row', lg: 'row' }}
           justifyContent={'space-between'}
@@ -61,7 +61,7 @@ const RaceCardElement = ({ raceCards, winnerFlag }: IRaceCardElement) => {
                 </Center>
                 <Center marginTop={6}>
                   <Badge
-                    paddingX={10}
+                    paddingX={{ base: 4, md: 8, lg: 10 }}
                     paddingY={2}
                     borderRadius={6}
                     fontSize={24}
@@ -126,7 +126,7 @@ const RaceCardElement = ({ raceCards, winnerFlag }: IRaceCardElement) => {
                 </Center>
                 <Center marginTop={6}>
                   <Badge
-                    paddingX={10}
+                    paddingX={{ base: 4, md: 6, lg: 10 }}
                     paddingY={2}
                     borderRadius={6}
                     fontSize={24}
