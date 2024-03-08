@@ -9,7 +9,7 @@ export default function Battles() {
           Battles
         </Box>
         <Box margin={1}>
-          <Button colorScheme="twitter">Create Battle</Button>
+          <Button bgColor=" #FABD2D">Create Battle</Button>
         </Box>
       </Flex>
       <BattlesContainer />
