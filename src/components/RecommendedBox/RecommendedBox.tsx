@@ -1,14 +1,14 @@
 import { Box } from '@chakra-ui/react'
 import Image from 'next/image'
 
-interface IGiftCard {
+interface IRecommendedBox {
   image: string
   label: string
 }
 
-const GiftCard = ({ image, label }: IGiftCard) => {
+const RecommendedBox = ({ image, label }: IRecommendedBox) => {
   return (
-    <Box as={'a'} href="/packs/id">
+    <Box>
       <Image
         src={`${image}`}
         alt={label}
@@ -20,4 +20,4 @@ const GiftCard = ({ image, label }: IGiftCard) => {
   )
 }
 
-export default GiftCard
+export default RecommendedBox
