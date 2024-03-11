@@ -8,6 +8,7 @@ import { AffiliateCard } from '@/types/affiliateCard'
 import { AffiliateInfor } from '@/types/affiliateInfor'
 import { IRaceCardType } from '@/types/raceCard'
 import { LevelCard } from '@/types/levelCard'
+import { SlotGameItem } from '@/types/slotGameItem'
 export const GIFT_CARDS: Array<GiftCard> = [
   {
     label: 'GiftCard1',
@@ -435,67 +436,67 @@ export const LEVEL_CARDS: Array<LevelCard> = [
   },
 ]
 
-export const RaceCards : Array<IRaceCardType> = [
+export const RaceCards: Array<IRaceCardType> = [
   {
-    avatar : '/assets/images/battles/avatar3.webp',
-    name : 'Colins',
-    amount : 1230922,
-    reward : 1000
+    avatar: '/assets/images/battles/avatar3.webp',
+    name: 'Colins',
+    amount: 1230922,
+    reward: 1000,
   },
   {
-    avatar : '/assets/images/battles/avatar1.webp',
-    name : 'James',
-    amount : 1230922,
-    reward : 500
+    avatar: '/assets/images/battles/avatar1.webp',
+    name: 'James',
+    amount: 1230922,
+    reward: 500,
   },
   {
-    avatar : '/assets/images/battles/avatar4.webp',
-    name : 'Robert',
-    amount : 1230922,
-    reward : 300
+    avatar: '/assets/images/battles/avatar4.webp',
+    name: 'Robert',
+    amount: 1230922,
+    reward: 300,
   },
   {
-    avatar : '/assets/images/battles/avatar2.webp',
-    name : 'Hellen',
-    amount : 1230922,
-    reward : 150
+    avatar: '/assets/images/battles/avatar2.webp',
+    name: 'Hellen',
+    amount: 1230922,
+    reward: 150,
   },
   {
-    avatar : '/assets/images/battles/avatar1.webp',
-    name : 'Judy',
-    amount : 1230922,
-    reward : 100
+    avatar: '/assets/images/battles/avatar1.webp',
+    name: 'Judy',
+    amount: 1230922,
+    reward: 100,
   },
   {
-    avatar : '/assets/images/battles/avatar3.webp',
-    name : 'Andrey',
-    amount : 1230922,
-    reward : 100
+    avatar: '/assets/images/battles/avatar3.webp',
+    name: 'Andrey',
+    amount: 1230922,
+    reward: 100,
   },
   {
-    avatar : '/assets/images/battles/avatar4.webp',
-    name : 'Dmitrije',
-    amount : 1230922,
-    reward : 100
+    avatar: '/assets/images/battles/avatar4.webp',
+    name: 'Dmitrije',
+    amount: 1230922,
+    reward: 100,
   },
   {
-    avatar : '/assets/images/battles/avatar2.webp',
-    name : 'Jovan',
-    amount : 1230922,
-    reward : 100
+    avatar: '/assets/images/battles/avatar2.webp',
+    name: 'Jovan',
+    amount: 1230922,
+    reward: 100,
   },
   {
-    avatar : '/assets/images/battles/avatar3.webp',
-    name : 'Alex',
-    amount : 1230922,
-    reward : 100
+    avatar: '/assets/images/battles/avatar3.webp',
+    name: 'Alex',
+    amount: 1230922,
+    reward: 100,
   },
   {
-    avatar : '/assets/images/battles/avatar1.webp',
-    name : 'Yuri',
-    amount : 1230922,
-    reward : 100
-  }
+    avatar: '/assets/images/battles/avatar1.webp',
+    name: 'Yuri',
+    amount: 1230922,
+    reward: 100,
+  },
 ]
 
 export const RECOMMNEDED_BOXS: Array<GiftCard> = [
@@ -558,5 +559,78 @@ export const RECOMMNEDED_BOXS: Array<GiftCard> = [
   {
     label: 'GiftCard15',
     image: '/assets/images/giftcard/giftcard1.webp',
+  },
+]
+
+export const SLOT_GAME_ITEMS: Array<SlotGameItem> = [
+  {
+    percentage: '0.1500%',
+    imageUrl: '/assets/images/slot/1.png',
+    collection: 'Daytona Stainless...',
+    brand: 'Rolex',
+    price: 17500,
+  },
+  {
+    percentage: '0.1500%',
+    imageUrl: '/assets/images/slot/2.png',
+    collection: 'Daytona Stainless...',
+    brand: 'Rolex',
+    price: 17500,
+  },
+  {
+    percentage: '0.1500%',
+    imageUrl: '/assets/images/slot/3.png',
+    collection: 'Daytona Stainless...',
+    brand: 'Rolex',
+    price: 17500,
+  },
+  {
+    percentage: '0.1500%',
+    imageUrl: '/assets/images/slot/4.png',
+    collection: 'Daytona Stainless...',
+    brand: 'Rolex',
+    price: 17500,
+  },
+  {
+    percentage: '0.1500%',
+    imageUrl: '/assets/images/slot/5.png',
+    collection: 'Daytona Stainless...',
+    brand: 'Rolex',
+    price: 17500,
+  },
+  {
+    percentage: '0.1500%',
+    imageUrl: '/assets/images/slot/6.png',
+    collection: 'Daytona Stainless...',
+    brand: 'Rolex',
+    price: 17500,
+  },
+  {
+    percentage: '0.1500%',
+    imageUrl: '/assets/images/slot/7.png',
+    collection: 'Daytona Stainless...',
+    brand: 'Rolex',
+    price: 17500,
+  },
+  {
+    percentage: '0.1500%',
+    imageUrl: '/assets/images/slot/8.png',
+    collection: 'Daytona Stainless...',
+    brand: 'Rolex',
+    price: 17500,
+  },
+  {
+    percentage: '0.1500%',
+    imageUrl: '/assets/images/slot/9.png',
+    collection: 'Daytona Stainless...',
+    brand: 'Rolex',
+    price: 17500,
+  },
+  {
+    percentage: '0.1500%',
+    imageUrl: '/assets/images/slot/10.png',
+    collection: 'Daytona Stainless...',
+    brand: 'Rolex',
+    price: 17500,
   },
 ]
