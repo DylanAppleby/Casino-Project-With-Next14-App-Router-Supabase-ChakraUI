@@ -10,6 +10,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import TopLoader from 'nextjs-toploader'
 import SupabaseProvider from '@/contexts/supabase-provider'
+import { Database } from '@/types/database'
 
 interface IRootLayout {
   children: ReactNode
@@ -23,8 +24,8 @@ export const metadata: Metadata = {
 }
 
 const RootLayout = async ({ children }: Readonly<IRootLayout>) => {
-  const supabase = createServerComponentClient({ cookies })
-
+  const cookieStore = cookies()
+  const supabase = createServerComponentClient<Database>({ cookies: () => cookieStore })
   const {
     data: { session },
   } = await supabase.auth.getSession()
