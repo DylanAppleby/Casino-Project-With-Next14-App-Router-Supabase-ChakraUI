@@ -14,7 +14,11 @@ const GiftCardContainer = () => {
             borderRadius={1}
             key={giftCard.label + index}
           >
-            <GiftCard image={giftCard.image} label={giftCard.label} />
+            <GiftCard
+              image={giftCard.image}
+              label={giftCard.label}
+              price={giftCard.price}
+            />
           </GridItem>
         )
       })}

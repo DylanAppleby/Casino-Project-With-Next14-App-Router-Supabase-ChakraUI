@@ -13,50 +13,62 @@ export const GIFT_CARDS: Array<GiftCard> = [
   {
     label: 'GiftCard1',
     image: '/assets/images/giftcard/giftcard1.webp',
+    price: 2165.12,
   },
   {
     label: 'GiftCard2',
     image: '/assets/images/giftcard/giftcard2.webp',
+    price: 4315.34,
   },
   {
     label: 'GiftCard3',
     image: '/assets/images/giftcard/giftcard3.webp',
+    price: 6541.32,
   },
   {
     label: 'GiftCard4',
     image: '/assets/images/giftcard/giftcard1.webp',
+    price: 1117.43,
   },
   {
     label: 'GiftCard5',
     image: '/assets/images/giftcard/giftcard2.webp',
+    price: 6541.32,
   },
   {
     label: 'GiftCard6',
     image: '/assets/images/giftcard/giftcard3.webp',
+    price: 6541.32,
   },
   {
     label: 'GiftCard7',
     image: '/assets/images/giftcard/giftcard1.webp',
+    price: 6541.32,
   },
   {
     label: 'GiftCard8',
     image: '/assets/images/giftcard/giftcard2.webp',
+    price: 6541.32,
   },
   {
     label: 'GiftCard9',
     image: '/assets/images/giftcard/giftcard3.webp',
+    price: 6541.32,
   },
   {
     label: 'GiftCard10',
     image: '/assets/images/giftcard/giftcard1.webp',
+    price: 6541.32,
   },
   {
     label: 'GiftCard11',
     image: '/assets/images/giftcard/giftcard2.webp',
+    price: 6541.32,
   },
   {
     label: 'GiftCard12',
     image: '/assets/images/giftcard/giftcard3.webp',
+    price: 6541.32,
   },
 ]
 
@@ -503,62 +515,77 @@ export const RECOMMNEDED_BOXS: Array<GiftCard> = [
   {
     label: 'GiftCard1',
     image: '/assets/images/giftcard/giftcard1.webp',
+    price: 5168.99,
   },
   {
     label: 'GiftCard2',
     image: '/assets/images/giftcard/giftcard2.webp',
+    price: 4058.07,
   },
   {
     label: 'GiftCard3',
     image: '/assets/images/giftcard/giftcard1.webp',
+    price: 3581.71,
   },
   {
     label: 'GiftCard4',
     image: '/assets/images/giftcard/giftcard2.webp',
+    price: 2870.76,
   },
   {
     label: 'GiftCard5',
     image: '/assets/images/giftcard/giftcard1.webp',
+    price: 2465.64,
   },
   {
     label: 'GiftCard6',
     image: '/assets/images/giftcard/giftcard2.webp',
+    price: 2165.32,
   },
   {
     label: 'GiftCard7',
     image: '/assets/images/giftcard/giftcard1.webp',
+    price: 1665.61,
   },
   {
     label: 'GiftCard8',
     image: '/assets/images/giftcard/giftcard2.webp',
+    price: 1340.23,
   },
   {
     label: 'GiftCard9',
     image: '/assets/images/giftcard/giftcard1.webp',
+    price: 1285.92,
   },
   {
     label: 'GiftCard10',
     image: '/assets/images/giftcard/giftcard2.webp',
+    price: 1117.41,
   },
   {
     label: 'GiftCard11',
     image: '/assets/images/giftcard/giftcard1.webp',
+    price: 1987.43,
   },
   {
     label: 'GiftCard12',
     image: '/assets/images/giftcard/giftcard2.webp',
+    price: 988.65,
   },
   {
     label: 'GiftCard13',
     image: '/assets/images/giftcard/giftcard1.webp',
+    price: 4034.13,
   },
   {
     label: 'GiftCard14',
     image: '/assets/images/giftcard/giftcard2.webp',
+    price: 2354.21,
   },
   {
     label: 'GiftCard15',
     image: '/assets/images/giftcard/giftcard1.webp',
+    price: 1285.92,
   },
 ]
 
