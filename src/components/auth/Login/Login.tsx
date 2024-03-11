@@ -21,10 +21,26 @@ import {
 } from '@chakra-ui/react'
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 import { FcGoogle } from 'react-icons/fc'
+import { useSupabase } from '@/contexts/supabase-provider'
+import { useRouter } from 'next/navigation'
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false)
   const handleShowClick = () => setShowPassword(!showPassword)
+  const supabase = useSupabase()
+  const router = useRouter()
+
+  const handleSignIn = async () => {
+    try {
+      await supabase.auth.signInWithPassword({
+        email: 'sven0227@gmail.com',
+        password: 'password',
+      })
+      // router.refresh()
+    } catch (error) {
+      console.log('error :>> ', error);
+    }
+  }
 
   return (
     <Stack flexDir="column" justifyContent="center" alignItems="center" gap={0}>
@@ -102,6 +118,7 @@ const Login = () => {
               colorScheme="blue"
               width="full"
               color="white"
+              onClick={handleSignIn}
             >
               Login
             </Button>

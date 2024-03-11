@@ -27,6 +27,7 @@ import { HEADER_NAV_ITEMS } from '@/constants/navItems'
 
 import { INavBar, TNavItem } from '@/types/navItem'
 import Link from 'next/link'
+import { useSession } from '@/contexts/supabase-provider'
 
 const NavbarBgColor = '#1F1F1F'
 
@@ -107,7 +108,7 @@ const MobileNav = (props: INavBar) => {
 const Header = () => {
   const { isOpen, onToggle } = useDisclosure()
   const { colorMode, toggleColorMode } = useColorMode()
-
+  const session = useSession()
   const {
     isOpen: isOpenLogin,
     onOpen: onOpenLogin,
@@ -118,7 +119,11 @@ const Header = () => {
     onOpen: onOpenRegister,
     onClose: onCloseRegister,
   } = useDisclosure()
-
+  if (session) {
+    // authentificated
+  } else {
+    // logged out
+  }
   return (
     <header className="header">
       <Box

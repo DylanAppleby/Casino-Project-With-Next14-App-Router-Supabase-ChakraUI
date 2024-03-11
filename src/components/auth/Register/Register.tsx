@@ -21,10 +21,23 @@ import {
 } from '@chakra-ui/react'
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 import { FcGoogle } from 'react-icons/fc'
+import { useSupabase } from '@/contexts/supabase-provider'
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false)
   const handleShowClick = () => setShowPassword(!showPassword)
+  const supabase = useSupabase()
+
+  const signUp = async () => {
+    const email = 'test@gmail.com'
+    const password = 'password'
+
+    const { error } = await supabase.auth.signUp({
+      email,
+      password,
+    })
+  }
+
   return (
     <Stack flexDir="column" justifyContent="center" alignItems="center" gap={0}>
       <Flex direction="column" mb={2} py={6} px={4}>
@@ -101,6 +114,7 @@ const Register = () => {
               colorScheme="blue"
               width="full"
               color="white"
+              onClick={signUp}
             >
               Register
             </Button>
