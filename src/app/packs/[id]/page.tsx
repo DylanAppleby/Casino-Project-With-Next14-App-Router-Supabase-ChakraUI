@@ -71,11 +71,11 @@ const products = [
 
 const ProductCarousel = () => {
   const [index, setIndex] = useState(0)
-  const displayCount = useBreakpointValue({ base: 3, md: 6, lg: 9 }) // Responsive display
+  const displayCount = useBreakpointValue({ base: 3, md: 5, lg: 9 }) // Responsive display
 
   const nextSlide = () => {
     let timeLimit = 0
-    const interval = 130
+    const interval = 50
     const intervalId = setInterval(() => {
       setIndex((current) => {
         // Calculate the next index, taking into account the display count and ensuring we loop back when reaching the end
@@ -87,7 +87,7 @@ const ProductCarousel = () => {
         return nextIndex
       })
       timeLimit += interval
-      if (timeLimit >= 2000) clearInterval(intervalId)
+      if (timeLimit >= 3000) clearInterval(intervalId)
     }, interval)
   }
 
@@ -125,7 +125,7 @@ const ProductCarousel = () => {
                 key={product.name + index}
                 p={5}
                 textAlign="center"
-                transform={index === centerIndex ? 'scale(1.7)' : 'none'} // Scale up the center product
+                transform={index === centerIndex ? 'scale(1.6)' : 'none'} // Scale up the center product
                 transition="transform 1s ease-in-out" // Smooth transition for scaling
               >
                 <Image
@@ -178,97 +178,155 @@ const ProductCarousel = () => {
               </Button>
             </Flex>
           </Flex>
-          <Flex gap={9}>
-            <Box py={15} pr={15}>
-              <Image
-                src={'/assets/images/giftcard/giftcard1.webp'}
-                minWidth={'190px'}
-                maxW={'190px'}
-                height={'full'}
-              />
-            </Box>
-            <Flex direction={'column'} justifyContent={'space-between'} pb={15}>
-              <Flex
-                py={'15px'}
-                bg={
-                  'radial-gradient(circle, rgba(231,181,65,0.14049369747899154) 0%, rgba(231,181,65,0) 54%, rgba(231,181,65,0) 60%)'
-                }
-                justifyContent={'center'}
-                alignItems={'center'}
-                width={'100px'}
-              >
-                <Button
-                  rounded={'full'}
-                  fontWeight={'bold'}
-                  color={'#eeba42'}
-                  borderColor={'#e7b541'}
-                  borderWidth={2}
-                  width={'150px'}
+          <Flex
+            direction={'column'}
+            gap={2}
+            alignItems={{ base: 'center', lg: 'start' }}
+            width={'full'}
+          >
+            <Flex gap={{ base: 3, md: 6, lg: 9 }}>
+              <Box py={15} pr={15}>
+                <Image
+                  src={'/assets/images/giftcard/giftcard1.webp'}
+                  minWidth={'190px'}
+                  maxW={'190px'}
+                  height={'full'}
+                />
+              </Box>
+              <Flex direction={'column'} justifyContent={'space-between'} pb={15}>
+                <Flex
+                  py={'15px'}
+                  bg={
+                    'radial-gradient(circle, rgba(231,181,65,0.14049369747899154) 0%, rgba(231,181,65,0) 54%, rgba(231,181,65,0) 60%)'
+                  }
+                  justifyContent={'center'}
+                  alignItems={'center'}
+                  width={'100px'}
                 >
-                  Featured
-                </Button>
-              </Flex>
-              <Flex direction={'column'} gap={2}>
-                <Text fontSize={52} fontWeight={'bold'}>
-                  Luxury
-                </Text>
-                <Text fontSize={20} fontWeight={'bold'}>
-                  Spin for a chance to win!
-                </Text>
-              </Flex>
-              <Flex gap={7} mt={'20px'} alignItems={'center'}>
-                <Button
-                  height={'50px'}
-                  bg={'#f6c043'}
-                  color={'#281f0b'}
-                  fontWeight={'bold'}
-                  _hover={{ color: '#77560f' }}
-                >
-                  <Flex gap={2} alignItems={'center'}>
-                    <Box width={4} height={6}>
-                      <Image src="/assets/images/slot/open.webp" />
-                    </Box>
-                    <Text>Open for $867.08</Text>
-                  </Flex>
-                </Button>
-                <Button onClick={nextSlide} fontWeight={'bold'} height={'50px'} px={5}>
-                  <Flex gap={2} alignItems={'center'}>
-                    <Box width={5} height={6}>
-                      <Image src="/assets/images/slot/refresh.webp" />
-                    </Box>
-                    <Text>Free Spin</Text>
-                  </Flex>
-                </Button>
-                <Flex alignItems={'center'} gap={3}>
-                  <Switch
-                    size="lg"
-                    sx={{
-                      '& .chakra-switch__track': {
-                        borderWidth: '2px',
-                        borderColor: '#898985',
-                        bgColor: '#3b3830',
-                      },
-                      '& .chakra-switch__thumb': {
-                        bg: 'gray',
-                      },
-                    }}
-                    _checked={{
-                      '& .chakra-switch__track': {
-                        borderWidth: '2px',
-                        borderColor: '#898985',
-                        bgColor: '#3b3830',
-                      },
-                      '& .chakra-switch__thumb': {
-                        bg: '#f6c043',
-                        boxShadow: '0px 3px 10px 6px #d3a03e',
-                      },
-                    }}
-                  />
-                  <Text fontWeight={'bold'} fontSize={18} whiteSpace={'nowrap'}>
-                    Fast Opening
+                  <Button
+                    rounded={'full'}
+                    fontWeight={'bold'}
+                    color={'#eeba42'}
+                    borderColor={'#e7b541'}
+                    borderWidth={2}
+                    width={'150px'}
+                  >
+                    Featured
+                  </Button>
+                </Flex>
+                <Flex direction={'column'} gap={2}>
+                  <Text fontSize={{ base: 40, md: 44, lg: 52 }} fontWeight={'bold'}>
+                    Luxury
+                  </Text>
+                  <Text
+                    fontSize={{ base: 13, md: 16, lg: 20 }}
+                    fontWeight={'bold'}
+                    whiteSpace={'nowrap'}
+                  >
+                    Spin for a chance to win!
                   </Text>
                 </Flex>
+                <Flex gap={{ base: 4, md: 4, lg: 7 }} mt={'20px'} alignItems={'center'}>
+                  <Button
+                    height={'50px'}
+                    bg={'#f6c043'}
+                    color={'#281f0b'}
+                    fontWeight={'bold'}
+                    _hover={{ color: '#77560f' }}
+                    display={{
+                      base: 'none',
+                      md: 'block',
+                    }}
+                  >
+                    <Flex gap={2} alignItems={'center'}>
+                      <Box width={4} height={6}>
+                        <Image src="/assets/images/slot/open.webp" />
+                      </Box>
+                      <Text>Open for $867.08</Text>
+                    </Flex>
+                  </Button>
+                  <Button
+                    onClick={nextSlide}
+                    fontWeight={'bold'}
+                    height={'50px'}
+                    px={5}
+                    display={{
+                      base: 'none',
+                      md: 'block',
+                    }}
+                  >
+                    <Flex gap={2} alignItems={'center'}>
+                      <Box width={5} height={6}>
+                        <Image src="/assets/images/slot/refresh.webp" />
+                      </Box>
+                      <Text>Free Spin</Text>
+                    </Flex>
+                  </Button>
+                  <Flex alignItems={'center'} gap={{ base: 1, md: 2, lg: 3 }}>
+                    <Switch
+                      size="lg"
+                      sx={{
+                        '& .chakra-switch__track': {
+                          borderWidth: '2px',
+                          borderColor: '#898985',
+                          bgColor: '#3b3830',
+                        },
+                        '& .chakra-switch__thumb': {
+                          bg: 'gray',
+                        },
+                      }}
+                      _checked={{
+                        '& .chakra-switch__track': {
+                          borderWidth: '2px',
+                          borderColor: '#898985',
+                          bgColor: '#3b3830',
+                        },
+                        '& .chakra-switch__thumb': {
+                          bg: '#f6c043',
+                          boxShadow: '0px 3px 10px 6px #d3a03e',
+                        },
+                      }}
+                    />
+                    <Text
+                      fontWeight={'bold'}
+                      fontSize={{ base: 14, md: 16, lg: 18 }}
+                      whiteSpace={'nowrap'}
+                    >
+                      Fast Opening
+                    </Text>
+                  </Flex>
+                </Flex>
               </Flex>
+            </Flex>
+            <Flex
+              gap={4}
+              bgColor={'#282727'}
+              px={5}
+              py={3}
+              display={{ base: 'flex', md: 'none' }}
+            >
+              <Button
+                height={'50px'}
+                bg={'#f6c043'}
+                color={'#281f0b'}
+                fontWeight={'bold'}
+                _hover={{ color: '#77560f' }}
+              >
+                <Flex gap={2} alignItems={'center'}>
+                  <Box width={4} height={6}>
+                    <Image src="/assets/images/slot/open.webp" />
+                  </Box>
+                  <Text>Open for $867.08</Text>
+                </Flex>
+              </Button>
+              <Button onClick={nextSlide} fontWeight={'bold'} height={'50px'} px={5}>
+                <Flex gap={2} alignItems={'center'}>
+                  <Box width={5} height={6}>
+                    <Image src="/assets/images/slot/refresh.webp" />
+                  </Box>
+                  <Text>Free Spin</Text>
+                </Flex>
+              </Button>
             </Flex>
           </Flex>
         </Flex>
