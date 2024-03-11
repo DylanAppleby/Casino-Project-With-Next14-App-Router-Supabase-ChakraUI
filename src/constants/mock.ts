@@ -9,6 +9,8 @@ import { AffiliateInfor } from '@/types/affiliateInfor'
 import { IRaceCardType } from '@/types/raceCard'
 import { LevelCard } from '@/types/levelCard'
 import { SlotGameItem } from '@/types/slotGameItem'
+import { SlotGameRecentItem } from '@/types/slotGameRecentItem'
+
 export const GIFT_CARDS: Array<GiftCard> = [
   {
     label: 'GiftCard1',
@@ -658,6 +660,81 @@ export const SLOT_GAME_ITEMS: Array<SlotGameItem> = [
     imageUrl: '/assets/images/slot/10.webp',
     collection: 'Daytona Stainless...',
     brand: 'Rolex',
+    price: 17500,
+  },
+]
+
+export const SLOT_GAME_RECENT_ITEMS: Array<SlotGameRecentItem> = [
+  {
+    bigbgUrl: 'linear-gradient(180deg, rgba(73,60,29,1) 0%, rgba(241,194,66,1) 0%, rgba(31,26,11,1) 100%)',
+    smallbgUrl: 'linear-gradient(180deg, rgba(73,60,29,1) 0%, rgba(101,79,29,1) 0%, rgba(28,29,31,1) 100%)',
+    imageUrl: '/assets/images/slot/1.png',
+    price: 17500,
+  },
+  {
+    bigbgUrl: 'linear-gradient(180deg, rgba(73,60,29,1) 0%, rgba(91,19,40,1) 0%, rgba(20,11,14,1) 100%)',
+    smallbgUrl: 'linear-gradient(180deg, rgba(73,60,29,1) 0%, rgba(47,31,38,1) 0%, rgba(39,37,38,1) 100%)',
+    imageUrl: '/assets/images/slot/2.png',
+    price: 17500,
+  },
+  {
+    bigbgUrl: 'linear-gradient(180deg, rgba(73,60,29,1) 0%, rgba(71,101,128,1) 0%, rgba(11,16,22,1) 100%)',
+    smallbgUrl: 'linear-gradient(180deg, rgba(73,60,29,1) 0%, rgba(48,54,63,1) 0%, rgba(29,30,32,1) 100%)',
+    imageUrl: '/assets/images/slot/3.png',
+    price: 17500,
+  },
+  {
+    bigbgUrl: 'linear-gradient(180deg, rgba(73,60,29,1) 0%, rgba(127,29,95,1) 0%, rgba(31,6,22,1) 100%)',
+    smallbgUrl: 'linear-gradient(180deg, rgba(73,60,29,1) 0%, rgba(57,38,42,1) 0%, rgba(41,39,40,1) 100%)',
+    imageUrl: '/assets/images/slot/7.png',
+    price: 17500,
+  },
+  {
+    bigbgUrl: 'linear-gradient(180deg, rgba(73,60,29,1) 0%, rgba(135,79,57,1) 0%, rgba(32,27,12,1) 100%)',
+    smallbgUrl: 'linear-gradient(180deg, rgba(73,60,29,1) 0%, rgba(54,41,36,1) 0%, rgba(31,31,29,1) 100%)',
+    imageUrl: '/assets/images/slot/4.png',
+    price: 17500,
+  },
+  {
+    bigbgUrl: 'linear-gradient(180deg, rgba(73,60,29,1) 0%, rgba(241,194,66,1) 0%, rgba(31,26,11,1) 100%)',
+    smallbgUrl: 'linear-gradient(180deg, rgba(73,60,29,1) 0%, rgba(101,79,29,1) 0%, rgba(28,29,31,1) 100%)',
+    imageUrl: '/assets/images/slot/1.png',
+    price: 17500,
+  },
+  {
+    bigbgUrl: 'linear-gradient(180deg, rgba(73,60,29,1) 0%, rgba(91,19,40,1) 0%, rgba(20,11,14,1) 100%)',
+    smallbgUrl: 'linear-gradient(180deg, rgba(73,60,29,1) 0%, rgba(47,31,38,1) 0%, rgba(39,37,38,1) 100%)',
+    imageUrl: '/assets/images/slot/2.png',
+    price: 17500,
+  },
+  {
+    bigbgUrl: 'linear-gradient(180deg, rgba(73,60,29,1) 0%, rgba(71,101,128,1) 0%, rgba(11,16,22,1) 100%)',
+    smallbgUrl: 'linear-gradient(180deg, rgba(73,60,29,1) 0%, rgba(48,54,63,1) 0%, rgba(29,30,32,1) 100%)',
+    imageUrl: '/assets/images/slot/3.png',
+    price: 17500,
+  },
+  {
+    bigbgUrl: 'linear-gradient(180deg, rgba(73,60,29,1) 0%, rgba(127,29,95,1) 0%, rgba(31,6,22,1) 100%)',
+    smallbgUrl: 'linear-gradient(180deg, rgba(73,60,29,1) 0%, rgba(57,38,42,1) 0%, rgba(41,39,40,1) 100%)',
+    imageUrl: '/assets/images/slot/7.png',
+    price: 17500,
+  },
+  {
+    bigbgUrl: 'linear-gradient(180deg, rgba(73,60,29,1) 0%, rgba(135,79,57,1) 0%, rgba(32,27,12,1) 100%)',
+    smallbgUrl: 'linear-gradient(180deg, rgba(73,60,29,1) 0%, rgba(54,41,36,1) 0%, rgba(31,31,29,1) 100%)',
+    imageUrl: '/assets/images/slot/4.png',
+    price: 17500,
+  },
+  {
+    bigbgUrl: 'linear-gradient(180deg, rgba(73,60,29,1) 0%, rgba(241,194,66,1) 0%, rgba(31,26,11,1) 100%)',
+    smallbgUrl: 'linear-gradient(180deg, rgba(73,60,29,1) 0%, rgba(101,79,29,1) 0%, rgba(28,29,31,1) 100%)',
+    imageUrl: '/assets/images/slot/1.png',
+    price: 17500,
+  },
+  {
+    bigbgUrl: 'linear-gradient(180deg, rgba(73,60,29,1) 0%, rgba(91,19,40,1) 0%, rgba(20,11,14,1) 100%)',
+    smallbgUrl: 'linear-gradient(180deg, rgba(73,60,29,1) 0%, rgba(47,31,38,1) 0%, rgba(39,37,38,1) 100%)',
+    imageUrl: '/assets/images/slot/2.png',
     price: 17500,
   },
 ]

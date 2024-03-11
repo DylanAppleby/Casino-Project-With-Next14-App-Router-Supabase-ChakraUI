@@ -15,6 +15,7 @@ import SlotUnlockCrate from '@/components/SlotUnlockCrate'
 import FunctionCardContainer from '@/containers/FunctionCardContainer'
 import RecommendedBoxConainer from '@/containers/RecommendedBoxContainer'
 import SlotGameItemContainer from '@/containers/SlotGameItemContainer'
+import SlotGameRecentItemContainer from '@/containers/SlotGameRecentItemContainer'
 // Example product data (simplified for demonstration)
 const products = [
   {
@@ -331,6 +332,7 @@ const ProductCarousel = () => {
           </Flex>
         </Flex>
       </Flex>
+      <SlotGameRecentItemContainer />
       <SlotGameItemContainer />
       <RecommendedBoxConainer />
       <SlotUnlockCrate />
