@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, Dispatch, SetStateAction, useEffect } from 'react'
+import { useCallback, Dispatch, SetStateAction } from 'react'
 import { Flex, Box, Button, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -35,17 +35,16 @@ const PackInfoWidget = ({
       bg="#121212"
       color="white"
       p={3}
-      width={'900px'}
-      height={'250px'}
+      width={{ base: '290px', md: '450px', lg: '800px' }}
       borderRadius="md"
       zIndex={9999}
       px={6}
       pt={6}
       pb={4}
       rounded={10}
-      justifyContent={'space-between'}
+      justifyContent={{ base: 'center', lg: 'space-between' }}
     >
-      <Flex gap={4}>
+      <Flex gap={4} display={{ base: 'none', lg: 'flex' }}>
         {selectedPacks.map((selected, index) => (
           <SelectedCard
             key={index + selected.imageURL + selected.label + selected.price}
@@ -59,7 +58,12 @@ const PackInfoWidget = ({
           />
         ))}
       </Flex>
-      <Flex direction={'column'} ml={6} gap={4}>
+      <Flex
+        direction={'column'}
+        ml={{ base: 0, lg: 6 }}
+        gap={4}
+        width={{ base: 'full', md: 'full', lg: 'auto' }}
+      >
         <Flex
           width={'full'}
           height={'full'}
@@ -92,7 +96,12 @@ const PackInfoWidget = ({
         </Flex>
         <Flex direction={'column'} gap={4}>
           <Link href={'/packs/id'}>
-            <Button bg={'yellow.500'} _hover={{ bg: 'yellow.600' }} height={12}>
+            <Button
+              bg={'yellow.500'}
+              _hover={{ bg: 'yellow.600' }}
+              height={12}
+              width={'full'}
+            >
               <Flex alignItems={'center'} gap={2}>
                 <Text whiteSpace={'nowrap'}>View pack Contents</Text>
                 <ArrowForwardIcon />
