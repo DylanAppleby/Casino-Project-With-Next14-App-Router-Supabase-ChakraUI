@@ -186,7 +186,7 @@ const Header = () => {
               </Flex>
 
               <Flex gap={2} justifyContent="center" alignItems="center">
-                <Flex
+                {/* <Flex
                   h={{ base: '1.875rem' }}
                   w={{ base: '1.875rem' }}
                   alignItems="center"
@@ -201,7 +201,7 @@ const Header = () => {
                   ) : (
                     <SunIcon w={{ base: 5 }} h={{ base: 5 }} />
                   )}
-                </Flex>
+                </Flex> */}
                 {/* <Flex
                   rounded="full"
                   h={{ base: '1.875rem' }}

@@ -25,7 +25,7 @@ import { useSupabase } from '@/contexts/supabase-provider'
 import { useRouter } from 'next/navigation'
 
 const Login = () => {
-  const [showPassword, setShowPassword] = useState(false)
+  const [showPassword, setShowPassword] = useState<boolean>(false)
   const handleShowClick = () => setShowPassword(!showPassword)
   const supabase = useSupabase()
   const router = useRouter()

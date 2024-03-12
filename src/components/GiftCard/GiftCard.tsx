@@ -1,34 +1,81 @@
 'use client'
-import { useState } from 'react'
+
+import { useState, Dispatch, SetStateAction, useCallback, useEffect } from 'react'
 import { Flex, Box, Button, Text } from '@chakra-ui/react'
 import Image from 'next/image'
-import Link from 'next/link'
-import { ArrowForwardIcon } from '@chakra-ui/icons'
+import { IPack } from '@/types/pack'
 
 interface IGiftCard {
   image: string
   label: string
   price: number
+  packId: string
+  selectedPacks: IPack[]
+  setSelectedPacks: Dispatch<SetStateAction<IPack[]>>
+  setTotal: Dispatch<SetStateAction<number>>
 }
 
-const GiftCard = ({ image, label, price }: IGiftCard) => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [removeHovered, setRemoveHovered] = useState(false)
-  const [addHovered, setAddHovered] = useState(false)
-  const [isAddVisible, setIsAddVisible] = useState(true)
-  const [isAddRemoveVisible, setIsAddRemoveVisible] = useState(false)
+const GiftCard = ({
+  image,
+  label,
+  price,
+  packId,
+  selectedPacks,
+  setTotal,
+  setSelectedPacks,
+}: IGiftCard) => {
+  const [addHovered, setAddHovered] = useState<boolean>(false)
+  const [packCount, setPackCount] = useState<number>(0)
 
-  const showContent = () => {
-    setIsAddVisible(false)
-    setIsAddRemoveVisible(true)
-    setIsOpen(true)
-  }
+  useEffect(() => {
+    if (selectedPacks.length === 0) {
+      setPackCount(0)
+    }
+  }, [selectedPacks.length])
 
-  const closeContent = () => {
-    setIsAddVisible(true)
-    setIsAddRemoveVisible(false)
-    setIsOpen(false)
-  }
+  const handleCardClick = useCallback(() => {
+    if (packCount === 0 && selectedPacks.length < 5) {
+      setPackCount((prev) => prev + 1)
+      setSelectedPacks((prev) => [
+        ...prev,
+        {
+          id: packId,
+          imageURL: image,
+          price,
+          label,
+        },
+      ])
+      setTotal((prev) => prev + price)
+    }
+  }, [packCount, selectedPacks.length])
+
+  const AddPack = useCallback(() => {
+    if (selectedPacks.length < 5) {
+      setPackCount((prev) => prev + 1)
+      setSelectedPacks((prev) => [
+        ...prev,
+        {
+          id: packId,
+          imageURL: image,
+          price,
+          label,
+        },
+      ])
+      setTotal((prev: number) => prev + price)
+    }
+  }, [setSelectedPacks, selectedPacks])
+
+  const RemovePack = useCallback(() => {
+    if (packCount > 0) {
+      const packsThatHaveThisId = selectedPacks.filter((pack) => pack.id === packId)
+      packsThatHaveThisId.pop()
+
+      const otherPacks = selectedPacks.filter((pack) => pack.id !== packId)
+      const newPacks = [...otherPacks, ...packsThatHaveThisId]
+      setSelectedPacks(newPacks)
+      setPackCount((prev) => prev - 1)
+    }
+  }, [packCount, setSelectedPacks, selectedPacks])
 
   return (
     <Box>
@@ -36,9 +83,11 @@ const GiftCard = ({ image, label, price }: IGiftCard) => {
         direction={'column'}
         gap={2}
         _hover={{ cursor: 'pointer' }}
-        onClick={showContent}
+        onClick={handleCardClick}
         onMouseEnter={() => setAddHovered(true)}
-        onMouseLeave={() => setAddHovered(false)}
+        onMouseLeave={() => {
+          setAddHovered(false)
+        }}
       >
         <Box>
           <Image
@@ -49,116 +98,31 @@ const GiftCard = ({ image, label, price }: IGiftCard) => {
             style={{ width: '100%', height: '100%' }}
           />
         </Box>
-        {isAddVisible && (
-          <Button className="addPack">{addHovered ? 'Add Pack' : '$' + price}</Button>
-        )}
-        {isAddRemoveVisible && (
+
+        {packCount > 0 ? (
           <Flex width={'full'} justifyContent={'space-between'} className="addRemovePack">
-            <Button fontWeight={'bold'} fontSize={20}>
+            <Button fontWeight={'bold'} fontSize={20} onClick={RemovePack}>
               -
             </Button>
             <Flex direction={'column'} alignItems={'center'} height={'full'}>
               <Text fontWeight={'bold'} fontSize={14}>
-                1
+                {packCount}
               </Text>
               <Text fontSize={14} color={'#5a5e62'}>
                 {'$' + price}
               </Text>
             </Flex>
-            <Button fontWeight={'bold'} fontSize={20}>
+            <Button fontWeight={'bold'} fontSize={20} onClick={AddPack}>
               +
             </Button>
           </Flex>
+        ) : (
+          <Button>{addHovered ? 'Add Pack' : '$' + price}</Button>
         )}
       </Flex>
-      {isOpen && (
-        <Flex
-          position="fixed"
-          bottom={4}
-          left="50%"
-          transform="translateX(-50%)"
-          bg="#121212"
-          color="white"
-          p={3}
-          width={'900px'}
-          height={'250px'}
-          borderRadius="md"
-          zIndex={9999}
-          px={6}
-          pt={6}
-          pb={4}
-          rounded={10}
-          justifyContent={'space-between'}
-        >
-          <Flex direction={'column'} gap={2} alignItems={'center'}>
-            <Box>
-              <Image
-                src={image}
-                width={72}
-                height={132}
-                alt={label}
-                style={{ width: 'auto', height: 'auto' }}
-              />
-            </Box>
-            <Button
-              bg={'transparent'}
-              _hover={{ bg: '#2a292a' }}
-              width={'full'}
-              onMouseEnter={() => setRemoveHovered(true)}
-              onMouseLeave={() => setRemoveHovered(false)}
-            >
-              {removeHovered ? 'Remove' : '$' + price}
-            </Button>
-          </Flex>
-          <Flex direction={'column'} ml={6} gap={4}>
-            <Flex
-              width={'full'}
-              height={'full'}
-              bg={'#22272b'}
-              rounded={8}
-              direction={'column'}
-              px={3}
-              py={4}
-              justifyContent={'space-between'}
-            >
-              <Flex justifyContent={'space-between'} alignItems={'center'}>
-                <Text fontWeight={'bold'}>Packs</Text>
-                <Flex gap={2} alignItems={'center'}>
-                  <Text fontWeight={'bold'}>1</Text>
-                  <Box rounded={2}>
-                    <Image
-                      src={'/assets/images/wincrate.webp'}
-                      width={4}
-                      height={4}
-                      alt={'wincrate'}
-                      style={{ width: '16px', height: '16px' }}
-                    />
-                  </Box>
-                </Flex>
-              </Flex>
-              <Flex justifyContent={'space-between'} alignItems={'center'}>
-                <Text fontWeight={'bold'}>Total</Text>
-                <Text fontWeight={'bold'}>$5168.99</Text>
-              </Flex>
-            </Flex>
-            <Flex direction={'column'} gap={4}>
-              <Link href={'/packs/id'}>
-                <Button bg={'yellow.500'} _hover={{ bg: 'yellow.600' }} height={12}>
-                  <Flex alignItems={'center'} gap={2}>
-                    <Text whiteSpace={'nowrap'}>View pack Contents</Text>
-                    <ArrowForwardIcon />
-                  </Flex>
-                </Button>
-              </Link>
-              <Button bg={'transparent'} height={12} onClick={closeContent}>
-                Cancel
-              </Button>
-            </Flex>
-          </Flex>
-        </Flex>
-      )}
     </Box>
   )
 }
 
 export default GiftCard
+

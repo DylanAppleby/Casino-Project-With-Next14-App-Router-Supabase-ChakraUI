@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 const countDownTimerWeek = (timestamp : any) => {
-    const [time, setTime] = useState("");
+    const [time, setTime] = useState<string>('')
     useEffect(() => {
         setInterval(() => {
             let distance : any = timestamp - new Date().getTime() 

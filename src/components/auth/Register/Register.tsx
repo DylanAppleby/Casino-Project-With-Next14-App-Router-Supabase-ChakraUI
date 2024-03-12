@@ -24,7 +24,7 @@ import { FcGoogle } from 'react-icons/fc'
 import { useSupabase } from '@/contexts/supabase-provider'
 
 const Register = () => {
-  const [showPassword, setShowPassword] = useState(false)
+  const [showPassword, setShowPassword] = useState<boolean>(false)
   const handleShowClick = () => setShowPassword(!showPassword)
   const supabase = useSupabase()
 
