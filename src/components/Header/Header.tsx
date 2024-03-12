@@ -1,5 +1,6 @@
 'use client'
 import Image from 'next/image'
+import { useState, useEffect } from 'react'
 
 import {
   Box,
@@ -13,11 +14,24 @@ import {
   useColorMode,
   useDisclosure,
   Button,
+  Badge,
   Container,
+  Menu,
+  MenuProps,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Avatar,
+  Switch,
+  Input,
+  InputGroup,
+  InputRightElement,
+  Spacer,
+  MenuDivider
 } from '@chakra-ui/react'
 
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
-import { MoonIcon, SunIcon } from '@chakra-ui/icons'
+import { HamburgerIcon, CloseIcon, CheckIcon } from '@chakra-ui/icons'
+import { useRouter } from 'next/navigation'
 
 import UserModal from '../auth/UserModal'
 import Login from '../auth/Login'
@@ -27,7 +41,7 @@ import { HEADER_NAV_ITEMS } from '@/constants/navItems'
 
 import { INavBar, TNavItem } from '@/types/navItem'
 import Link from 'next/link'
-import { useSession } from '@/contexts/supabase-provider'
+import { useSession, useSupabase } from '@/contexts/supabase-provider'
 
 const NavbarBgColor = '#1F1F1F'
 
@@ -109,6 +123,11 @@ const Header = () => {
   const { isOpen, onToggle } = useDisclosure()
   const { colorMode, toggleColorMode } = useColorMode()
   const session = useSession()
+  const supabase = useSupabase()
+  const router = useRouter()
+  const handleLogOut = async () => {
+    await supabase.auth.signOut().then(router.refresh)
+  }
   const {
     isOpen: isOpenLogin,
     onOpen: onOpenLogin,
@@ -119,11 +138,12 @@ const Header = () => {
     onOpen: onOpenRegister,
     onClose: onCloseRegister,
   } = useDisclosure()
-  if (session) {
-    // authentificated
-  } else {
-    // logged out
-  }
+
+  useEffect(() => {
+    onCloseLogin()
+    onCloseRegister()
+  }, [session])
+
   return (
     <header className="header">
       <Box
@@ -187,22 +207,6 @@ const Header = () => {
 
               <Flex gap={2} justifyContent="center" alignItems="center">
                 {/* <Flex
-                  h={{ base: '1.875rem' }}
-                  w={{ base: '1.875rem' }}
-                  alignItems="center"
-                  justifyContent="center"
-                  rounded="full"
-                  bgColor={useColorModeValue('gray.200', 'gray.900')}
-                  onClick={toggleColorMode}
-                  cursor="pointer"
-                >
-                  {colorMode === 'light' ? (
-                    <MoonIcon w={{ base: 5 }} h={{ base: 5 }} />
-                  ) : (
-                    <SunIcon w={{ base: 5 }} h={{ base: 5 }} />
-                  )}
-                </Flex> */}
-                {/* <Flex
                   rounded="full"
                   h={{ base: '1.875rem' }}
                   borderWidth={2}
@@ -239,17 +243,61 @@ const Header = () => {
                     +
                   </Flex>
                 </Flex> */}
-                <Flex gap={2}>
-                  <Button bg={'none'} onClick={onOpenLogin}>
-                    Login
-                  </Button>
-                  <Button
-                    bg={useColorModeValue('yellow.300', 'yellow.500')}
-                    onClick={onOpenRegister}
-                  >
-                    Register
-                  </Button>
-                </Flex>
+                {!session &&
+                  <Flex gap={2}>
+                    <Button bg={'none'} onClick={onOpenLogin}>
+                      Login
+                    </Button>
+                    <Button
+                      bg={useColorModeValue('yellow.300', 'yellow.500')}
+                      onClick={onOpenRegister}
+                    >
+                      Register
+                    </Button>
+                  </Flex>
+                }
+                {session && 
+                  <Flex fontSize={'18px'} fontWeight={'800'}>
+                    <Menu closeOnSelect={false} autoSelect={false}>
+                      <MenuButton>
+                        <Avatar size='sm' src='https://bit.ly/broken-link' />
+                      </MenuButton>
+                      <MenuList>
+                        <MenuItem>
+                          <Link href={'/account'}>
+                            <Flex gap='20'>
+                              <Box>
+                                <Avatar size='xs' src='https://bit.ly/broken-link' marginRight={2}/>
+                                rich_ant
+                              </Box>
+                              <Spacer />
+                              <Box bgColor={'rgba(56, 161, 105, 0.6)'} color={'white'} paddingX={2} borderRadius={4}>
+                                0
+                              </Box>
+                            </Flex>
+                          </Link>
+                        </MenuItem>
+                        <MenuDivider />
+                        <MenuItem>
+                          <Input type='text' placeholder='Promotion code' />
+                          <Box marginLeft={3}><CheckIcon color={useColorModeValue('black', 'white')} /></Box>
+                        </MenuItem>
+                        <MenuDivider />
+                        <MenuItem onClick={toggleColorMode}>
+                          <Flex gap='20'>
+                              <Box>Dark Mode</Box>
+                              <Spacer />
+                              <Box>{colorMode === 'light' ? <Switch /> : <Switch isChecked />}</Box>
+                          </Flex>
+                        </MenuItem>
+                        <MenuDivider />
+                        <MenuItem onClick={handleLogOut}>
+                          Sign out
+                        </MenuItem>
+                      </MenuList>
+                    </Menu>
+                  </Flex>
+                }
               </Flex>
             </Flex>
           </Flex>
