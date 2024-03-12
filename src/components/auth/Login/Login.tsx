@@ -102,7 +102,11 @@ const Login = () => {
             orientation="horizontal"
             bgColor={useColorModeValue('gray.300', 'gray.700')}
           />
-          <AbsoluteCenter bg={useColorModeValue('white', 'gray.700')} px="4">
+          <AbsoluteCenter
+            bg={useColorModeValue('white', 'gray.700')}
+            px="4"
+            bgColor={'#1F1F1F'}
+          >
             Or
           </AbsoluteCenter>
         </Flex>
@@ -113,21 +117,31 @@ const Login = () => {
             <FormControl>
               <FormLabel htmlFor="email">Email address</FormLabel>
               <InputGroup>
-                <Input onChange={(e : any) => setEmail(e.target.value)} type="email" id="email" />
+                <Input
+                  onChange={(e: any) => setEmail(e.target.value)}
+                  type="email"
+                  id="email"
+                />
               </InputGroup>
             </FormControl>
-            <Badge colorScheme='red'>{emailErr}</Badge>
+            <Badge colorScheme="red">{emailErr}</Badge>
             <FormControl>
               <FormLabel htmlFor="password">Password</FormLabel>
               <InputGroup>
-                <Input type={showPassword ? 'text' : 'password'} id="password" onChange={(e : any) => setPassword(e.target.value)} />
+                <Input
+                  type={showPassword ? 'text' : 'password'}
+                  id="password"
+                  onChange={(e: any) => setPassword(e.target.value)}
+                />
                 <InputRightElement width="2.5rem">
                   <Box h="2rem" fontSize="sm" onClick={handleShowClick} pt="0.25rem">
                     {showPassword ? <ViewIcon /> : <ViewOffIcon />}
                   </Box>
                 </InputRightElement>
               </InputGroup>
-              {0 < password.length && password.length < 8 && <Text fontSize={'14'}>Password must have 8+ characters.</Text>}
+              {0 < password.length && password.length < 8 && (
+                <Text fontSize={'14'}>Password must have 8+ characters.</Text>
+              )}
               <FormHelperText justifyContent="space-between" display="flex">
                 <Flex gap="1">
                   <Checkbox />
@@ -135,7 +149,18 @@ const Login = () => {
                 </Flex>
                 <Link color="blue.400">Forgot password?</Link>
               </FormHelperText>
-              {errMsg && <Stack width={'100%'} bgColor={'#E53E3E'} color={'white'} padding={2} borderRadius={8} marginY={4}><Text align={'center'}>{errMsg}</Text></Stack>}
+              {errMsg && (
+                <Stack
+                  width={'100%'}
+                  bgColor={'#E53E3E'}
+                  color={'white'}
+                  padding={2}
+                  borderRadius={8}
+                  marginY={4}
+                >
+                  <Text align={'center'}>{errMsg}</Text>
+                </Stack>
+              )}
             </FormControl>
             <Button
               borderRadius="md"

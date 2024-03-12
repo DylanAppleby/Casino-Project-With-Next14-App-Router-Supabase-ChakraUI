@@ -1,6 +1,7 @@
-import { FC, useEffect } from 'react'
+import { FC } from 'react'
 
 import { Avatar, Box, Button, Flex, Image } from '@chakra-ui/react'
+import Link from 'next/link'
 
 export enum BattleType {
   ONE_ONE,
@@ -164,11 +165,13 @@ const BattleCard: FC<IBattleCard> = (props) => {
           </Flex>
           <Box fontWeight={'black'}>{`$${(232.82).toFixed(2)}`}</Box>
         </Flex>
-        <Flex width={'full'} overflowX={'hidden'}>
-          {packs.map((pack) => {
-            return <PackCard {...pack} />
-          })}
-        </Flex>
+        <Link href={'/battles/id'}>
+          <Flex width={'full'} overflowX={'hidden'}>
+            {packs.map((pack) => {
+              return <PackCard {...pack} />
+            })}
+          </Flex>
+        </Link>
         <Flex margin={'1rem'}>
           <Button bgColor=" #FABD2D">Join Battle</Button>
         </Flex>
@@ -249,11 +252,13 @@ const BattleCard: FC<IBattleCard> = (props) => {
           </Flex>
           <Box fontWeight={'black'}>{`$${(225.92).toFixed(2)}`}</Box>
         </Flex>
-        <Flex width={'full'} overflowX={'hidden'}>
-          {packs.map((pack) => {
-            return <PackCard1 {...pack} />
-          })}
-        </Flex>
+        <Link href={'/battles/id'}>
+          <Flex width={'full'} overflowX={'hidden'}>
+            {packs.map((pack) => {
+              return <PackCard1 {...pack} />
+            })}
+          </Flex>
+        </Link>
         <Flex margin={'1rem'}>
           <Button>View Battle</Button>
         </Flex>
@@ -334,11 +339,13 @@ const BattleCard: FC<IBattleCard> = (props) => {
           </Flex>
           <Box fontWeight={'black'}>{`$${(45.21).toFixed(2)}`}</Box>
         </Flex>
-        <Flex width={'full'} overflowX={'hidden'}>
-          {packs.map((pack) => {
-            return <PackCard2 {...pack} />
-          })}
-        </Flex>
+        <Link href={'/battles/id'}>
+          <Flex width={'full'} overflowX={'hidden'}>
+            {packs.map((pack) => {
+              return <PackCard2 {...pack} />
+            })}
+          </Flex>
+        </Link>
         <Flex margin={'1rem'}>
           <Button>View Results</Button>
         </Flex>
