@@ -3,6 +3,7 @@ import { CardType } from '@/types/battleCard'
 import type { TBattleCardVoucher, TBattleCardPic } from '@/types/battleCard'
 import { GiftVoucher } from '@/types/giftVoucher'
 import { CryptoData } from '@/types/cryptoData'
+import { SalesData } from '@/types/salesData'
 import { PackHistory } from '@/types/packHistory'
 import { AffiliateCard } from '@/types/affiliateCard'
 import { AffiliateInfor } from '@/types/affiliateInfor'
@@ -326,6 +327,27 @@ export const WITHDRAWALS: Array<CryptoData> = [
     amountUSD: '-$3549.43',
     status: 'PROCESSED',
     image: '/assets/images/cryptoicon/coin.webp',
+  },
+]
+
+export const SALES: Array<SalesData> = [
+  {
+    header: '- $0.01',
+    product: 'Voucher',
+    brand: '-',
+    amountUSD: '$0.01',
+  },
+  {
+    header: '- $0.01',
+    product: 'Voucher',
+    brand: '-',
+    amountUSD: '$0.01',
+  },
+  {
+    header: '- $0.01',
+    product: 'Voucher',
+    brand: '-',
+    amountUSD: '$0.01',
   },
 ]
 
