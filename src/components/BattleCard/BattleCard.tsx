@@ -38,14 +38,13 @@ interface IBattleCard {
 const PackCard = (props: IPack) => {
   return (
     <Box paddingX={1}>
-      <Flex direction="row" width="full" height="full">
+      <Flex direction="row" width="60px" height="95px">
         <Image
           src="/assets/images/battles/luxury.webp"
           alt=""
-          width={30}
-          height={81}
+          width={'full'}
+          height={'auto'}
           margin={1.5}
-          style={{ width: 'auto', height: 'full' }}
         />
       </Flex>
     </Box>
@@ -55,14 +54,13 @@ const PackCard = (props: IPack) => {
 const PackCard1 = (props: IPack) => {
   return (
     <Box paddingX={1}>
-      <Flex direction="row" width="full" height="full">
+      <Flex direction="row" width="60px" height="95px">
         <Image
           src="/assets/images/battles/luxury_black.webp"
           alt=""
-          width={70}
-          height={81}
+          width={'full'}
+          height={'auto'}
           margin={1.5}
-          style={{ width: 'auto', height: 'full' }}
         />
       </Flex>
     </Box>
@@ -71,12 +69,12 @@ const PackCard1 = (props: IPack) => {
 const PackCard2 = (props: IPack) => {
   return (
     <Box paddingX={1}>
-      <Flex direction="row" width="full" height="full">
+      <Flex direction="row" width="60px" height="95px">
         <Image
           src="/assets/images/battles/Timeless.webp"
           alt=""
-          width={70}
-          height={81}
+          width={'full'}
+          height={'auto'}
           margin={1.5}
           style={{ width: 'auto', height: 'full' }}
         />
@@ -95,9 +93,10 @@ const BattleCard: FC<IBattleCard> = (props) => {
         bgColor="#e2e8f029"
         rounded="0.375rem"
         alignItems="center"
-        justifyContent="flex-end"
+        justifyContent="center"
         padding={5}
         marginY={5}
+        direction={{ base: 'column', md: 'row' }}
       >
         <Flex direction="column" alignItems="center" justifyContent="center">
           <Flex
@@ -163,22 +162,14 @@ const BattleCard: FC<IBattleCard> = (props) => {
               height={8}
             ></Avatar>
           </Flex>
-          <Box fontWeight={'black'}>
-            {
-              `$${(232.82).toFixed(2)}`
-              //   {packs.reduce((pack, acc) => {
-              //   acc += pack.price
-              //   return acc
-              // }, 0)}
-            }
-          </Box>
+          <Box fontWeight={'black'}>{`$${(232.82).toFixed(2)}`}</Box>
         </Flex>
-        <Flex width={'full'} margin={5}>
+        <Flex width={'full'} overflowX={'hidden'}>
           {packs.map((pack) => {
             return <PackCard {...pack} />
           })}
         </Flex>
-        <Flex width={200} margin={5}>
+        <Flex margin={'1rem'}>
           <Button bgColor=" #FABD2D">Join Battle</Button>
         </Flex>
       </Flex>
@@ -187,9 +178,10 @@ const BattleCard: FC<IBattleCard> = (props) => {
         bgColor="#e2e8f029"
         rounded="0.375rem"
         alignItems="center"
-        justifyContent="flex-end"
+        justifyContent="center"
         padding={5}
         marginY={5}
+        direction={{ base: 'column', md: 'row' }}
       >
         <Flex direction="column" alignItems="center" justifyContent="center">
           <Flex
@@ -255,22 +247,14 @@ const BattleCard: FC<IBattleCard> = (props) => {
               height={8}
             ></Avatar>
           </Flex>
-          <Box fontWeight={'black'}>
-            {
-              `$${(225.92).toFixed(2)}`
-              //   {packs.reduce((pack, acc) => {
-              //   acc += pack.price
-              //   return acc
-              // }, 0)}
-            }
-          </Box>
+          <Box fontWeight={'black'}>{`$${(225.92).toFixed(2)}`}</Box>
         </Flex>
-        <Flex width={'full'} margin={5}>
+        <Flex width={'full'} overflowX={'hidden'}>
           {packs.map((pack) => {
             return <PackCard1 {...pack} />
           })}
         </Flex>
-        <Flex width={200} margin={5}>
+        <Flex margin={'1rem'}>
           <Button>View Battle</Button>
         </Flex>
       </Flex>
@@ -279,9 +263,10 @@ const BattleCard: FC<IBattleCard> = (props) => {
         bgColor="#e2e8f029"
         rounded="0.375rem"
         alignItems="center"
-        justifyContent="flex-end"
+        justifyContent="center"
         padding={5}
         marginY={5}
+        direction={{ base: 'column', md: 'row' }}
       >
         <Flex direction="column" alignItems="center" justifyContent="center">
           <Flex
@@ -347,23 +332,15 @@ const BattleCard: FC<IBattleCard> = (props) => {
               height={8}
             ></Avatar>
           </Flex>
-          <Box fontWeight={'black'}>
-            {
-              `$${(45.21).toFixed(2)}`
-              //   {packs.reduce((pack, acc) => {
-              //   acc += pack.price
-              //   return acc
-              // }, 0)}
-            }
-          </Box>
+          <Box fontWeight={'black'}>{`$${(45.21).toFixed(2)}`}</Box>
         </Flex>
-        <Flex width={'full'} margin={5}>
+        <Flex width={'full'} overflowX={'hidden'}>
           {packs.map((pack) => {
             return <PackCard2 {...pack} />
           })}
         </Flex>
-        <Flex width={200} margin={5}>
-          <Button>Join Results</Button>
+        <Flex margin={'1rem'}>
+          <Button>View Results</Button>
         </Flex>
       </Flex>
     </>
