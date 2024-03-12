@@ -66,7 +66,7 @@ export const ACCOUNT_SIDEBAR_ITEMS: Array<TNavItem> = [
 export const SETTING_SIDEBAR_ITEMS: Array<TNavItem> = [
   {
     label: 'Fairness',
-    href: '/fairness',
+    href: '/account/fairness',
   },
   {
     label: 'Security',

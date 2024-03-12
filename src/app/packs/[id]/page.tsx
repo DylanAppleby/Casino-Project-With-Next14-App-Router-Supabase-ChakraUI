@@ -71,7 +71,7 @@ const products = [
 ]
 
 const ProductCarousel = () => {
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState<number>(0)
   const displayCount = useBreakpointValue({ base: 3, md: 5, lg: 9 }) // Responsive display
 
   const nextSlide = () => {

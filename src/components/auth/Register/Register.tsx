@@ -34,6 +34,7 @@ const Register = () => {
   const [password, setPassword] = useState('')
   const [emailErr, setEmailErr] = useState('')
   const [errMsg, setErrMsg] = useState('')
+
   const handleShowClick = () => setShowPassword(!showPassword)
   const supabase = useSupabase()
   const router = useRouter()
