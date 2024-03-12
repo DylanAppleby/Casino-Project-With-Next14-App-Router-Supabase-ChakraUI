@@ -165,12 +165,12 @@ const Login = () => {
             <Button
               borderRadius="md"
               type="submit"
-              variant="solid"
-              colorScheme="blue"
+              // variant="solid"
               width="full"
-              color="white"
+              color="#181718"
               onClick={handleSignIn}
-              isDisabled={email && password.length > 7 ? false : true}
+              bgColor="#FABD2D"
+              // isDisabled={email && password.length > 7 ? false : true}
             >
               Login
             </Button>
