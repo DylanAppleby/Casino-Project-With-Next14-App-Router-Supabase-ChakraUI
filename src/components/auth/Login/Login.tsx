@@ -147,7 +147,7 @@ const Login = () => {
                   <Checkbox />
                   <Text>Remember me</Text>
                 </Flex>
-                <Link color="blue.400">Forgot password?</Link>
+                <Link color="#FABD2D">Forgot password?</Link>
               </FormHelperText>
               {errMsg && (
                 <Stack
@@ -176,7 +176,7 @@ const Login = () => {
             </Button>
             <Box textAlign="center" pt={8}>
               Don't have an account?{' '}
-              <Link color="blue.500" href="#">
+              <Link color="#FABD2D" href="#">
                 Register
               </Link>
             </Box>
