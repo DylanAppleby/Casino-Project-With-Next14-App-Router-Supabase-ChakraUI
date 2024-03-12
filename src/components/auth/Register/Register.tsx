@@ -165,12 +165,11 @@ const Register = () => {
             <Button
               borderRadius="md"
               type="submit"
-              variant="solid"
-              colorScheme="blue"
               width="full"
-              color="white"
+              color="#181718"
               onClick={signUp}
-              isDisabled={email && password.length > 7 ? false : true}
+              bgColor="#FABD2D"
+              // isDisabled={email && password.length > 7 ? false : true}
             >
               Register
             </Button>
