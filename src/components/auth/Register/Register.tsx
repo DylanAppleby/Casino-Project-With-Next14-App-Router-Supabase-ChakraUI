@@ -1,3 +1,4 @@
+'use client'
 import { useState } from 'react'
 
 import {
@@ -18,24 +19,49 @@ import {
   FormLabel,
   AbsoluteCenter,
   useColorModeValue,
+  Badge,
+  useToast 
 } from '@chakra-ui/react'
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 import { FcGoogle } from 'react-icons/fc'
 import { useSupabase } from '@/contexts/supabase-provider'
+import { useRouter } from 'next/navigation'
+import emailValidation from '@/utils/emailValidation'
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [emailErr, setEmailErr] = useState('')
+  const [errMsg, setErrMsg] = useState('')
   const handleShowClick = () => setShowPassword(!showPassword)
   const supabase = useSupabase()
+  const router = useRouter()
+  const toast = useToast()
 
   const signUp = async () => {
-    const email = 'test@gmail.com'
-    const password = 'password'
-
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-    })
+    if (emailValidation(email)) {
+      const { error } = await supabase.auth.signUp({
+        email: email,
+        password: password,
+      })
+      if (error) {
+        setErrMsg(error.message)
+        setEmailErr('')
+      }
+      else {
+        router.refresh()
+        toast({
+          title: 'Register Success!.',
+          description: "We've registerd your account succesfully.",
+          status: 'success',
+          duration: 5000,
+          isClosable: true,
+        })
+      }
+    }else {
+      setEmailErr('Email must have @ and . element')
+    }
   }
 
   return (
@@ -86,19 +112,21 @@ const Register = () => {
             <FormControl>
               <FormLabel htmlFor="email">Email address</FormLabel>
               <InputGroup>
-                <Input type="email" id="email" />
+                <Input type="email" id="email" onChange={(e : any) => setEmail(e.target.value)} />
               </InputGroup>
             </FormControl>
+            <Badge colorScheme='red'>{emailErr}</Badge>
             <FormControl>
               <FormLabel htmlFor="password">Password</FormLabel>
               <InputGroup>
-                <Input type={showPassword ? 'text' : 'password'} id="password" />
+                <Input type={showPassword ? 'text' : 'password'} id="password" onChange={(e : any) => setPassword(e.target.value)} />
                 <InputRightElement width="2.5rem">
                   <Box h="2rem" fontSize="sm" onClick={handleShowClick} pt="0.25rem">
                     {showPassword ? <ViewIcon /> : <ViewOffIcon />}
                   </Box>
                 </InputRightElement>
               </InputGroup>
+              {0 < password.length && password.length < 8 && <Text fontSize={'14'}>Password must have 8+ characters.</Text>}
               <FormHelperText justifyContent="space-between" display="flex">
                 <Flex gap="1">
                   <Checkbox />
@@ -106,6 +134,7 @@ const Register = () => {
                 </Flex>
                 <Link color="blue.400">Forgot password?</Link>
               </FormHelperText>
+              {errMsg && <Stack width={'100%'} bgColor={'#E53E3E'} color={'white'} padding={2} borderRadius={8} marginY={4}><Text align={'center'}>{errMsg}</Text></Stack>}
             </FormControl>
             <Button
               borderRadius="md"
@@ -115,6 +144,7 @@ const Register = () => {
               width="full"
               color="white"
               onClick={signUp}
+              isDisabled={email && password.length > 7 ? false : true}
             >
               Register
             </Button>
