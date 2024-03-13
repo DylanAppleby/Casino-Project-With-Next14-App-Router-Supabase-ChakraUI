@@ -88,6 +88,7 @@ const Footer = () => {
                 <Flex
                   direction={{ base: 'column', sm: 'row' }}
                   gap={{ base: '1rem', sm: '20rem' }}
+                  alignItems={'center'}
                 >
                   <Flex direction={'column'}>
                     <Text color={'#75728c'} fontWeight={'bold'}>
