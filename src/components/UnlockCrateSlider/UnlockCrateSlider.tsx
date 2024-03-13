@@ -17,9 +17,15 @@ const UnlockCrateSlider = ({ label }: IUnlockCrateSlider) => {
   return (
     <Flex direction="column" width="full" gap={3}>
       <Flex width="full" justifyContent="space-between">
-        <Text>0 XP</Text>
-        <Text>{label}</Text>
-        <Text>2500 XP</Text>
+        <Text fontFamily="Clash Grotesk" fontWeight={600}>
+          0 XP
+        </Text>
+        <Text fontFamily="Clash Grotesk" fontWeight={600}>
+          {label}
+        </Text>
+        <Text fontFamily="Clash Grotesk" fontWeight={600}>
+          2500 XP
+        </Text>
       </Flex>
       <Box
         display="flex"
@@ -50,13 +56,20 @@ const UnlockCrateSlider = ({ label }: IUnlockCrateSlider) => {
               style={{ width: '100%', height: '100%' }}
             />
           </Box>
-          <Text whiteSpace={'nowrap'} fontWeight="bold" fontStyle={'italic'}>
+          <Text
+            fontFamily="PP Neue Montreal"
+            whiteSpace={'nowrap'}
+            fontWeight="bold"
+            fontStyle={'italic'}
+          >
             LVL 0
           </Text>
         </Flex>
-        <Text whiteSpace={'nowrap'}>Your VIP Progress</Text>
+        <Text fontFamily="Airbnb Cereal" fontWeight={500} whiteSpace={'nowrap'}>
+          Your VIP Progress
+        </Text>
         <Flex gap={4}>
-          <Text whiteSpace={'nowrap'} fontStyle={'italic'}>
+          <Text fontFamily="PP Neue Montreal" whiteSpace={'nowrap'} fontStyle={'italic'}>
             LVL 1 UNLOCKED
           </Text>
           <Box>

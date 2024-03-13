@@ -25,18 +25,36 @@ const UnlockCrate = () => {
         flex={1}
       >
         <Flex direction="column">
-          <Heading fontFamily="ClashGrotesk" fontSize={{ base: 28, sm: 32, md: 40 }}>
+          <Heading
+            fontFamily="Clash Grotesk"
+            fontWeight={500}
+            fontSize={{ base: 28, sm: 32, md: 40 }}
+          >
             Unlock a crates with
           </Heading>
-          <Heading fontFamily="ClashGrotesk" fontSize={{ base: 28, sm: 32, md: 40 }}>
+          <Heading
+            fontFamily="Clash Grotesk"
+            fontWeight={500}
+            fontSize={{ base: 28, sm: 32, md: 40 }}
+          >
             higher odds as you go
           </Heading>
         </Flex>
         <Box>
-          <Text fontSize={{ base: 15, sm: 18, md: 21 }} whiteSpace={'nowrap'}>
+          <Text
+            fontSize={{ base: 15, sm: 18, md: 21 }}
+            fontFamily="Airbnb Cereal"
+            fontWeight={500}
+            whiteSpace={'nowrap'}
+          >
             Every few packs opened, you unlock a crate...
           </Text>
-          <Text fontSize={{ base: 15, sm: 18, md: 21 }} whiteSpace={'nowrap'}>
+          <Text
+            fontSize={{ base: 15, sm: 18, md: 21 }}
+            fontFamily="Airbnb Cereal"
+            fontWeight={500}
+            whiteSpace={'nowrap'}
+          >
             The Ultimate prize one can get with 99% higher odds
           </Text>
         </Box>
@@ -50,7 +68,13 @@ const UnlockCrate = () => {
           Register
         </Button>
       </Flex>
-      <Flex padding={10} alignItems="center" justifyContent="center" flex={1}>
+      <Flex
+        padding={10}
+        alignItems="center"
+        justifyContent="center"
+        flex={1}
+        boxShadow="0 0 20px 20px yellow"
+      >
         <Image
           src={`/assets/images/unlockcrate.webp`}
           alt="crate.webp"
