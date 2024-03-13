@@ -1,12 +1,4 @@
-import {
-  Flex,
-  Text,
-  Avatar,
-  Center,
-  Image,
-  Badge,
-  useColorModeValue,
-} from '@chakra-ui/react'
+import { Flex, Text, Avatar, Center, Image, Badge } from '@chakra-ui/react'
 import { IRaceCardElement } from '@/types/raceCard'
 import getWinnerArr from '@/utils/getWinnerArr'
 

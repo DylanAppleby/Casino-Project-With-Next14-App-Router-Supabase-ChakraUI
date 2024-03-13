@@ -7,7 +7,6 @@ import {
   SliderTrack,
   SliderFilledTrack,
   SliderThumb,
-  useColorModeValue,
 } from '@chakra-ui/react'
 import Image from 'next/image'
 interface IUnlockCrateSlider {
@@ -38,22 +37,18 @@ const UnlockCrateSlider = ({ label }: IUnlockCrateSlider) => {
           <SliderTrack>
             <SliderFilledTrack />
           </SliderTrack>
-          <SliderThumb
-            width={4}
-            height={4}
-            bg={useColorModeValue('yellow.300', 'yellow.500')}
-          />
+          <SliderThumb width={4} height={4} bg={'yellow.500'} />
         </Slider>
       </Box>
       <Flex width="full" justifyContent="space-between" alignItems={'center'} gap={7}>
-        <Flex gap={2}>
+        <Flex gap={2} alignItems={'center'}>
           <Box>
             <Image
               src="/assets/images/rectangle.webp"
               alt="rectangle icon"
               width={16}
               height={16}
-              style={{ width: '100%', height: '100%' }}
+              style={{ width: '16px', height: '17px' }}
             />
           </Box>
           <Text
@@ -68,7 +63,7 @@ const UnlockCrateSlider = ({ label }: IUnlockCrateSlider) => {
         <Text fontFamily="Airbnb Cereal" fontWeight={500} whiteSpace={'nowrap'}>
           Your VIP Progress
         </Text>
-        <Flex gap={4}>
+        <Flex gap={2} alignItems={'center'}>
           <Text fontFamily="PP Neue Montreal" whiteSpace={'nowrap'} fontStyle={'italic'}>
             LVL 1 UNLOCKED
           </Text>
@@ -76,9 +71,9 @@ const UnlockCrateSlider = ({ label }: IUnlockCrateSlider) => {
             <Image
               src="/assets/images/rectangle.webp"
               alt="rectangle icon"
-              width={14}
-              height={14}
-              style={{ width: '100%', height: '100%' }}
+              width={16}
+              height={16}
+              style={{ width: '16px', height: '17px' }}
             />
           </Box>
         </Flex>

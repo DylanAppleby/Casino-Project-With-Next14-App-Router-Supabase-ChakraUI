@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import { Flex, Text, Button, Box, Heading, useColorModeValue } from '@chakra-ui/react'
+import { Flex, Text, Button, Box, Heading } from '@chakra-ui/react'
 import UnlockCrateSlider from '@/components/UnlockCrateSlider'
 
 const UnlockCrate = () => {
@@ -10,7 +10,7 @@ const UnlockCrate = () => {
         base: 'transparent',
         sm: 'transparent',
         md: 'transparent',
-        lg: useColorModeValue('white', '#313030'),
+        lg: '#313030',
       }}
       borderRadius={30}
       justifyContent="center"
@@ -60,24 +60,19 @@ const UnlockCrate = () => {
         </Box>
         <UnlockCrateSlider label="2500 XP's left" />
         <Button
-          bg={useColorModeValue('yellow.300', 'yellow.500')}
+          bg={'yellow.500'}
           h={{ base: '3rem' }}
           w={{ base: '5.5rem' }}
-          color={useColorModeValue('gray.50', 'gray.800')}
+          color={'gray.800'}
+          _hover={{ bg: 'yellow.400' }}
         >
           Register
         </Button>
       </Flex>
-      <Flex
-        padding={10}
-        alignItems="center"
-        justifyContent="center"
-        flex={1}
-        boxShadow="0 0 20px 20px yellow"
-      >
+      <Flex padding={10} alignItems="center" justifyContent="center" flex={1}>
         <Image
-          src={`/assets/images/unlockcrate.webp`}
-          alt="crate.webp"
+          src={`/assets/images/unlockcrate.png`}
+          alt="crate.png"
           width={400}
           height={150}
           style={{ width: '100%', height: '100%' }}

@@ -117,7 +117,9 @@ const GiftCard = ({
             </Button>
           </Flex>
         ) : (
-          <Button>{addHovered ? 'Add Pack' : '$' + price}</Button>
+          <Button bg={'#2a292a'} color={'#eeeee8'}>
+            {addHovered ? 'Add Pack' : '$' + price}
+          </Button>
         )}
       </Flex>
     </Box>

@@ -18,9 +18,8 @@ import {
   Divider,
   FormLabel,
   AbsoluteCenter,
-  useColorModeValue,
   Badge,
-  useToast 
+  useToast,
 } from '@chakra-ui/react'
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 import { FcGoogle } from 'react-icons/fc'
@@ -49,8 +48,7 @@ const Register = () => {
       if (error) {
         setErrMsg(error.message)
         setEmailErr('')
-      }
-      else {
+      } else {
         router.refresh()
         toast({
           title: 'Register Success!.',
@@ -60,7 +58,7 @@ const Register = () => {
           isClosable: true,
         })
       }
-    }else {
+    } else {
       setEmailErr('Email must have @ and . element')
     }
   }
@@ -98,15 +96,8 @@ const Register = () => {
           </Flex>
         </Flex>
         <Flex position="relative" direction="column" mt="1rem" py="0.5rem" width="full">
-          <Divider
-            orientation="horizontal"
-            bgColor={useColorModeValue('gray.300', 'gray.700')}
-          />
-          <AbsoluteCenter
-            bg={useColorModeValue('white', 'gray.700')}
-            px="4"
-            bgColor={'#1F1F1F'}
-          >
+          <Divider orientation="horizontal" bgColor={'gray.700'} />
+          <AbsoluteCenter bg={'gray.700'} px="4" bgColor={'#1F1F1F'}>
             Or
           </AbsoluteCenter>
         </Flex>
@@ -169,6 +160,9 @@ const Register = () => {
               color="#181718"
               onClick={signUp}
               bgColor="#FABD2D"
+              _hover={{
+                bgColor: 'yellow.400',
+              }}
               // isDisabled={email && password.length > 7 ? false : true}
             >
               Register

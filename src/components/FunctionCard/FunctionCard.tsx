@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import { Flex, Box, Text, useColorModeValue } from '@chakra-ui/react'
+import { Flex, Box, Text } from '@chakra-ui/react'
 
 interface IGiftCard {
   label: string
@@ -15,7 +15,7 @@ const FunctionCard = ({ label, header, content }: IGiftCard) => {
       width={{ base: '20.5rem', lg: 'full' }}
       minWidth={{ base: '20.5rem', lg: '0rem' }}
       maxWidth={'20.5rem'}
-      bg={useColorModeValue('yellow.300', 'yellow.500')}
+      bg={'yellow.500'}
       px={1}
       pb={1}
     >

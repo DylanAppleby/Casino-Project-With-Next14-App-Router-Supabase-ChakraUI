@@ -19,8 +19,7 @@ import {
   Divider,
   FormLabel,
   AbsoluteCenter,
-  useColorModeValue,
-  useToast 
+  useToast,
 } from '@chakra-ui/react'
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 import { FcGoogle } from 'react-icons/fc'
@@ -41,7 +40,7 @@ const Login = () => {
   const toast = useToast()
 
   const handleSignIn = async () => {
-    if(emailValidation(email)) {
+    if (emailValidation(email)) {
       const { error } = await supabase.auth.signInWithPassword({
         email: email,
         password: password,
@@ -49,8 +48,7 @@ const Login = () => {
       if (error) {
         setErrMsg('The email or password combination was incorrect. Please try again.')
         setEmailErr('')
-      }
-      else {
+      } else {
         router.refresh()
         toast({
           title: 'Login Success!.',
@@ -60,7 +58,7 @@ const Login = () => {
           isClosable: true,
         })
       }
-    }else {
+    } else {
       setEmailErr('Email must have @ and . element')
     }
   }
@@ -98,15 +96,8 @@ const Login = () => {
           </Flex>
         </Flex>
         <Flex position="relative" direction="column" mt="1rem" py="0.5rem" width="full">
-          <Divider
-            orientation="horizontal"
-            bgColor={useColorModeValue('gray.300', 'gray.700')}
-          />
-          <AbsoluteCenter
-            bg={useColorModeValue('white', 'gray.700')}
-            px="4"
-            bgColor={'#1F1F1F'}
-          >
+          <Divider orientation="horizontal" bgColor={'gray.700'} />
+          <AbsoluteCenter bg={'gray.700'} px="4" bgColor={'#1F1F1F'}>
             Or
           </AbsoluteCenter>
         </Flex>
@@ -170,6 +161,9 @@ const Login = () => {
               color="#181718"
               onClick={handleSignIn}
               bgColor="#FABD2D"
+              _hover={{
+                bgColor: 'yellow.400',
+              }}
               // isDisabled={email && password.length > 7 ? false : true}
             >
               Login
