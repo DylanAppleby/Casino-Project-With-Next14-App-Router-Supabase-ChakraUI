@@ -7,7 +7,7 @@ import { CRATES_PAGE } from '@/constants/mock'
 
 const CratesPageContainer = () => {
   return (
-    <Grid templateColumns={{ base: 'repeat(5, 1fr)', lg: 'repeat(1, 1fr)' }} gap={5}>
+    <Grid templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(1, 1fr)' }} gap={5}>
       <GridItem>
         <Grid
           templateColumns={{

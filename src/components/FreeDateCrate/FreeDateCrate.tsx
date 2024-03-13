@@ -6,14 +6,22 @@ import countDownTimerWeek from '@/utils/countDownTimerWeek'
 import countDownTimerMonth from '@/utils/countDownTimerMonth'
 const FreeDateCrate = () => {
   return (
-    <Flex direction={'column'} overflowX={'scroll'}>
+    <Flex
+      direction={'column'}
+      overflowX={'auto'}
+      css={{
+        msOverflowStyle: 'none',
+        scrollbarWidth: 'none',
+        '&::-webkit-scrollbar': { display: 'none' },
+      }}
+    >
       <Flex
-        bgColor={'#4D4020'}
+        bgColor={{ base: 'transparent', xl: '#4D4020' }}
         width={'1248.02px'}
         height={'220'}
-        border={'2px'}
+        border={{ base: 'none', xl: '2px' }}
         borderRadius={'1rem'}
-        borderColor={'#F6C143'}
+        borderColor={{ base: 'none', xl: '#F6C143' }}
         marginY={5}
         gap={5}
       >
