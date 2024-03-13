@@ -14,7 +14,7 @@ interface IUnlockCrateSlider {
 }
 const UnlockCrateSlider = ({ label }: IUnlockCrateSlider) => {
   return (
-    <Flex direction="column" width="full" gap={3}>
+    <Flex direction="column" gap={3}>
       <Flex width="full" justifyContent="space-between">
         <Text fontFamily="Clash Grotesk" fontWeight={600}>
           0 XP
@@ -33,11 +33,17 @@ const UnlockCrateSlider = ({ label }: IUnlockCrateSlider) => {
         bgColor={'#393e45'}
         rounded={'full'}
       >
-        <Slider aria-label="slider-ex-1" size="xl">
-          <SliderTrack>
-            <SliderFilledTrack />
+        <Slider width={'full'}>
+          <SliderTrack height={'full'} rounded={'full'}>
+            <SliderFilledTrack bgColor={'#d3a03e'} />
           </SliderTrack>
-          <SliderThumb width={4} height={4} bg={'yellow.500'} />
+          <SliderThumb
+            width={4}
+            height={4}
+            bg={'yellow.500'}
+            borderWidth={1}
+            borderColor={'#ffffff'}
+          />
         </Slider>
       </Box>
       <Flex width="full" justifyContent="space-between" alignItems={'center'} gap={7}>
@@ -48,7 +54,7 @@ const UnlockCrateSlider = ({ label }: IUnlockCrateSlider) => {
               alt="rectangle icon"
               width={16}
               height={16}
-              style={{ width: '16px', height: '17px' }}
+              style={{ width: '16px', height: '17px', minWidth: '16px' }}
             />
           </Box>
           <Text
@@ -73,7 +79,7 @@ const UnlockCrateSlider = ({ label }: IUnlockCrateSlider) => {
               alt="rectangle icon"
               width={16}
               height={16}
-              style={{ width: '16px', height: '17px' }}
+              style={{ width: '16px', height: '17px', minWidth: '16px' }}
             />
           </Box>
         </Flex>

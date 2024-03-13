@@ -45,19 +45,28 @@ const responsive = {
 const SlotGameRecentItemContainer = () => {
   return (
     <Flex direction={'column'} width={'full'} gap={8}>
-      <Flex direction={'row'} gap={'20rem'}>
-        <Text fontSize={24} fontWeight={'bold'} whiteSpace={'nowrap'}>
+      <Flex
+        direction={'row'}
+        gap={{ base: '10', md: '16rem', lg: '20rem' }}
+        justifyContent={{ base: 'center', lg: 'start' }}
+      >
+        <Text
+          fontSize={{ base: 18, md: 20, lg: 24 }}
+          fontWeight={'bold'}
+          whiteSpace={'nowrap'}
+        >
           Best unboxings
         </Text>
-        <Text fontSize={24} fontWeight={'bold'} whiteSpace={'nowrap'}>
-          Recentlly unboxed
+        <Text
+          fontSize={{ base: 18, md: 20, lg: 24 }}
+          fontWeight={'bold'}
+          whiteSpace={'nowrap'}
+          display={{ base: 'none', md: 'none', lg: 'inline' }}
+        >
+          Recently unboxed
         </Text>
       </Flex>
-      <Carousel
-        arrows={true}
-        responsive={responsive}
-        itemClass="carousel-item-padding-40-px"
-      >
+      <Carousel responsive={responsive} itemClass="carousel-item-padding-20-px">
         {SLOT_GAME_RECENT_ITEMS.map((slotGameRecentItem, index) => (
           <SlotGameRecentItem
             key={slotGameRecentItem.imageUrl + index}
