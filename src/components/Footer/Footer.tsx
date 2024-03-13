@@ -1,16 +1,7 @@
 'use client'
 
 import { ReactNode } from 'react'
-import {
-  Box,
-  Container,
-  SimpleGrid,
-  Stack,
-  Text,
-  Flex,
-  useColorModeValue,
-  Divider,
-} from '@chakra-ui/react'
+import { Box, Container, SimpleGrid, Stack, Text, Flex, Divider } from '@chakra-ui/react'
 import Image from 'next/image'
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
@@ -25,11 +16,7 @@ const Footer = () => {
   const thisYear = new Date().getFullYear()
   return (
     <footer>
-      <Box
-        bg={useColorModeValue('white', '#1f1f1f')}
-        color={useColorModeValue('gray.700', 'gray.200')}
-        pt={10}
-      >
+      <Box bg={'#1f1f1f'} color={'gray.200'} pt={10}>
         <Container maxW={'container.xl'}>
           <Flex direction="column">
             <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
@@ -96,20 +83,14 @@ const Footer = () => {
                 alignItems={'center'}
                 gap={6}
               >
-                <Divider
-                  orientation="horizontal"
-                  bgColor={useColorModeValue('gray.300', 'gray.700')}
-                />
+                <Divider orientation="horizontal" bgColor={'gray.700'} />
                 <Image
                   src={`${process.env.NEXT_PUBLIC_SITE_URL}/assets/images/logo.webp`}
                   alt="Wincrate Logo"
                   width="128"
                   height="23"
                 />
-                <Divider
-                  orientation="horizontal"
-                  bgColor={useColorModeValue('gray.300', 'gray.700')}
-                />
+                <Divider orientation="horizontal" bgColor={'gray.700'} />
               </Flex>
               <Text pt={6} fontSize={'sm'} textAlign={'center'}>
                 © {thisYear} Wincrate | All rights reserved

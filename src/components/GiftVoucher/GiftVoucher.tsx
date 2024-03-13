@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import { Box, Flex, Text, useColorModeValue } from '@chakra-ui/react'
+import { Box, Flex, Text } from '@chakra-ui/react'
 
 interface IGiftVoucher {
   image: string
@@ -11,7 +11,7 @@ interface IGiftVoucher {
 const GiftVoucher = ({ image, labelHeader, labelContent, price }: IGiftVoucher) => {
   return (
     <Flex
-      bg={useColorModeValue('gray.100', '#313030')}
+      bg={'#313030'}
       borderRadius={15}
       width="full"
       px={5}

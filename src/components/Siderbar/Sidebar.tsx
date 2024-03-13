@@ -7,7 +7,6 @@ import {
   Button,
   Box,
   Flex,
-  useColorModeValue,
   Text,
   Drawer,
   DrawerContent,
@@ -96,10 +95,10 @@ const NavItem = ({ url, label, ...rest }: NavItemProps) => {
           width={'232px'}
           cursor="pointer"
           _hover={{
-            bg: useColorModeValue('gray.50', '#34383c'),
+            bg: '#34383c',
             color: 'white',
           }}
-          bg={isActive ? useColorModeValue('gray.50', '#34383c') : 'transparent'}
+          bg={isActive ? '#34383c' : 'transparent'}
           color={isActive ? 'white' : 'inherit'}
           {...rest}
           fontWeight={'bold'}

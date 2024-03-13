@@ -10,28 +10,26 @@ import {
   Text,
   Tag,
   Collapse,
-  useColorModeValue,
-  useColorMode,
   useDisclosure,
   Button,
-  Badge,
   Container,
   Menu,
-  MenuProps,
   MenuButton,
   MenuList,
   MenuItem,
   Avatar,
   Switch,
   Input,
-  InputGroup,
-  InputRightElement,
   Spacer,
-  MenuDivider
+  MenuDivider,
+  useColorModeValue,
+  useColorMode,
 } from '@chakra-ui/react'
 
 import { HamburgerIcon, CloseIcon, CheckIcon } from '@chakra-ui/icons'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
+import { useSession, useSupabase } from '@/contexts/supabase-provider'
 
 import UserModal from '../auth/UserModal'
 import Login from '../auth/Login'
@@ -40,8 +38,6 @@ import Register from '../auth/Register'
 import { HEADER_NAV_ITEMS } from '@/constants/navItems'
 
 import { INavBar, TNavItem } from '@/types/navItem'
-import Link from 'next/link'
-import { useSession, useSupabase } from '@/contexts/supabase-provider'
 
 const NavbarBgColor = '#1F1F1F'
 
@@ -56,12 +52,12 @@ const DesktopNav = (props: INavBar) => {
             px={{ md: 2, lg: 4 }}
             fontSize={'md'}
             fontWeight={600}
-            color={useColorModeValue('gray.600', 'gray.200')}
-            bgColor={useColorModeValue('white', NavbarBgColor)}
+            color={'gray.200'}
+            bgColor={NavbarBgColor}
             _hover={{
               textDecoration: 'none',
-              color: useColorModeValue('gray.800', 'gray.50'),
-              bgColor: useColorModeValue('gray.200', '#FFFFFF05'),
+              color: 'gray.50',
+              bgColor: '#FFFFFF05',
             }}
           >
             {headerNavItem.label}
@@ -69,7 +65,7 @@ const DesktopNav = (props: INavBar) => {
               <Tag
                 size="sm"
                 pt={0.5}
-                bg={useColorModeValue('yellow.300', 'yellow.500')}
+                bg={'yellow.500'}
                 ml={2}
                 color={'gray.800'}
                 rounded="full"
@@ -93,7 +89,7 @@ const MobileNavItem = ({ href, label }: TNavItem) => (
       textDecoration: 'none',
     }}
   >
-    <Text fontWeight={600} color={useColorModeValue('gray.600', 'gray.200')}>
+    <Text fontWeight={600} color={'gray.200'}>
       {label}
     </Text>
   </Box>
@@ -106,7 +102,7 @@ const MobileNav = (props: INavBar) => {
     <Stack
       position={'relative'}
       zIndex={999}
-      bg={useColorModeValue('white', 'gray.800')}
+      bg={'gray.800'}
       p={4}
       display={{ md: 'none' }}
     >
@@ -146,12 +142,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <Box
-        width="full"
-        height="3.75rem"
-        bg={useColorModeValue('white', NavbarBgColor)}
-        color={useColorModeValue('gray.600', 'white')}
-      >
+      <Box width="full" height="3.75rem" bg={NavbarBgColor} color={'white'}>
         <Container maxW={'container.xl'} height={'full'}>
           <Flex
             height="full"
@@ -159,7 +150,7 @@ const Header = () => {
             justifyContent="center"
             borderBottom={1}
             borderStyle={'solid'}
-            borderColor={useColorModeValue('gray.200', 'gray.900')}
+            borderColor={'gray.900'}
           >
             <Flex width="full" align="center" justifyContent="space-between">
               <Flex>
@@ -188,17 +179,16 @@ const Header = () => {
                     justifyContent={'center'}
                     alignItems={'center'}
                     cursor="pointer"
-                    as="a"
-                    href="/"
                   >
-                    <Image
-                      src={`${process.env.NEXT_PUBLIC_SITE_URL}/assets/images/logo.webp`}
-                      alt="Wincrate Logo"
-                      width="128"
-                      height="23"
-                    />
+                    <Link href={'/'}>
+                      <Image
+                        src={`${process.env.NEXT_PUBLIC_SITE_URL}/assets/images/logo.webp`}
+                        alt="Wincrate Logo"
+                        width="128"
+                        height="23"
+                      />
+                    </Link>
                   </Flex>
-
                   <Box display={{ base: 'none', md: 'flex' }}>
                     <DesktopNav navItems={HEADER_NAV_ITEMS} />
                   </Box>
@@ -206,72 +196,46 @@ const Header = () => {
               </Flex>
 
               <Flex gap={2} justifyContent="center" alignItems="center">
-                {/* <Flex
-                  rounded="full"
-                  h={{ base: '1.875rem' }}
-                  borderWidth={2}
-                  borderColor={useColorModeValue('gray.400', 'gray.700')}
-                  color={useColorModeValue('gray.400', 'gray.600')}
-                  fontSize="small"
-                  fontWeight="medium"
-                  alignItems="center"
-                  justifyContent="space-between"
-                  pl={2}
-                  pr={1.5}
-                >
-                  <Box display="inline-flex">
-                    <Box color={useColorModeValue('gray.600', 'gray.400')}>
-                      ${Number(24046).toLocaleString('us')}
-                    </Box>
-                    .43
-                  </Box>
-                  <Flex
-                    h={4}
-                    w={4}
-                    alignItems="center"
-                    justifyContent="center"
-                    fontSize={'md'}
-                    lineHeight="1rem"
-                    fontWeight="bold"
-                    color={useColorModeValue('white', 'white')}
-                    bg={'orange'}
-                    rounded="full"
-                    pb={0.75}
-                    cursor="pointer"
-                    ml={4}
-                  >
-                    +
-                  </Flex>
-                </Flex> */}
-                {!session &&
+                {!session && (
                   <Flex gap={2}>
-                    <Button bg={'none'} onClick={onOpenLogin}>
+                    <Button bg={'transparent'} onClick={onOpenLogin} color={'#eeeee8'}>
                       Login
                     </Button>
                     <Button
-                      bg={useColorModeValue('yellow.300', 'yellow.500')}
+                      bg={'yellow.500'}
+                      _hover={{ bg: 'yellow.400' }}
                       onClick={onOpenRegister}
+                      color={'#eeeee8'}
                     >
                       Register
                     </Button>
                   </Flex>
-                }
-                {session && 
+                )}
+                {session && (
                   <Flex fontSize={'18px'} fontWeight={'800'}>
                     <Menu closeOnSelect={false} autoSelect={false}>
                       <MenuButton>
-                        <Avatar size='sm' src='https://bit.ly/broken-link' />
+                        <Avatar size="sm" src="https://bit.ly/broken-link" />
                       </MenuButton>
                       <MenuList>
                         <MenuItem>
                           <Link href={'/account'}>
-                            <Flex gap='20'>
+                            <Flex gap="20">
                               <Box>
-                                <Avatar size='xs' src='https://bit.ly/broken-link' marginRight={2}/>
+                                <Avatar
+                                  size="xs"
+                                  src="https://bit.ly/broken-link"
+                                  marginRight={2}
+                                />
                                 rich_ant
                               </Box>
                               <Spacer />
-                              <Box bgColor={'rgba(56, 161, 105, 0.6)'} color={'white'} paddingX={2} borderRadius={4}>
+                              <Box
+                                bgColor={'rgba(56, 161, 105, 0.6)'}
+                                color={'white'}
+                                paddingX={2}
+                                borderRadius={4}
+                              >
                                 0
                               </Box>
                             </Flex>
@@ -279,25 +243,27 @@ const Header = () => {
                         </MenuItem>
                         <MenuDivider />
                         <MenuItem>
-                          <Input type='text' placeholder='Promotion code' />
-                          <Box marginLeft={3}><CheckIcon color={useColorModeValue('black', 'white')} /></Box>
+                          <Input type="text" placeholder="Promotion code" />
+                          <Box marginLeft={3}>
+                            <CheckIcon color={useColorModeValue('black', 'white')} />
+                          </Box>
                         </MenuItem>
                         <MenuDivider />
                         <MenuItem onClick={toggleColorMode}>
-                          <Flex gap='20'>
-                              <Box>Dark Mode</Box>
-                              <Spacer />
-                              <Box>{colorMode === 'light' ? <Switch /> : <Switch isChecked />}</Box>
+                          <Flex gap="20">
+                            <Box>Dark Mode</Box>
+                            <Spacer />
+                            <Box>
+                              {colorMode === 'light' ? <Switch /> : <Switch isChecked />}
+                            </Box>
                           </Flex>
                         </MenuItem>
                         <MenuDivider />
-                        <MenuItem onClick={handleLogOut}>
-                          Sign out
-                        </MenuItem>
+                        <MenuItem onClick={handleLogOut}>Sign out</MenuItem>
                       </MenuList>
                     </Menu>
                   </Flex>
-                }
+                )}
               </Flex>
             </Flex>
           </Flex>

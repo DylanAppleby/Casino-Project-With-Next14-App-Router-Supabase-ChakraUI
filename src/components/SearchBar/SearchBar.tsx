@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import {
   Flex,
   Box,
-  useColorModeValue,
   FormControl,
   InputGroup,
   Input,
@@ -56,8 +55,8 @@ const SearchBar = () => {
     <Flex
       direction={{ base: 'column-reverse', md: 'row' }}
       justifyContent={'space-between'}
-      gap={8}
       width="full"
+      gap={8}
       my={8}
     >
       <Flex gap={2}>
@@ -69,10 +68,14 @@ const SearchBar = () => {
           fontSize="small"
           fontWeight="medium"
           alignItems="center"
-          justifyContent="space-between"
+          justifyContent="center"
           cursor="pointer"
           onClick={() => toggleButtonColor(1)}
-          bgColor={activeButton === 1 ? '#d3a03e' : 'initial'}
+          bgColor={activeButton === 1 ? '#d3a03e' : '#302e30'}
+          _hover={{ bg: activeButton === 1 ? 'yellow.400' : '#434143' }}
+          width={{ base: 'full', lg: 'auto' }}
+          minWidth="auto"
+          color={'#eeeee8'}
         >
           <Box height="1.25rem" minWidth="0.8125rem">
             <Image
@@ -95,10 +98,14 @@ const SearchBar = () => {
           fontSize="small"
           fontWeight="medium"
           alignItems="center"
-          justifyContent="space-between"
+          justifyContent="center"
           cursor="pointer"
           onClick={() => toggleButtonColor(2)}
-          bgColor={activeButton === 2 ? '#d3a03e' : 'initial'}
+          bgColor={activeButton === 2 ? '#d3a03e' : '#302e30'}
+          _hover={{ bg: activeButton === 2 ? 'yellow.400' : '#434143' }}
+          width={{ base: 'full', lg: 'auto' }}
+          minWidth="auto"
+          color={'#eeeee8'}
         >
           <Box height="1.25rem" minWidth="0.8125rem">
             <Image
@@ -121,10 +128,14 @@ const SearchBar = () => {
           fontSize="small"
           fontWeight="medium"
           alignItems="center"
-          justifyContent="space-between"
+          justifyContent="center"
           cursor="pointer"
           onClick={() => toggleButtonColor(3)}
-          bgColor={activeButton === 3 ? '#d3a03e' : 'initial'}
+          bgColor={activeButton === 3 ? '#d3a03e' : '#302e30'}
+          _hover={{ bg: activeButton === 3 ? 'yellow.400' : '#434143' }}
+          width={{ base: 'full', lg: 'auto' }}
+          minWidth="auto"
+          color={'#eeeee8'}
         >
           <Box height="1.25rem" minWidth="1rem">
             <Image
@@ -145,7 +156,7 @@ const SearchBar = () => {
           <InputGroup>
             <InputLeftElement width="2.5rem">
               <Box h="2rem" fontSize="sm" py="0.25rem">
-                <SearchIcon />
+                <SearchIcon color={'#fefefe'} />
               </Box>
             </InputLeftElement>
             <Input
@@ -153,11 +164,13 @@ const SearchBar = () => {
               id="search"
               placeholder="Search"
               borderWidth={2}
+              borderColor={'#3d3c3d'}
+              color={'#fefefe'}
               borderRadius={'full'}
               _focus={{
                 borderColor: 'transparent',
                 outline: 'none',
-                boxShadow: '0 0 0 3px #d3a03e',
+                boxShadow: '0 0 0 2px #d3a03e',
               }}
             />
           </InputGroup>

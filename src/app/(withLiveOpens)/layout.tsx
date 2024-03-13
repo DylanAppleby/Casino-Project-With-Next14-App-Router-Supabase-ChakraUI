@@ -29,7 +29,9 @@ const WithLiveOpens = ({ children }: Readonly<IWithLiveOpens>) => {
                   borderRadius="full"
                   boxShadow="0px 1px 8px 3px #d3a03e"
                 />
-                <Text fontSize={'lg'}>Live Opens</Text>
+                <Text fontSize={'lg'} color={'#fefefe'}>
+                  Live Opens
+                </Text>
               </Flex>
               <GiftVoucherContainer />
             </Flex>

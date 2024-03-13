@@ -29,7 +29,6 @@ export {
   SliderTrack,
   SliderFilledTrack,
   SliderThumb,
-  useColorModeValue,
   Image,
 } from '@chakra-ui/react'
 
