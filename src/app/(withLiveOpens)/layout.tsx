@@ -29,7 +29,11 @@ const WithLiveOpens = ({ children }: Readonly<IWithLiveOpens>) => {
                   borderRadius="full"
                   boxShadow="0px 1px 8px 3px #d3a03e"
                 />
-                <Text fontSize={'lg'} color={'#fefefe'}>
+                <Text
+                  fontSize={'lg'}
+                  color={'#fefefe'}
+                  style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
+                >
                   Live Opens
                 </Text>
               </Flex>
