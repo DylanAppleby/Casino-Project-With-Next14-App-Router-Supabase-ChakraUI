@@ -22,9 +22,9 @@ const Rewards = () => {
           <Flex
             direction="column"
             marginY={5}
-            paddingX={14}
             alignItems="space-between"
-            gap={5}
+            gap={1}
+            width={{ base: 'full', lg: '500px' }}
           >
             <Text fontSize={50} fontWeight={'bold'} textAlign={'center'}>
               Your Crates
