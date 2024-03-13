@@ -1,14 +1,17 @@
 import { ReactNode } from 'react'
+
 import type { Metadata } from 'next'
-import { Urbanist } from 'next/font/google'
-import { Container, Flex } from '@chakra-ui/react'
 import { cookies } from 'next/headers'
+import { Urbanist } from 'next/font/google'
+import Head from 'next/head'
+
+import { Container, Flex } from '@chakra-ui/react'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
+import TopLoader from 'nextjs-toploader'
 
 import LayoutProvider from '@/components/LayoutProvider'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import TopLoader from 'nextjs-toploader'
 import SupabaseProvider from '@/contexts/supabase-provider'
 import { Database } from '@/types/database'
 
@@ -32,6 +35,12 @@ const RootLayout = async ({ children }: Readonly<IRootLayout>) => {
 
   return (
     <html lang="en">
+      <Head>
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
       <body className={urbanist.className}>
         <TopLoader
           color="#2299DD"
