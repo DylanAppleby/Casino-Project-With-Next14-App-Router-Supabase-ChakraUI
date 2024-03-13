@@ -25,7 +25,7 @@ const WithLiveOpens = ({ children }: Readonly<IWithLiveOpens>) => {
                 <Box
                   width={3}
                   height={3}
-                  bgColor="yellow"
+                  bgColor="#d0a249"
                   borderRadius="full"
                   boxShadow="0px 1px 8px 3px #d3a03e"
                 />
