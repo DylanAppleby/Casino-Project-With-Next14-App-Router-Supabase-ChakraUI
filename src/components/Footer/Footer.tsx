@@ -162,8 +162,22 @@ const Footer = () => {
                   fontWeight={'bold'}
                   align={'center'}
                 >
-                  Support support@wincrate.com | Partners partners@wincrate.com | Press
-                  press@wincrate.com
+                  Support{' '}
+                  <a
+                    href="mailto:support@wincrate.com"
+                    rel="noreferrer reopener"
+                    style={{ color: 'white' }}
+                  >
+                    support@wincrate.com
+                  </a>{' '}
+                  | Partners{' '}
+                  <a href="mailto:partners@wincrate.com" style={{ color: 'white' }}>
+                    partners@wincrate.com
+                  </a>{' '}
+                  | Press{' '}
+                  <a href="mailto:press@wincrate.com" style={{ color: 'white' }}>
+                    press@wincrate.com
+                  </a>
                 </Text>
               </Flex>
             </Box>
