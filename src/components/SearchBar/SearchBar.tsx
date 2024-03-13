@@ -156,7 +156,7 @@ const SearchBar = () => {
           <InputGroup>
             <InputLeftElement width="2.5rem">
               <Box h="2rem" fontSize="sm" py="0.25rem">
-                <SearchIcon color={'#fefefe'} />
+                <SearchIcon color={'#888687'} />
               </Box>
             </InputLeftElement>
             <Input
@@ -164,9 +164,10 @@ const SearchBar = () => {
               id="search"
               placeholder="Search"
               borderWidth={2}
-              borderColor={'#3d3c3d'}
-              color={'#fefefe'}
+              borderColor={'#343335'}
+              color={'#4A4749'}
               borderRadius={'full'}
+              textColor={'#888687'}
               _focus={{
                 borderColor: 'transparent',
                 outline: 'none',

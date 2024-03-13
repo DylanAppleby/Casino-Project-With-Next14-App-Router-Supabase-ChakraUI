@@ -30,12 +30,18 @@ const GiftVoucher = ({ image, labelHeader, labelContent, price }: IGiftVoucher) 
           />
         </Box>
         <Flex direction="column" alignItems="space-around">
-          <Text>{labelHeader}</Text>
-          <Text>{labelContent}</Text>
+          <Text style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}>
+            {labelHeader}
+          </Text>
+          <Text style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}>
+            {labelContent}
+          </Text>
         </Flex>
       </Flex>
       <Box>
-        <Text>{'$' + Number(price).toLocaleString('us').toString()}</Text>
+        <Text style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}>
+          {'$' + Number(price).toLocaleString('us').toString()}
+        </Text>
       </Box>
     </Flex>
   )
