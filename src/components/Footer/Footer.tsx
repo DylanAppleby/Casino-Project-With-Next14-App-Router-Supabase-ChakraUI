@@ -3,6 +3,7 @@
 import { ReactNode } from 'react'
 import { Box, Container, SimpleGrid, Stack, Text, Flex, Divider } from '@chakra-ui/react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (
@@ -83,18 +84,87 @@ const Footer = () => {
                 alignItems={'center'}
                 gap={6}
               >
-                <Divider orientation="horizontal" bgColor={'gray.700'} />
+                <Divider orientation="horizontal" bgColor="gray.700" />
+                <Flex
+                  direction={{ base: 'column', sm: 'row' }}
+                  gap={{ base: '1rem', sm: '20rem' }}
+                >
+                  <Flex direction={'column'}>
+                    <Text color={'#75728c'} fontWeight={'bold'}>
+                      Responsible
+                    </Text>
+                    <Text color={'#75728c'} fontWeight={'bold'}>
+                      Gaming
+                    </Text>
+                  </Flex>
+                  <Flex>
+                    <Text fontSize={'40px'} color={'#75728c'}>
+                      21+
+                    </Text>
+                  </Flex>
+                </Flex>
+                <Divider orientation="horizontal" bgColor="gray.700" />
+              </Flex>
+              <Flex
+                position="relative"
+                width="full"
+                direction={'column'}
+                alignItems={'center'}
+                gap={6}
+                py={'20px'}
+              >
                 <Image
                   src={`${process.env.NEXT_PUBLIC_SITE_URL}/assets/images/logo.webp`}
                   alt="Wincrate Logo"
                   width="128"
                   height="23"
                 />
-                <Divider orientation="horizontal" bgColor={'gray.700'} />
               </Flex>
-              <Text pt={6} fontSize={'sm'} textAlign={'center'}>
-                © {thisYear} Wincrate | All rights reserved
+              <Text
+                fontSize={'sm'}
+                color={'#75728c'}
+                fontWeight={'bold'}
+                textAlign={'center'}
+              >
+                © Wincrate | All rights reserved
               </Text>
+              <Flex padding={'20px'} direction={'column'} gap={'1rem'}>
+                <Text
+                  fontSize={'11.5px'}
+                  color={'#75728c'}
+                  fontWeight={'bold'}
+                  align={'center'}
+                >
+                  Wincrate is owned and operated by Wincrate Limited, registration number
+                  HE433433, registered address 28 Oktovriou, 313 Omrania BLD, Limassol,
+                  CY-3105, Cryprus, Contact us at support@Wincrate.us. Wincrate is
+                  authorized and regulated by the Government of Curacao and operates under
+                  Licence No.8048/JAZ issued to Antillephone. Wincrate has passed all
+                  compliance and is legally authorized to conduct gaming operations for
+                  all games of chance.
+                </Text>
+                <Text
+                  fontSize={'13px'}
+                  color={'#75728c'}
+                  fontWeight={'bold'}
+                  align={'center'}
+                >
+                  NO PURCHASE NECESSARY to enter Sweepstakes. SWEEPSTAKES ARE VOID WHERE
+                  PROHIBITED BY LAW. For detailed rules, see{' '}
+                  <Link href={''} style={{ color: 'white' }}>
+                    terms of service
+                  </Link>
+                </Text>
+                <Text
+                  fontSize={'13px'}
+                  color={'#75728c'}
+                  fontWeight={'bold'}
+                  align={'center'}
+                >
+                  Support support@wincrate.com | Partners partners@wincrate.com | Press
+                  press@wincrate.com
+                </Text>
+              </Flex>
             </Box>
           </Flex>
         </Container>

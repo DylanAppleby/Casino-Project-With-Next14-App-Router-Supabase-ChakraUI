@@ -2,6 +2,7 @@
 
 import { useState, Dispatch, SetStateAction, useCallback, useEffect } from 'react'
 import { Flex, Box, Button, Text } from '@chakra-ui/react'
+import { ViewIcon } from '@chakra-ui/icons'
 import Image from 'next/image'
 import { IPack } from '@/types/pack'
 
@@ -127,4 +128,3 @@ const GiftCard = ({
 }
 
 export default GiftCard
-
