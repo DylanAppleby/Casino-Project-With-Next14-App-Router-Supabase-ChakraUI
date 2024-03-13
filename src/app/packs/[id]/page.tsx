@@ -189,8 +189,7 @@ const ProductCarousel = () => {
               <Box py={15} pr={15}>
                 <Image
                   src={'/assets/images/giftcard/giftcard1.webp'}
-                  minWidth={'190px'}
-                  maxW={'190px'}
+                  width={'190px'}
                   height={'full'}
                 />
               </Box>
