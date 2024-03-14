@@ -20,7 +20,7 @@ const Footer = () => {
       <Box bg={'#1f1f1f'} color={'gray.200'} pt={10}>
         <Container maxW={'container.xl'}>
           <Flex direction="column">
-            <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
+            <SimpleGrid columns={{ base: 2, md: 4 }} spacing={8}>
               <Stack align={'flex-start'}>
                 <ListHeader>About</ListHeader>
                 <Box as="a" href={'#'} color="#75728c">
@@ -87,10 +87,13 @@ const Footer = () => {
                 <Divider orientation="horizontal" bgColor="gray.700" />
                 <Flex
                   direction={{ base: 'column', sm: 'row' }}
-                  gap={{ base: '1rem', sm: '20rem' }}
+                  gap={{ base: '0.5rem', sm: '4rem', md: '8rem', lg: '20rem' }}
                   alignItems={'center'}
                 >
-                  <Flex direction={'column'}>
+                  <Flex
+                    direction={{ base: 'row', sm: 'column' }}
+                    gap={{ base: 2, sm: 0 }}
+                  >
                     <Text color={'#75728c'} fontWeight={'bold'}>
                       Responsible
                     </Text>
