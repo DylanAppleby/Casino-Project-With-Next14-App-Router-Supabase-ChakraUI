@@ -24,6 +24,7 @@ const BattleDetailCardVoucher = ({
       gap={3}
       width="full"
       height="full"
+      minHeight={'200px'}
       bgColor="#e2e8f029"
       rounded="0.375rem"
       px={4}

@@ -31,10 +31,18 @@ const FreeDateCrate = () => {
           direction={'column'}
           justifyContent={'space-between'}
         >
-          <Text fontSize={33} color={'white'}>
+          <Text
+            style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
+            fontSize={33}
+            color={'white'}
+          >
             Free Daily Crates
           </Text>
-          <Flex fontSize={25} color={'#F6C143'}>
+          <Flex
+            style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
+            fontSize={25}
+            color={'#F6C143'}
+          >
             {countDownTimer(1710000000000)}
           </Flex>
           <Flex direction={'row'} gap={5} alignItems={'flex-end'}>
@@ -64,10 +72,18 @@ const FreeDateCrate = () => {
           borderLeftColor={'#F6C143'}
         ></Box>
         <Flex margin={5} direction={'column'} justifyContent={'space-between'}>
-          <Text fontSize={33} color={'white'}>
+          <Text
+            style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
+            fontSize={33}
+            color={'white'}
+          >
             Free Weekly Crates
           </Text>
-          <Flex fontSize={25} color={'#F6C143'}>
+          <Flex
+            style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
+            fontSize={25}
+            color={'#F6C143'}
+          >
             {countDownTimerWeek(1710000000000)}
           </Flex>
           <Flex direction={'row'} gap={5} alignItems={'flex-end'}>
@@ -99,10 +115,18 @@ const FreeDateCrate = () => {
           borderLeftColor={'#F6C143'}
         ></Box>
         <Flex margin={5} direction={'column'} justifyContent={'space-between'}>
-          <Text fontSize={33} color={'white'}>
+          <Text
+            style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
+            fontSize={33}
+            color={'white'}
+          >
             Free Monthly Crates
           </Text>
-          <Flex fontSize={25} color={'#F6C143'}>
+          <Flex
+            style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
+            fontSize={25}
+            color={'#F6C143'}
+          >
             {countDownTimerMonth(1710000000000)}
           </Flex>
           <Flex direction={'row'} gap={5} alignItems={'flex-end'}>

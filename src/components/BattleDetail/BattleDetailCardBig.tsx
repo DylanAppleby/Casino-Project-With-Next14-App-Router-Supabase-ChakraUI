@@ -11,6 +11,7 @@ const BattleDetailCardBig = ({ index }: IBattleDetailCardBig) => {
       flexDirection="column"
       width="full"
       height="full"
+      minHeight={'200px'}
       alignItems="center"
       justifyContent="center"
       bgColor="#e2e8f029"

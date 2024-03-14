@@ -16,13 +16,22 @@ const UnlockCrateSlider = ({ label }: IUnlockCrateSlider) => {
   return (
     <Flex direction="column" gap={3}>
       <Flex width="full" justifyContent="space-between">
-        <Text fontFamily="Clash Grotesk" fontWeight={600}>
+        <Text
+          style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
+          fontWeight={600}
+        >
           0 XP
         </Text>
-        <Text fontFamily="Clash Grotesk" fontWeight={600}>
+        <Text
+          style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
+          fontWeight={600}
+        >
           {label}
         </Text>
-        <Text fontFamily="Clash Grotesk" fontWeight={600}>
+        <Text
+          style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
+          fontWeight={600}
+        >
           2500 XP
         </Text>
       </Flex>
@@ -58,7 +67,7 @@ const UnlockCrateSlider = ({ label }: IUnlockCrateSlider) => {
             />
           </Box>
           <Text
-            fontFamily="PP Neue Montreal"
+            style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
             whiteSpace={'nowrap'}
             fontWeight="bold"
             fontStyle={'italic'}
@@ -66,11 +75,19 @@ const UnlockCrateSlider = ({ label }: IUnlockCrateSlider) => {
             LVL 0
           </Text>
         </Flex>
-        <Text fontFamily="Airbnb Cereal" fontWeight={500} whiteSpace={'nowrap'}>
+        <Text
+          style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
+          fontWeight={500}
+          whiteSpace={'nowrap'}
+        >
           Your VIP Progress
         </Text>
         <Flex gap={2} alignItems={'center'}>
-          <Text fontFamily="PP Neue Montreal" whiteSpace={'nowrap'} fontStyle={'italic'}>
+          <Text
+            style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
+            whiteSpace={'nowrap'}
+            fontStyle={'italic'}
+          >
             LVL 1 UNLOCKED
           </Text>
           <Box>
