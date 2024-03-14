@@ -3,4 +3,5 @@ export interface GiftCard {
   label: string
   price: number
   giftCardId: string
+  brand: string
 }

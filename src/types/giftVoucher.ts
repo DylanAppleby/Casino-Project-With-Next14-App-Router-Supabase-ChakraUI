@@ -3,4 +3,5 @@ export interface GiftVoucher {
   labelHeader: string
   labelContent: string
   price: string
+  hoverImage: string
 }
