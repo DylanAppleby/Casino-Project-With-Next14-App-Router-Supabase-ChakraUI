@@ -9,6 +9,8 @@ import {
   Button,
   useBreakpointValue,
   Switch,
+  calc,
+  Container,
 } from '@chakra-ui/react'
 import { ChevronLeftIcon } from '@chakra-ui/icons'
 import SlotUnlockCrate from '@/components/SlotUnlockCrate'
@@ -16,6 +18,9 @@ import FunctionCardContainer from '@/containers/FunctionCardContainer'
 import RecommendedBoxConainer from '@/containers/RecommendedBoxContainer'
 import SlotGameItemContainer from '@/containers/SlotGameItemContainer'
 import SlotGameRecentItemContainer from '@/containers/SlotGameRecentItemContainer'
+
+import useWindowDimensionsObserver from '@/hooks/useWindowDimensionsObserver'
+
 // Example product data (simplified for demonstration)
 const products = [
   {
@@ -73,6 +78,7 @@ const products = [
 const ProductCarousel = () => {
   const [index, setIndex] = useState<number>(0)
   const displayCount = useBreakpointValue({ base: 3, md: 5, lg: 9 }) // Responsive display
+  const { isMobile } = useWindowDimensionsObserver()
 
   const nextSlide = () => {
     let timeLimit = 0
@@ -112,13 +118,17 @@ const ProductCarousel = () => {
     <Flex direction={'column'} width={'full'} gap={12} mb={12}>
       <Flex direction={'column'} width={'full'}>
         <Flex
-          direction="column"
           align="center"
           justify="center"
-          backgroundImage="/assets/images/slot/slotback.webp"
+          backgroundImage={
+            isMobile
+              ? '/assets/images/slot/mobileback.webp'
+              : '/assets/images/slot/slotback.webp'
+          }
           backgroundSize="cover"
           backgroundPosition="center"
           backgroundRepeat="no-repeat"
+          marginX={'calc(calc(calc(100vw - 100%)/2) * -1)'}
         >
           <Flex overflow="hidden" justify="center">
             {visibleProducts.map((product, index) => (
@@ -143,41 +153,43 @@ const ProductCarousel = () => {
           <Flex
             bg="radial-gradient(circle, rgba(80,79,80,1) 0%, rgba(54,53,54,1) 50%, rgba(33,32,33,1) 100%)"
             height={'full'}
-            justifyContent={'space-between'}
-            px={{ base: 2, md: 6 }}
-            py={4}
+            marginX={'calc(calc(calc(100vw - 100%)/2) * -1)'}
           >
-            <Button px={{ base: 2, md: 4 }}>
-              <Flex gap={2} alignItems={'center'}>
-                <Box rounded={'full'} bgColor={'#403f40'} p={1} width={7} height={7}>
-                  <ChevronLeftIcon />
-                </Box>
-                <Text fontSize={{ base: '12', md: '14' }}>Back</Text>
-              </Flex>
-            </Button>
-            <Flex gap={{ base: 2, md: 6 }} alignItems={'center'}>
-              <Button rounded={{ base: 6, md: 'full' }} px={{ base: 2, md: 5 }}>
-                <Flex gap={1} alignItems={'center'}>
-                  <Box>
-                    <Image
-                      src="/assets/images/slot/ticker.webp"
-                      minWidth={5}
-                      minHeight={5}
-                      width={5}
-                      height={5}
-                    />
-                  </Box>
-                  <Text color={'#7c787c'} fontSize={{ base: '12', md: '14' }}>
-                    FAIRNESS GUARANTEED
-                  </Text>
+            <Container maxW={'container.xl'}>
+              <Flex justifyContent={'space-between'} py={4}>
+                <Button px={{ base: 2, md: 4 }}>
+                  <Flex gap={2} alignItems={'center'}>
+                    <Box rounded={'full'} bgColor={'#403f40'} p={1} width={7} height={7}>
+                      <ChevronLeftIcon />
+                    </Box>
+                    <Text fontSize={{ base: '12', md: '14' }}>Back</Text>
+                  </Flex>
+                </Button>
+                <Flex gap={{ base: 2, md: 6 }} alignItems={'center'}>
+                  <Button rounded={{ base: 6, md: 'full' }} px={{ base: 2, md: 5 }}>
+                    <Flex gap={1} alignItems={'center'}>
+                      <Box>
+                        <Image
+                          src="/assets/images/slot/ticker.webp"
+                          minWidth={5}
+                          minHeight={5}
+                          width={5}
+                          height={5}
+                        />
+                      </Box>
+                      <Text color={'#7c787c'} fontSize={{ base: '12', md: '14' }}>
+                        FAIRNESS GUARANTEED
+                      </Text>
+                    </Flex>
+                  </Button>
+                  <Button rounded={'full'} width={10} padding={0}>
+                    <Box>
+                      <Image src="/assets/images/slot/sound.webp" width={4} height={3} />
+                    </Box>
+                  </Button>
                 </Flex>
-              </Button>
-              <Button rounded={'full'} width={10} padding={0}>
-                <Box>
-                  <Image src="/assets/images/slot/sound.webp" width={4} height={3} />
-                </Box>
-              </Button>
-            </Flex>
+              </Flex>
+            </Container>
           </Flex>
           <Flex
             direction={'column'}
