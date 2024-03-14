@@ -38,6 +38,7 @@ const GiftCardContainer = () => {
                 label={giftCard.label}
                 price={giftCard.price}
                 packId={giftCard.giftCardId}
+                brand={giftCard.brand}
                 selectedPacks={selectedPacks}
                 setSelectedPacks={setSelectedPacks}
                 setTotal={setTotal}

@@ -11,6 +11,7 @@ const GiftVoucherContainer = () => {
           labelHeader={giftVoucher.labelHeader}
           labelContent={giftVoucher.labelContent}
           price={giftVoucher.price}
+          hoverImage={giftVoucher.hoverImage}
         />
       ))}
     </Flex>

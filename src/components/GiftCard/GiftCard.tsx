@@ -1,16 +1,18 @@
 'use client'
 
 import { useState, Dispatch, SetStateAction, useCallback, useEffect } from 'react'
-import { Flex, Box, Button, Text } from '@chakra-ui/react'
+import { Flex, Box, Button, Text, useDisclosure } from '@chakra-ui/react'
 import { ViewIcon } from '@chakra-ui/icons'
 import Image from 'next/image'
 import { IPack } from '@/types/pack'
-
+import GiftCardDetailModal from '../GiftCardDetailModal'
+import GiftCardDetailContentContainer from '@/containers/GiftCardDetailContentContainer'
 interface IGiftCard {
   image: string
   label: string
   price: number
   packId: string
+  brand: string
   selectedPacks: IPack[]
   setSelectedPacks: Dispatch<SetStateAction<IPack[]>>
   setTotal: Dispatch<SetStateAction<number>>
@@ -22,11 +24,17 @@ const GiftCard = ({
   price,
   packId,
   selectedPacks,
+  brand,
   setTotal,
   setSelectedPacks,
 }: IGiftCard) => {
   const [addHovered, setAddHovered] = useState<boolean>(false)
   const [packCount, setPackCount] = useState<number>(0)
+  const {
+    isOpen: isOpenCardDetail,
+    onOpen: onOpenCardDetail,
+    onClose: onCloseCardDetail,
+  } = useDisclosure()
 
   useEffect(() => {
     if (selectedPacks.length === 0) {
@@ -79,17 +87,32 @@ const GiftCard = ({
   }, [packCount, setSelectedPacks, selectedPacks])
 
   return (
-    <Box>
+    <Box position={'relative'} display={'inline-block'}>
       <Flex
         direction={'column'}
         gap={2}
         _hover={{ cursor: 'pointer' }}
-        onClick={handleCardClick}
         onMouseEnter={() => setAddHovered(true)}
         onMouseLeave={() => {
           setAddHovered(false)
         }}
       >
+        {addHovered && (
+          <Button
+            position={'absolute'}
+            top={2}
+            right={2}
+            bg={'#333'}
+            padding={3}
+            _hover={{ bg: '#222' }}
+            onClick={onOpenCardDetail}
+          >
+            <ViewIcon width={3} height={3} />
+          </Button>
+        )}
+        <GiftCardDetailModal isOpen={isOpenCardDetail} onClose={onCloseCardDetail}>
+          <GiftCardDetailContentContainer brand={brand} price={price} />
+        </GiftCardDetailModal>
         <Box>
           <Image
             src={`${image}`}
@@ -118,7 +141,7 @@ const GiftCard = ({
             </Button>
           </Flex>
         ) : (
-          <Button bg={'#2a292a'} color={'#eeeee8'}>
+          <Button bg={'#2a292a'} color={'#eeeee8'} onClick={handleCardClick}>
             {addHovered ? 'Add Pack' : '$' + price}
           </Button>
         )}
