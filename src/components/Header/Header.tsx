@@ -1,5 +1,4 @@
 'use client'
-import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
 import {
@@ -24,20 +23,24 @@ import {
   MenuDivider,
   useColorModeValue,
   useColorMode,
+  Image,
 } from '@chakra-ui/react'
 
-import { HamburgerIcon, CloseIcon, CheckIcon } from '@chakra-ui/icons'
+import { HamburgerIcon, CloseIcon, CheckIcon, InfoIcon } from '@chakra-ui/icons'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useSession, useSupabase } from '@/contexts/supabase-provider'
 
 import UserModal from '../auth/UserModal'
+import CartModal from '../CartModal'
+import DepositModal from '../DepositModal'
 import Login from '../auth/Login'
 import Register from '../auth/Register'
 
 import { HEADER_NAV_ITEMS } from '@/constants/navItems'
 
 import { INavBar, TNavItem } from '@/types/navItem'
+import CryptoSelectContainer from '@/containers/CryptoSelectContainer'
 
 const NavbarBgColor = '#1F1F1F'
 
@@ -118,12 +121,11 @@ const MobileNav = (props: INavBar) => {
 const Header = () => {
   const { isOpen, onToggle } = useDisclosure()
   const { colorMode, toggleColorMode } = useColorMode()
+
   const session = useSession()
   const supabase = useSupabase()
   const router = useRouter()
-  const handleLogOut = async () => {
-    await supabase.auth.signOut().then(router.refresh)
-  }
+
   const {
     isOpen: isOpenLogin,
     onOpen: onOpenLogin,
@@ -134,6 +136,16 @@ const Header = () => {
     onOpen: onOpenRegister,
     onClose: onCloseRegister,
   } = useDisclosure()
+  const { isOpen: isOpenCart, onOpen: onOpenCart, onClose: onCloseCart } = useDisclosure()
+  const {
+    isOpen: isOpenDeposit,
+    onOpen: onOpenDeposit,
+    onClose: onCloseDeposit,
+  } = useDisclosure()
+
+  const handleLogOut = async () => {
+    await supabase.auth.signOut().then(router.refresh)
+  }
 
   useEffect(() => {
     onCloseLogin()
@@ -212,57 +224,86 @@ const Header = () => {
                   </Flex>
                 )}
                 {session && (
-                  <Flex fontSize={'18px'} fontWeight={'800'}>
-                    <Menu closeOnSelect={false} autoSelect={false}>
-                      <MenuButton>
-                        <Avatar size="sm" src="https://bit.ly/broken-link" />
-                      </MenuButton>
-                      <MenuList>
-                        <MenuItem>
-                          <Link href={'/account'}>
+                  <>
+                    <Button
+                      rounded={'full'}
+                      height={'2rem'}
+                      width={'52px'}
+                      fontSize={'14'}
+                      onClick={onOpenCart}
+                      display={{ base: 'none', md: 'block' }}
+                      px={3}
+                    >
+                      Cart
+                    </Button>
+                    <Button
+                      rounded={'full'}
+                      height={'2rem'}
+                      width={'110px'}
+                      fontSize={'14'}
+                      onClick={onOpenDeposit}
+                      px={3}
+                      bg={'#d3a03e'}
+                      _hover={{ bg: 'yellow.400' }}
+                    >
+                      Deposit
+                    </Button>
+                    <Flex fontSize={'18px'} fontWeight={'800'}>
+                      <Menu closeOnSelect={false} autoSelect={false}>
+                        <MenuButton>
+                          <Avatar size="sm" src="https://bit.ly/broken-link" />
+                        </MenuButton>
+                        <MenuList>
+                          <MenuItem>
+                            <Link href={'/account'}>
+                              <Flex gap="20">
+                                <Box>
+                                  <Avatar
+                                    size="xs"
+                                    src="https://bit.ly/broken-link"
+                                    marginRight={2}
+                                  />
+                                  rich_ant
+                                </Box>
+                                <Spacer />
+                                <Box
+                                  bgColor={'rgba(56, 161, 105, 0.6)'}
+                                  color={'white'}
+                                  paddingX={2}
+                                  borderRadius={4}
+                                >
+                                  0
+                                </Box>
+                              </Flex>
+                            </Link>
+                          </MenuItem>
+                          <MenuDivider />
+                          <MenuItem>
+                            <Input type="text" placeholder="Promotion code" />
+                            <Box marginLeft={3}>
+                              <CheckIcon color={useColorModeValue('black', 'white')} />
+                            </Box>
+                          </MenuItem>
+                          <MenuDivider />
+                          <MenuItem onClick={toggleColorMode}>
                             <Flex gap="20">
-                              <Box>
-                                <Avatar
-                                  size="xs"
-                                  src="https://bit.ly/broken-link"
-                                  marginRight={2}
-                                />
-                                rich_ant
-                              </Box>
+                              <Box>Dark Mode</Box>
                               <Spacer />
-                              <Box
-                                bgColor={'rgba(56, 161, 105, 0.6)'}
-                                color={'white'}
-                                paddingX={2}
-                                borderRadius={4}
-                              >
-                                0
+                              <Box>
+                                {colorMode === 'light' ? (
+                                  <Switch />
+                                ) : (
+                                  <Switch isChecked />
+                                )}
                               </Box>
                             </Flex>
-                          </Link>
-                        </MenuItem>
-                        <MenuDivider />
-                        <MenuItem>
-                          <Input type="text" placeholder="Promotion code" />
-                          <Box marginLeft={3}>
-                            <CheckIcon color={useColorModeValue('black', 'white')} />
-                          </Box>
-                        </MenuItem>
-                        <MenuDivider />
-                        <MenuItem onClick={toggleColorMode}>
-                          <Flex gap="20">
-                            <Box>Dark Mode</Box>
-                            <Spacer />
-                            <Box>
-                              {colorMode === 'light' ? <Switch /> : <Switch isChecked />}
-                            </Box>
-                          </Flex>
-                        </MenuItem>
-                        <MenuDivider />
-                        <MenuItem onClick={handleLogOut}>Sign out</MenuItem>
-                      </MenuList>
-                    </Menu>
-                  </Flex>
+                          </MenuItem>
+                          <MenuDivider />
+                          <MenuItem onClick={handleLogOut}>Sign out</MenuItem>
+                        </MenuList>
+                      </Menu>
+                    </Flex>
+                  </>
                 )}
               </Flex>
             </Flex>
@@ -278,6 +319,98 @@ const Header = () => {
         <UserModal isOpen={isOpenRegister} onClose={onCloseRegister}>
           <Register />
         </UserModal>
+        <CartModal isOpen={isOpenCart} onClose={onCloseCart}>
+          <Flex direction={'column'} gap={4} width={'full'}>
+            <Flex justifyContent={'space-between'}>
+              <Link href={'/cart'}>
+                <Text fontSize={'14'} fontWeight={'bold'}>
+                  View Full Cart
+                </Text>
+              </Link>
+              <Text fontWeight={'bold'}>$0.00</Text>
+            </Flex>
+            <Flex
+              bg={'#35424b'}
+              justifyContent={'center'}
+              alignItems={'center'}
+              direction={'column'}
+              height={'200px'}
+              px={5}
+            >
+              <Box mb={5}>
+                <InfoIcon width={'40px'} height={'40px'} color={'#d3a03e'} />
+              </Box>
+              <Text fontSize={'18'} fontWeight={'bold'}>
+                Your Cart is Empty
+              </Text>
+              <Text fontSize={'16'} textAlign={'center'}>
+                Open packs or battle to earn XP and rewards!
+              </Text>
+            </Flex>
+            <Flex direction={'row-reverse'} py={4}>
+              <Button onClick={onCloseCart}>Close</Button>
+            </Flex>
+          </Flex>
+        </CartModal>
+        <DepositModal isOpen={isOpenDeposit} onClose={onCloseDeposit}>
+          <Flex direction={'column'} width={'full'}>
+            <Flex
+              direction={'column'}
+              justifyContent={'center'}
+              alignItems={'center'}
+              bg={'rgba(0, 0, 0, 0.3)'}
+              height={'full'}
+              px={5}
+              py={5}
+              rounded={10}
+              width={'full'}
+            >
+              <Text fontSize={16} fontWeight={'bold'} mb={5}>
+                Cash Deposits Disabled
+              </Text>
+              <Text fontSize={16} textAlign={'center'} width={'full'} mb={5}>
+                A credit card payment method was used that requires verification. Please
+                verify your card to unlock this payment method for future use.
+              </Text>
+              <Link href={'/card-verification'}>
+                <Button>Verify Card</Button>
+              </Link>
+            </Flex>
+            <Flex direction={'column'} mt={6}>
+              <Text fontSize={'16px'} fontWeight={'bold'} mb={3}>
+                Crypto
+              </Text>
+              <CryptoSelectContainer />
+            </Flex>
+            <Text align={'center'} fontSize={'10.5'} fontWeight={'bold'}>
+              Cryptocurrency deposits are generally credited after 3 confirmations. Please
+              allow up to 30 minutes for funds to appear in your account. In most cases,
+              funds will appear within 5 minutes. There is no mechanism to withdraw
+              deposited funds. All funds must be used to purchase. Credit card deposits
+              are not eligible for deposit bonuses and are subject to card verification.
+            </Text>
+            <Flex width={'full'} gap={2} mt={5}>
+              <Input
+                type="text"
+                id="search"
+                placeholder="Enter Referral Code"
+                borderWidth={2}
+                borderColor={'#343335'}
+                color={'#4A4749'}
+                rounded={6}
+                textColor={'#888687'}
+                _focus={{
+                  borderColor: 'transparent',
+                  outline: 'none',
+                  boxShadow: '0 0 0 2px #d3a03e',
+                }}
+              />
+              <Button bg={'#d0a249'} _hover={{ bg: 'yellow.400' }}>
+                Submit
+              </Button>
+            </Flex>
+          </Flex>
+        </DepositModal>
       </Box>
     </header>
   )
