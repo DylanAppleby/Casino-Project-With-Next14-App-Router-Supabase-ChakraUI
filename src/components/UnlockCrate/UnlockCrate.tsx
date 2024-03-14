@@ -23,7 +23,7 @@ const UnlockCrate = () => {
         px={{ base: 0, md: 10, lg: 10 }}
         py={{ base: 0, md: 10, lg: 10 }}
         flex={1}
-        alignItems="center"
+        alignItems={{ base: 'center', lg: 'start' }}
       >
         <Flex direction="column">
           <Heading

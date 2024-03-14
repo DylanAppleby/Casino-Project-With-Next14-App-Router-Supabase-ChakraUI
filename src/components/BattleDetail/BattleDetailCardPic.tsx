@@ -14,6 +14,7 @@ const BattleDetailCardPic = ({ imageUrl }: IBattleDetailCardPic) => {
       bgColor="#e2e8f029"
       rounded="0.375rem"
       padding={4}
+      minHeight={'200px'}
       alignItems="center"
     >
       <Image

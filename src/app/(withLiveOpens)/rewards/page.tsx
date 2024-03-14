@@ -26,7 +26,7 @@ const Rewards = () => {
             gap={1}
             width={{ base: 'full', lg: '500px' }}
           >
-            <Text fontSize={50} fontWeight={'bold'} textAlign={'center'}>
+            <Text fontSize={50} fontWeight={'black'} textAlign={'center'}>
               Your Crates
             </Text>
             <UnlockCrateSlider label="$1568.89 left" />

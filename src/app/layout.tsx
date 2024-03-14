@@ -40,6 +40,10 @@ const RootLayout = async ({ children }: Readonly<IRootLayout>) => {
           href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=airbnb-cereal@400,500&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <body className={urbanist.className}>
         <TopLoader

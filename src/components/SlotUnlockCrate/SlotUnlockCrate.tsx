@@ -23,18 +23,18 @@ const SlotUnlockCrate = () => {
         px={{ base: 0, md: 10, lg: 10 }}
         py={{ base: 0, md: 10, lg: 10 }}
         flex={1}
-        alignItems={'center'}
+        alignItems={{ base: 'center', lg: 'start' }}
       >
         <Flex direction="column">
           <Heading
-            fontFamily="Clash Grotesk"
+            style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
             fontWeight={500}
             fontSize={{ base: 28, sm: 32, md: 40 }}
           >
             Unlock a crates with
           </Heading>
           <Heading
-            fontFamily="Clash Grotesk"
+            style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
             fontWeight={500}
             fontSize={{ base: 28, sm: 32, md: 40 }}
           >
@@ -44,7 +44,7 @@ const SlotUnlockCrate = () => {
         <Box>
           <Text
             fontSize={{ base: 15, sm: 18, md: 21 }}
-            fontFamily="Airbnb Cereal"
+            style={{ fontFamily: 'airbnb cereal, sans-serif', fontWeight: 500 }}
             fontWeight={500}
             whiteSpace={'nowrap'}
           >
@@ -52,7 +52,7 @@ const SlotUnlockCrate = () => {
           </Text>
           <Text
             fontSize={{ base: 15, sm: 18, md: 21 }}
-            fontFamily="Airbnb Cereal"
+            style={{ fontFamily: 'airbnb cereal, sans-serif', fontWeight: 500 }}
             fontWeight={500}
             whiteSpace={'nowrap'}
           >

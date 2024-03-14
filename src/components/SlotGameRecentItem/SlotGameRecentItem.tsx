@@ -18,7 +18,6 @@ const SlotGameRecentItem = ({
       bg={bigbgUrl}
       direction={'column'}
       rounded={15}
-      margin={2}
       width="160px"
       height="160px"
       justifyContent={'center'}
