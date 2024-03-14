@@ -893,6 +893,60 @@ export const BATTLE_PACKS: Array<BattlePack> = [
     price: '5',
     detail: {},
   },
+  {
+    id: '1',
+    imageUrl: '/',
+    price: '5',
+    detail: {},
+  },
+  {
+    id: '1',
+    imageUrl: '/',
+    price: '5',
+    detail: {},
+  },
+  {
+    id: '1',
+    imageUrl: '/',
+    price: '5',
+    detail: {},
+  },
+  {
+    id: '1',
+    imageUrl: '/',
+    price: '5',
+    detail: {},
+  },
+  {
+    id: '1',
+    imageUrl: '/',
+    price: '5',
+    detail: {},
+  },
+  {
+    id: '1',
+    imageUrl: '/',
+    price: '5',
+    detail: {},
+  },
+  {
+    id: '1',
+    imageUrl: '/',
+    price: '5',
+    detail: {},
+  },
+  {
+    id: '1',
+    imageUrl: '/',
+    price: '5',
+    detail: {},
+  },
+  {
+    id: '1',
+    imageUrl: '/',
+    price: '5',
+    detail: {},
+  },
 ]
 
 export const GIFT_CARD_DETAILS: Array<GiftCardDetail> = [

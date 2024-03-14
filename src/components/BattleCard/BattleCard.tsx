@@ -1,7 +1,6 @@
 import { FC } from 'react'
 
 import { Avatar, Box, Button, Flex, Image } from '@chakra-ui/react'
-import Link from 'next/link'
 
 export enum BattleType {
   ONE_ONE,
@@ -38,66 +37,44 @@ interface IBattleCard {
 
 const PackCard = (props: IPack) => {
   return (
-    <Box paddingX={1}>
-      <Flex direction="row" width="60px" height="95px">
-        <Image
-          src="/assets/images/battles/luxury.webp"
-          alt=""
-          width={'full'}
-          height={'auto'}
-          margin={1.5}
-        />
-      </Flex>
-    </Box>
+    <Image
+      src="/assets/images/battles/luxury.webp"
+      alt="pack"
+      style={{ width: 60, height: 'auto' }}
+    />
   )
 }
 
 const PackCard1 = (props: IPack) => {
   return (
-    <Box paddingX={1}>
-      <Flex direction="row" width="60px" height="95px">
-        <Image
-          src="/assets/images/battles/luxury_black.webp"
-          alt=""
-          width={'full'}
-          height={'auto'}
-          margin={1.5}
-        />
-      </Flex>
-    </Box>
+    <Image
+      src="/assets/images/battles/luxury_black.webp"
+      alt="pack"
+      style={{ width: 60, height: 'auto' }}
+    />
   )
 }
-const PackCard2 = (props: IPack) => {
-  return (
-    <Box paddingX={1}>
-      <Flex direction="row" width="60px" height="95px">
-        <Image
-          src="/assets/images/battles/Timeless.webp"
-          alt=""
-          width={'full'}
-          height={'auto'}
-          margin={1.5}
-          style={{ width: 'auto', height: 'full' }}
-        />
-      </Flex>
-    </Box>
-  )
-}
+const PackCard2 = (props: IPack) => (
+  <Image
+    src="/assets/images/battles/Timeless.webp"
+    alt="pack"
+    style={{ width: 60, height: 'auto' }}
+  />
+)
 
 const BattleCard: FC<IBattleCard> = (props) => {
   const { packs, type, userList } = props
 
   return (
-    <>
+    <Flex direction="column" gap={4} width="full">
       <Flex
-        width="full"
         bgColor="#e2e8f029"
         rounded="0.375rem"
         alignItems="center"
         justifyContent="center"
         padding={5}
-        marginY={5}
         direction={{ base: 'column', md: 'row' }}
+        _hover={{ cursor: 'pointer' }}
       >
         <Flex direction="column" alignItems="center" justifyContent="center">
           <Flex
@@ -112,7 +89,7 @@ const BattleCard: FC<IBattleCard> = (props) => {
               width={5}
               height={5}
               margin={1}
-            ></Image>
+            />
             {`${packs.length} rounds`}
           </Flex>
           <Flex
@@ -125,66 +102,77 @@ const BattleCard: FC<IBattleCard> = (props) => {
               src={'/assets/images/battles/useravatar1.webp'}
               width={8}
               height={8}
-            ></Avatar>
+            />
             <Image
               src="/assets/images/battles/vs.webp"
               alt=""
               width={2}
               height={2}
               margin={1}
-            ></Image>
+            />
             <Avatar
               src={'/assets/images/battles/useravatar2.webp'}
               width={8}
               height={8}
-            ></Avatar>
+            />
             <Image
               src="/assets/images/battles/vs.webp"
               alt=""
               width={2}
               height={2}
               margin={1}
-            ></Image>
+            />
             <Avatar
               src={'/assets/images/battles/useravatar3.webp'}
               width={8}
               height={8}
-            ></Avatar>
+            />
             <Image
               src="/assets/images/battles/vs.webp"
               alt=""
               width={2}
               height={2}
               margin={1}
-            ></Image>
+            />
             <Avatar
               src={'/assets/images/battles/useravatar4.webp'}
               width={8}
               height={8}
-            ></Avatar>
+            />
           </Flex>
           <Box fontWeight={'black'}>{`$${(232.82).toFixed(2)}`}</Box>
         </Flex>
-        <Link href={'/battles/id'}>
-          <Flex width={'full'} overflowX={'hidden'}>
-            {packs.map((pack) => {
-              return <PackCard {...pack} />
-            })}
-          </Flex>
-        </Link>
+        <Flex
+          overflowX={'hidden'}
+          justifyContent={{ base: 'center', md: 'start' }}
+          gap={2}
+          flex={1}
+          paddingX={4}
+        >
+          {packs.map((pack) => {
+            return <PackCard {...pack} />
+          })}
+        </Flex>
         <Flex margin={'1rem'}>
-          <Button bgColor=" #FABD2D">Join Battle</Button>
+          <Button
+            bgColor=" #FABD2D"
+            _hover={{
+              bgColor: 'yellow.400',
+            }}
+            width={'115px'}
+          >
+            Join Battle
+          </Button>
         </Flex>
       </Flex>
       <Flex
-        width="full"
         bgColor="#e2e8f029"
         rounded="0.375rem"
         alignItems="center"
         justifyContent="center"
         padding={5}
-        marginY={5}
         direction={{ base: 'column', md: 'row' }}
+        _hover={{ cursor: 'pointer' }}
       >
         <Flex direction="column" alignItems="center" justifyContent="center">
           <Flex
@@ -199,7 +187,7 @@ const BattleCard: FC<IBattleCard> = (props) => {
               width={5}
               height={5}
               margin={1}
-            ></Image>
+            />
             {`${packs.length} rounds`}
           </Flex>
           <Flex
@@ -212,66 +200,68 @@ const BattleCard: FC<IBattleCard> = (props) => {
               src={'/assets/images/battles/useravatar5.webp'}
               width={8}
               height={8}
-            ></Avatar>
+            />
             <Image
               src="/assets/images/battles/vs.webp"
               alt=""
               width={2}
               height={2}
               margin={1}
-            ></Image>
+            />
             <Avatar
               src={'/assets/images/battles/useravatar6.webp'}
               width={8}
               height={8}
-            ></Avatar>
+            />
             <Image
               src="/assets/images/battles/vs.webp"
               alt=""
               width={2}
               height={2}
               margin={1}
-            ></Image>
+            />
             <Avatar
               src={'/assets/images/battles/useravatar7.webp'}
               width={8}
               height={8}
-            ></Avatar>
+            />
             <Image
               src="/assets/images/battles/vs.webp"
               alt=""
               width={2}
               height={2}
               margin={1}
-            ></Image>
+            />
             <Avatar
               src={'/assets/images/battles/useravatar8.webp'}
               width={8}
               height={8}
-            ></Avatar>
+            />
           </Flex>
           <Box fontWeight={'black'}>{`$${(225.92).toFixed(2)}`}</Box>
         </Flex>
-        <Link href={'/battles/id'}>
-          <Flex width={'full'} overflowX={'hidden'}>
-            {packs.map((pack) => {
-              return <PackCard1 {...pack} />
-            })}
-          </Flex>
-        </Link>
+        <Flex
+          overflowX={'hidden'}
+          justifyContent={{ base: 'center', md: 'start' }}
+          gap={2}
+          flex={1}
+          paddingX={4}
+        >
+          {packs.map((pack) => {
+            return <PackCard1 {...pack} />
+          })}
+        </Flex>
         <Flex margin={'1rem'}>
-          <Button>View Battle</Button>
+          <Button width={'115px'}>View Battle</Button>
         </Flex>
       </Flex>
       <Flex
-        width="full"
         bgColor="#e2e8f029"
         rounded="0.375rem"
         alignItems="center"
-        justifyContent="center"
         padding={5}
-        marginY={5}
         direction={{ base: 'column', md: 'row' }}
+        _hover={{ cursor: 'pointer' }}
       >
         <Flex direction="column" alignItems="center" justifyContent="center">
           <Flex
@@ -286,7 +276,7 @@ const BattleCard: FC<IBattleCard> = (props) => {
               width={5}
               height={5}
               margin={1}
-            ></Image>
+            />
             {`${packs.length} rounds`}
           </Flex>
           <Flex
@@ -299,58 +289,62 @@ const BattleCard: FC<IBattleCard> = (props) => {
               src={'/assets/images/battles/useravatar9.webp'}
               width={8}
               height={8}
-            ></Avatar>
+            />
             <Image
               src="/assets/images/battles/vs.webp"
               alt=""
               width={2}
               height={2}
               margin={1}
-            ></Image>
+            />
             <Avatar
               src={'/assets/images/battles/useravatar10.webp'}
               width={8}
               height={8}
-            ></Avatar>
+            />
             <Image
               src="/assets/images/battles/vs.webp"
               alt=""
               width={2}
               height={2}
               margin={1}
-            ></Image>
+            />
             <Avatar
               src={'/assets/images/battles/useravatar11.webp'}
               width={8}
               height={8}
-            ></Avatar>
+            />
             <Image
               src="/assets/images/battles/vs.webp"
               alt=""
               width={2}
               height={2}
               margin={1}
-            ></Image>
+            />
             <Avatar
               src={'/assets/images/battles/useravatar12.webp'}
               width={8}
               height={8}
-            ></Avatar>
+            />
           </Flex>
           <Box fontWeight={'black'}>{`$${(45.21).toFixed(2)}`}</Box>
         </Flex>
-        <Link href={'/battles/id'}>
-          <Flex width={'full'} overflowX={'hidden'}>
-            {packs.map((pack) => {
-              return <PackCard2 {...pack} />
-            })}
-          </Flex>
-        </Link>
+        <Flex
+          overflowX={'hidden'}
+          justifyContent={{ base: 'center', md: 'start' }}
+          gap={2}
+          flex={1}
+          paddingX={4}
+        >
+          {packs.map((pack) => (
+            <PackCard2 {...pack} />
+          ))}
+        </Flex>
         <Flex margin={'1rem'}>
-          <Button>View Results</Button>
+          <Button width={'115px'}>View Results</Button>
         </Flex>
       </Flex>
-    </>
+    </Flex>
   )
 }
 

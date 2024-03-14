@@ -3,13 +3,27 @@ import BattlesContainer from '@/containers/BattlesContainer'
 
 export default function Battles() {
   return (
-    <Flex width={'full'} direction={'column'}>
-      <Flex height={'100px'} alignItems={'center'} justifyContent={'space-between'}>
-        <Box fontSize={24} width="full" fontWeight="black">
+    <Flex width="full" direction={'column'}>
+      <Flex
+        mt={'30px'}
+        mb={'32px'}
+        width="full"
+        alignItems={'center'}
+        justifyContent={'space-between'}
+      >
+        <Box fontSize={28} width="full" fontWeight="black">
           Battles
         </Box>
-        <Box margin={1}>
-          <Button bgColor=" #FABD2D">Create Battle</Button>
+        <Box>
+          <Button
+            bgColor=" #FABD2D"
+            _hover={{ bgColor: 'yellow.400' }}
+            height={8}
+            padding={3}
+            fontSize={14}
+          >
+            Create Battle
+          </Button>
         </Box>
       </Flex>
       <BattlesContainer />
