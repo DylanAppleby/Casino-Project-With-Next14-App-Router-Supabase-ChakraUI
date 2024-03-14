@@ -60,7 +60,7 @@ const RootLayout = async ({ children }: Readonly<IRootLayout>) => {
         <SupabaseProvider session={session}>
           <LayoutProvider>
             <Header />
-            <main>
+            <main style={{ overflowX: 'hidden' }}>
               <Container maxW={'container.xl'}>
                 <Flex justifyContent="center">{children}</Flex>
               </Container>
