@@ -18,8 +18,8 @@ const SlotGameRecentItem = ({
       bg={bigbgUrl}
       direction={'column'}
       rounded={15}
-      width="160px"
-      height="160px"
+      width="145px"
+      height="145px"
       justifyContent={'center'}
       alignItems={'center'}
       padding={'2px'}
@@ -33,27 +33,25 @@ const SlotGameRecentItem = ({
       >
         <Flex direction={'column'} alignItems={'center'}>
           <Box>
-            <Image src={imageUrl} width={'100px'} height={'110px'} />
+            <Image src={imageUrl} width={'80px'} height={'100px'} />
           </Box>
         </Flex>
         <Flex direction={'row'} justifyContent={'space-evenly'}>
-          <Flex direction={'row'} gap={4} justifyContent={'center'} alignItems={'center'}>
+          <Flex direction={'row'} gap={5} justifyContent={'center'} alignItems={'center'}>
             <Button
-              width={'1rem'}
-              borderWidth={1}
-              borderRadius={'50%'}
-              padding={0}
-              borderColor={'#feffff'}
+              rounded={'full'}
+              border={'1px'}
+              marginY={-10}
+              minWidth={'30px'}
+              height={'45px'}
             >
-              <Flex>
-                <Image src="/assets/images/slot/play.webp" width={3} height={3} />
-              </Flex>
+              <Image src="/assets/images/slot/play.webp" width={3} height={3} />
             </Button>
             <Box
               bg={'#393839'}
-              fontSize={15}
+              fontSize={'14px'}
               fontWeight={'bold'}
-              px={3}
+              px={2}
               py={1}
               borderRadius={1}
               border={''}
