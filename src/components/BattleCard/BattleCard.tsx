@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { Avatar, Box, Button, Flex, Image } from '@chakra-ui/react'
+import { Avatar, Box, Button, Flex, Image, Link } from '@chakra-ui/react'
 
 export enum BattleType {
   ONE_ONE,
@@ -142,27 +142,31 @@ const BattleCard: FC<IBattleCard> = (props) => {
           </Flex>
           <Box fontWeight={'black'}>{`$${(232.82).toFixed(2)}`}</Box>
         </Flex>
-        <Flex
-          overflowX={'hidden'}
-          justifyContent={{ base: 'center', md: 'start' }}
-          gap={2}
-          flex={1}
-          paddingX={4}
-        >
-          {packs.map((pack) => {
-            return <PackCard {...pack} />
-          })}
-        </Flex>
-        <Flex margin={'1rem'}>
-          <Button
-            bgColor=" #FABD2D"
-            _hover={{
-              bgColor: 'yellow.400',
-            }}
-            width={'115px'}
+        <Link href={'/battles/id'}>
+          <Flex
+            overflowX={'hidden'}
+            justifyContent={{ base: 'center', md: 'start' }}
+            gap={2}
+            flex={1}
+            paddingX={4}
           >
-            Join Battle
-          </Button>
+            {packs.map((pack) => {
+              return <PackCard {...pack} />
+            })}
+          </Flex>
+        </Link>
+        <Flex margin={'1rem'}>
+          <Link href={'/battles/id'}>
+            <Button
+              bgColor=" #FABD2D"
+              _hover={{
+                bgColor: 'yellow.400',
+              }}
+              width={'115px'}
+            >
+              Join Battle
+            </Button>
+          </Link>
         </Flex>
       </Flex>
       <Flex
@@ -240,20 +244,24 @@ const BattleCard: FC<IBattleCard> = (props) => {
           </Flex>
           <Box fontWeight={'black'}>{`$${(225.92).toFixed(2)}`}</Box>
         </Flex>
-        <Flex
-          overflowX={'hidden'}
-          justifyContent={{ base: 'center', md: 'start' }}
-          gap={2}
-          flex={1}
-          paddingX={4}
-        >
-          {packs.map((pack) => {
-            return <PackCard1 {...pack} />
-          })}
-        </Flex>
-        <Flex margin={'1rem'}>
-          <Button width={'115px'}>View Battle</Button>
-        </Flex>
+        <Link href={'/battles/id'}>
+          <Flex
+            overflowX={'hidden'}
+            justifyContent={{ base: 'center', md: 'start' }}
+            gap={2}
+            flex={1}
+            paddingX={4}
+          >
+            {packs.map((pack) => {
+              return <PackCard1 {...pack} />
+            })}
+          </Flex>
+        </Link>
+        <Link href={'/battles/id'}>
+          <Flex margin={'1rem'}>
+            <Button width={'115px'}>View Battle</Button>
+          </Flex>
+        </Link>
       </Flex>
       <Flex
         bgColor="#e2e8f029"
@@ -329,20 +337,26 @@ const BattleCard: FC<IBattleCard> = (props) => {
           </Flex>
           <Box fontWeight={'black'}>{`$${(45.21).toFixed(2)}`}</Box>
         </Flex>
-        <Flex
-          overflowX={'hidden'}
-          justifyContent={{ base: 'center', md: 'start' }}
-          gap={2}
-          flex={1}
-          paddingX={4}
-        >
-          {packs.map((pack) => (
-            <PackCard2 {...pack} />
-          ))}
-        </Flex>
-        <Flex margin={'1rem'}>
-          <Button width={'115px'}>View Results</Button>
-        </Flex>
+
+        <Link href={'/battles/id'}>
+          <Flex
+            overflowX={'hidden'}
+            justifyContent={{ base: 'center', md: 'start' }}
+            gap={2}
+            flex={1}
+            paddingX={4}
+          >
+            {packs.map((pack) => (
+              <PackCard2 {...pack} />
+            ))}
+          </Flex>
+        </Link>
+
+        <Link href={'/battles/id'}>
+          <Flex margin={'1rem'}>
+            <Button width={'115px'}>View Results</Button>
+          </Flex>
+        </Link>
       </Flex>
     </Flex>
   )

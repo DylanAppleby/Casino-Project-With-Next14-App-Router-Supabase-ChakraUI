@@ -54,7 +54,7 @@ const Rewards = () => {
       <Flex direction={'column'}>
         <CratesPageContainer />
       </Flex>
-      <Flex direction={'row'} justifyContent={'space-between'}>
+      <Flex direction={'row'} justifyContent={'space-between'} paddingBottom={5}>
         <Flex>Showing 15-1 of 7</Flex>
         <Flex gap={3}>
           <Button>Previous</Button>
