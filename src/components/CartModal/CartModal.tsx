@@ -18,7 +18,7 @@ const CartModal = ({ isOpen, onClose, children }: ICartModal) => {
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent bgColor={'#1F1F1F'} maxW={{ base: '350', md: '500', lg: '672' }}>
-        <ModalHeader>Quick Cart</ModalHeader>
+        <ModalHeader>Quick Vault</ModalHeader>
         <ModalBody pt={8} pb={6} px={6}>
           {children}
         </ModalBody>
