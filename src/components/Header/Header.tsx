@@ -154,264 +154,323 @@ const Header = () => {
 
   return (
     <header className="header">
-      <Box width="full" height="3.75rem" bg={NavbarBgColor} color={'white'}>
-        <Container maxW={'container.xl'} height={'full'}>
-          <Flex
-            height="full"
-            width="full"
-            justifyContent="center"
-            borderBottom={1}
-            borderStyle={'solid'}
-            borderColor={'gray.900'}
-          >
-            <Flex width="full" align="center" justifyContent="space-between">
-              <Flex>
-                <Flex
-                  flex={{ base: 1, md: 'auto' }}
-                  ml={{ base: -2 }}
-                  display={{ base: 'flex', md: 'none' }}
+      <Flex direction={'column'}>
+        <Flex bgColor={'#313030'} display={{ base: 'flex', md: 'none' }}>
+          <Container maxW={'container.xl'} width="full" height="3rem">
+            <Flex alignItems={'center'} justifyContent={'space-between'} mt={1.5}>
+              <Flex gap={2} alignItems="center" textAlign="center">
+                <Box
+                  width={3}
+                  height={3}
+                  bgColor="#d0a249"
+                  borderRadius="full"
+                  boxShadow="0px 0px 8px 3px #d3a03e"
+                />
+                <Text
+                  fontSize={'16'}
+                  color={'#fefefe'}
+                  style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
+                  whiteSpace={'nowrap'}
                 >
-                  <IconButton
-                    onClick={onToggle}
-                    icon={
-                      isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
-                    }
-                    variant={'ghost'}
-                    aria-label={'Toggle Navigation'}
-                  />
-                </Flex>
-
-                <Flex
-                  justify={{ base: 'center', md: 'start' }}
-                  gap={{ base: 0, md: 6, lg: 12 }}
-                >
-                  <Flex
-                    width={{ base: 32 }}
-                    bg="darkgray.500"
-                    justifyContent={'center'}
-                    alignItems={'center'}
-                    cursor="pointer"
-                  >
-                    <Link href={'/'}>
-                      <Image
-                        src={`${process.env.NEXT_PUBLIC_SITE_URL}/assets/images/logo.webp`}
-                        alt="Wincrate Logo"
-                        width="128"
-                        height="23"
-                      />
-                    </Link>
-                  </Flex>
-                  <Box display={{ base: 'none', md: 'flex' }}>
-                    <DesktopNav navItems={HEADER_NAV_ITEMS} />
-                  </Box>
-                </Flex>
+                  Live Opens
+                </Text>
               </Flex>
-
-              <Flex gap={2} justifyContent="center" alignItems="center">
-                {!session && (
-                  <Flex gap={2}>
-                    <Button bg={'transparent'} onClick={onOpenLogin} color={'#eeeee8'}>
-                      Login
-                    </Button>
-                    <Button
-                      bg={'yellow.500'}
-                      _hover={{ bg: 'yellow.400' }}
-                      onClick={onOpenRegister}
-                      color={'#eeeee8'}
-                    >
-                      Register
-                    </Button>
+              <Flex alignItems={'center'} gap={1}>
+                <Box>
+                  <Image
+                    src="/assets/images/giftvoucher/voucherwatch.webp"
+                    alt="gift voucher"
+                    width={9}
+                    height={9}
+                  />
+                </Box>
+                <Text
+                  fontSize={'16'}
+                  whiteSpace={'nowrap'}
+                  style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
+                >
+                  Audemars Patek
+                </Text>
+                <Text
+                  fontSize={'16'}
+                  whiteSpace={'nowrap'}
+                  style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
+                  color={'#a6a4a4'}
+                >
+                  Royal Oak
+                </Text>
+              </Flex>
+              <Text
+                fontSize={'16'}
+                color={'#7ee4a8'}
+                style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
+              >
+                $38,450
+              </Text>
+            </Flex>
+          </Container>
+        </Flex>
+        <Box width="full" height="3.75rem" bg={NavbarBgColor} color={'white'}>
+          <Container maxW={'container.xl'} height={'full'}>
+            <Flex
+              height="full"
+              width="full"
+              justifyContent="center"
+              borderBottom={1}
+              borderStyle={'solid'}
+              borderColor={'gray.900'}
+            >
+              <Flex width="full" align="center" justifyContent="space-between">
+                <Flex>
+                  <Flex
+                    flex={{ base: 1, md: 'auto' }}
+                    ml={{ base: -2 }}
+                    display={{ base: 'flex', md: 'none' }}
+                  >
+                    <IconButton
+                      onClick={onToggle}
+                      icon={
+                        isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+                      }
+                      variant={'ghost'}
+                      aria-label={'Toggle Navigation'}
+                    />
                   </Flex>
-                )}
-                {session && (
-                  <>
-                    <Button
-                      rounded={'full'}
-                      height={'2rem'}
-                      width={'52px'}
-                      fontSize={'14'}
-                      onClick={onOpenCart}
-                      display={{ base: 'none', md: 'block' }}
-                      px={3}
+
+                  <Flex
+                    justify={{ base: 'center', md: 'start' }}
+                    gap={{ base: 0, md: 6, lg: 12 }}
+                  >
+                    <Flex
+                      width={{ base: 32 }}
+                      bg="darkgray.500"
+                      justifyContent={'center'}
+                      alignItems={'center'}
+                      cursor="pointer"
+                      m={2}
                     >
-                      Cart
-                    </Button>
-                    <Button
-                      rounded={'full'}
-                      height={'2rem'}
-                      width={'110px'}
-                      fontSize={'14'}
-                      onClick={onOpenDeposit}
-                      px={3}
-                      bg={'#d3a03e'}
-                      _hover={{ bg: 'yellow.400' }}
-                    >
-                      Deposit
-                    </Button>
-                    <Flex fontSize={'18px'} fontWeight={'800'}>
-                      <Menu closeOnSelect={false} autoSelect={false}>
-                        <MenuButton>
-                          <Avatar size="sm" src="https://bit.ly/broken-link" />
-                        </MenuButton>
-                        <MenuList>
-                          <MenuItem>
-                            <Link href={'/account'}>
+                      <Link href={'/'}>
+                        <Image
+                          src={`${process.env.NEXT_PUBLIC_SITE_URL}/assets/images/logo.webp`}
+                          alt="Wincrate Logo"
+                          width="128"
+                          height="23"
+                        />
+                      </Link>
+                    </Flex>
+                    <Box display={{ base: 'none', md: 'flex' }}>
+                      <DesktopNav navItems={HEADER_NAV_ITEMS} />
+                    </Box>
+                  </Flex>
+                </Flex>
+
+                <Flex gap={2} justifyContent="center" alignItems="center">
+                  {!session && (
+                    <Flex gap={2}>
+                      <Button bg={'transparent'} onClick={onOpenLogin} color={'#eeeee8'}>
+                        Login
+                      </Button>
+                      <Button
+                        bg={'yellow.500'}
+                        _hover={{ bg: 'yellow.400' }}
+                        onClick={onOpenRegister}
+                        color={'#eeeee8'}
+                      >
+                        Register
+                      </Button>
+                    </Flex>
+                  )}
+                  {session && (
+                    <>
+                      <Button
+                        rounded={'full'}
+                        height={'2rem'}
+                        width={'52px'}
+                        fontSize={'14'}
+                        onClick={onOpenCart}
+                        display={{ base: 'none', md: 'block' }}
+                        px={3}
+                      >
+                        Cart
+                      </Button>
+                      <Button
+                        rounded={'full'}
+                        height={'2rem'}
+                        width={'110px'}
+                        fontSize={'14'}
+                        onClick={onOpenDeposit}
+                        px={3}
+                        bg={'#d3a03e'}
+                        _hover={{ bg: 'yellow.400' }}
+                      >
+                        Deposit
+                      </Button>
+                      <Flex fontSize={'18px'} fontWeight={'800'}>
+                        <Menu closeOnSelect={false} autoSelect={false}>
+                          <MenuButton>
+                            <Avatar size="sm" src="https://bit.ly/broken-link" />
+                          </MenuButton>
+                          <MenuList>
+                            <MenuItem>
+                              <Link href={'/account'}>
+                                <Flex gap="20">
+                                  <Box>
+                                    <Avatar
+                                      size="xs"
+                                      src="https://bit.ly/broken-link"
+                                      marginRight={2}
+                                    />
+                                    rich_ant
+                                  </Box>
+                                  <Spacer />
+                                  <Box
+                                    bgColor={'rgba(56, 161, 105, 0.6)'}
+                                    color={'white'}
+                                    paddingX={2}
+                                    borderRadius={4}
+                                  >
+                                    0
+                                  </Box>
+                                </Flex>
+                              </Link>
+                            </MenuItem>
+                            <MenuDivider />
+                            <MenuItem>
+                              <Input type="text" placeholder="Promotion code" />
+                              <Box marginLeft={3}>
+                                <CheckIcon color={useColorModeValue('black', 'white')} />
+                              </Box>
+                            </MenuItem>
+                            <MenuDivider />
+                            <MenuItem onClick={toggleColorMode}>
                               <Flex gap="20">
-                                <Box>
-                                  <Avatar
-                                    size="xs"
-                                    src="https://bit.ly/broken-link"
-                                    marginRight={2}
-                                  />
-                                  rich_ant
-                                </Box>
+                                <Box>Dark Mode</Box>
                                 <Spacer />
-                                <Box
-                                  bgColor={'rgba(56, 161, 105, 0.6)'}
-                                  color={'white'}
-                                  paddingX={2}
-                                  borderRadius={4}
-                                >
-                                  0
+                                <Box>
+                                  {colorMode === 'light' ? (
+                                    <Switch />
+                                  ) : (
+                                    <Switch isChecked />
+                                  )}
                                 </Box>
                               </Flex>
-                            </Link>
-                          </MenuItem>
-                          <MenuDivider />
-                          <MenuItem>
-                            <Input type="text" placeholder="Promotion code" />
-                            <Box marginLeft={3}>
-                              <CheckIcon color={useColorModeValue('black', 'white')} />
-                            </Box>
-                          </MenuItem>
-                          <MenuDivider />
-                          <MenuItem onClick={toggleColorMode}>
-                            <Flex gap="20">
-                              <Box>Dark Mode</Box>
-                              <Spacer />
-                              <Box>
-                                {colorMode === 'light' ? (
-                                  <Switch />
-                                ) : (
-                                  <Switch isChecked />
-                                )}
-                              </Box>
-                            </Flex>
-                          </MenuItem>
-                          <MenuDivider />
-                          <MenuItem onClick={handleLogOut}>Sign out</MenuItem>
-                        </MenuList>
-                      </Menu>
-                    </Flex>
-                  </>
-                )}
+                            </MenuItem>
+                            <MenuDivider />
+                            <MenuItem onClick={handleLogOut}>Sign out</MenuItem>
+                          </MenuList>
+                        </Menu>
+                      </Flex>
+                    </>
+                  )}
+                </Flex>
               </Flex>
             </Flex>
-          </Flex>
-        </Container>
+          </Container>
 
-        <Collapse in={isOpen} animateOpacity>
-          <MobileNav navItems={HEADER_NAV_ITEMS} />
-        </Collapse>
-        <UserModal isOpen={isOpenLogin} onClose={onCloseLogin}>
-          <Login />
-        </UserModal>
-        <UserModal isOpen={isOpenRegister} onClose={onCloseRegister}>
-          <Register />
-        </UserModal>
-        <CartModal isOpen={isOpenCart} onClose={onCloseCart}>
-          <Flex direction={'column'} gap={4} width={'full'}>
-            <Flex justifyContent={'space-between'}>
-              <Link href={'/cart'}>
-                <Text fontSize={'14'} fontWeight={'bold'}>
-                  View Full Cart
+          <Collapse in={isOpen} animateOpacity>
+            <MobileNav navItems={HEADER_NAV_ITEMS} />
+          </Collapse>
+          <UserModal isOpen={isOpenLogin} onClose={onCloseLogin}>
+            <Login />
+          </UserModal>
+          <UserModal isOpen={isOpenRegister} onClose={onCloseRegister}>
+            <Register />
+          </UserModal>
+          <CartModal isOpen={isOpenCart} onClose={onCloseCart}>
+            <Flex direction={'column'} gap={4} width={'full'}>
+              <Flex justifyContent={'space-between'}>
+                <Link href={'/cart'}>
+                  <Text fontSize={'14'} fontWeight={'bold'}>
+                    View Full Cart
+                  </Text>
+                </Link>
+                <Text fontWeight={'bold'}>$0.00</Text>
+              </Flex>
+              <Flex
+                bg={'#35424b'}
+                justifyContent={'center'}
+                alignItems={'center'}
+                direction={'column'}
+                height={'200px'}
+                px={5}
+              >
+                <Box mb={5}>
+                  <InfoIcon width={'40px'} height={'40px'} color={'#d3a03e'} />
+                </Box>
+                <Text fontSize={'18'} fontWeight={'bold'}>
+                  Your Cart is Empty
                 </Text>
-              </Link>
-              <Text fontWeight={'bold'}>$0.00</Text>
+                <Text fontSize={'16'} textAlign={'center'}>
+                  Open packs or battle to earn XP and rewards!
+                </Text>
+              </Flex>
+              <Flex direction={'row-reverse'} py={4}>
+                <Button onClick={onCloseCart}>Close</Button>
+              </Flex>
             </Flex>
-            <Flex
-              bg={'#35424b'}
-              justifyContent={'center'}
-              alignItems={'center'}
-              direction={'column'}
-              height={'200px'}
-              px={5}
-            >
-              <Box mb={5}>
-                <InfoIcon width={'40px'} height={'40px'} color={'#d3a03e'} />
-              </Box>
-              <Text fontSize={'18'} fontWeight={'bold'}>
-                Your Cart is Empty
+          </CartModal>
+          <DepositModal isOpen={isOpenDeposit} onClose={onCloseDeposit}>
+            <Flex direction={'column'} width={'full'}>
+              <Flex
+                direction={'column'}
+                justifyContent={'center'}
+                alignItems={'center'}
+                bg={'rgba(0, 0, 0, 0.3)'}
+                height={'full'}
+                px={5}
+                py={5}
+                rounded={10}
+                width={'full'}
+              >
+                <Text fontSize={16} fontWeight={'bold'} mb={5}>
+                  Cash Deposits Disabled
+                </Text>
+                <Text fontSize={16} textAlign={'center'} width={'full'} mb={5}>
+                  A credit card payment method was used that requires verification. Please
+                  verify your card to unlock this payment method for future use.
+                </Text>
+                <Link href={'/card-verification'}>
+                  <Button>Verify Card</Button>
+                </Link>
+              </Flex>
+              <Flex direction={'column'} mt={6}>
+                <Text fontSize={'16px'} fontWeight={'bold'} mb={3}>
+                  Crypto
+                </Text>
+                <CryptoSelectContainer />
+              </Flex>
+              <Text align={'center'} fontSize={'10.5'} fontWeight={'bold'}>
+                Cryptocurrency deposits are generally credited after 3 confirmations.
+                Please allow up to 30 minutes for funds to appear in your account. In most
+                cases, funds will appear within 5 minutes. There is no mechanism to
+                withdraw deposited funds. All funds must be used to purchase. Credit card
+                deposits are not eligible for deposit bonuses and are subject to card
+                verification.
               </Text>
-              <Text fontSize={'16'} textAlign={'center'}>
-                Open packs or battle to earn XP and rewards!
-              </Text>
+              <Flex width={'full'} gap={2} mt={5}>
+                <Input
+                  type="text"
+                  id="search"
+                  placeholder="Enter Referral Code"
+                  borderWidth={2}
+                  borderColor={'#343335'}
+                  color={'#4A4749'}
+                  rounded={6}
+                  textColor={'#888687'}
+                  _focus={{
+                    borderColor: 'transparent',
+                    outline: 'none',
+                    boxShadow: '0 0 0 2px #d3a03e',
+                  }}
+                />
+                <Button bg={'#d0a249'} _hover={{ bg: 'yellow.400' }}>
+                  Submit
+                </Button>
+              </Flex>
             </Flex>
-            <Flex direction={'row-reverse'} py={4}>
-              <Button onClick={onCloseCart}>Close</Button>
-            </Flex>
-          </Flex>
-        </CartModal>
-        <DepositModal isOpen={isOpenDeposit} onClose={onCloseDeposit}>
-          <Flex direction={'column'} width={'full'}>
-            <Flex
-              direction={'column'}
-              justifyContent={'center'}
-              alignItems={'center'}
-              bg={'rgba(0, 0, 0, 0.3)'}
-              height={'full'}
-              px={5}
-              py={5}
-              rounded={10}
-              width={'full'}
-            >
-              <Text fontSize={16} fontWeight={'bold'} mb={5}>
-                Cash Deposits Disabled
-              </Text>
-              <Text fontSize={16} textAlign={'center'} width={'full'} mb={5}>
-                A credit card payment method was used that requires verification. Please
-                verify your card to unlock this payment method for future use.
-              </Text>
-              <Link href={'/card-verification'}>
-                <Button>Verify Card</Button>
-              </Link>
-            </Flex>
-            <Flex direction={'column'} mt={6}>
-              <Text fontSize={'16px'} fontWeight={'bold'} mb={3}>
-                Crypto
-              </Text>
-              <CryptoSelectContainer />
-            </Flex>
-            <Text align={'center'} fontSize={'10.5'} fontWeight={'bold'}>
-              Cryptocurrency deposits are generally credited after 3 confirmations. Please
-              allow up to 30 minutes for funds to appear in your account. In most cases,
-              funds will appear within 5 minutes. There is no mechanism to withdraw
-              deposited funds. All funds must be used to purchase. Credit card deposits
-              are not eligible for deposit bonuses and are subject to card verification.
-            </Text>
-            <Flex width={'full'} gap={2} mt={5}>
-              <Input
-                type="text"
-                id="search"
-                placeholder="Enter Referral Code"
-                borderWidth={2}
-                borderColor={'#343335'}
-                color={'#4A4749'}
-                rounded={6}
-                textColor={'#888687'}
-                _focus={{
-                  borderColor: 'transparent',
-                  outline: 'none',
-                  boxShadow: '0 0 0 2px #d3a03e',
-                }}
-              />
-              <Button bg={'#d0a249'} _hover={{ bg: 'yellow.400' }}>
-                Submit
-              </Button>
-            </Flex>
-          </Flex>
-        </DepositModal>
-      </Box>
+          </DepositModal>
+        </Box>
+      </Flex>
     </header>
   )
 }
