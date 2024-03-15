@@ -148,6 +148,7 @@ const Header = () => {
   }
 
   useEffect(() => {
+    localStorage.setItem('chakra-ui-color-mode', 'dark')
     onCloseLogin()
     onCloseRegister()
   }, [session])
