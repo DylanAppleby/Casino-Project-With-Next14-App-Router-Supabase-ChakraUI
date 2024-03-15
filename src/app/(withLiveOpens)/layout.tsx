@@ -19,25 +19,27 @@ const WithLiveOpens = ({ children }: Readonly<IWithLiveOpens>) => {
       <Flex width="full" gap={7}>
         {children}
         {!battleId && path != '/rewards' && path != '/battles/create' && (
-          <Flex width="full" display={{ base: 'none', lg: 'flex' }} maxWidth={80}>
-            <Flex direction="column" width="full">
-              <Flex gap={2} alignItems="center" textAlign="center" my="2.5rem">
-                <Box
-                  width={3}
-                  height={3}
-                  bgColor="#d0a249"
-                  borderRadius="full"
-                  boxShadow="0px 1px 8px 3px #d3a03e"
-                />
-                <Text
-                  fontSize={'lg'}
-                  color={'#fefefe'}
-                  style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
-                >
-                  Live Opens
-                </Text>
-              </Flex>
-              <GiftVoucherContainer />
+          <Flex
+            width="full"
+            direction="column"
+            display={{ base: 'none', lg: 'flex' }}
+            maxWidth={80}
+          >
+            <Flex gap={2} alignItems="center" textAlign="center" my="2.5rem">
+              <Box
+                width={3}
+                height={3}
+                bgColor="#d0a249"
+                borderRadius="full"
+                boxShadow="0px 1px 8px 3px #d3a03e"
+              />
+              <Text
+                fontSize={'lg'}
+                color={'#fefefe'}
+                style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
+              >
+                Live Opens
+              </Text>
             </Flex>
             <GiftVoucherContainer />
           </Flex>
