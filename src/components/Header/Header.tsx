@@ -157,17 +157,17 @@ const Header = () => {
       <Flex direction={'column'}>
         <Flex bgColor={'#313030'} display={{ base: 'flex', md: 'none' }}>
           <Container maxW={'container.xl'} width="full" height="3rem">
-            <Flex alignItems={'center'} justifyContent={'space-between'} mt={1.5}>
-              <Flex gap={2} alignItems="center" textAlign="center">
+            <Flex alignItems={'center'} justifyContent={'space-between'} mt={2}>
+              <Flex gap={1} alignItems="center" textAlign="center">
                 <Box
-                  width={3}
-                  height={3}
+                  width={2.5}
+                  height={2.5}
                   bgColor="#d0a249"
                   borderRadius="full"
-                  boxShadow="0px 0px 8px 3px #d3a03e"
+                  boxShadow="0px 0px 5px 2px #d3a03e"
                 />
                 <Text
-                  fontSize={'16'}
+                  fontSize={'14'}
                   color={'#fefefe'}
                   style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
                   whiteSpace={'nowrap'}
@@ -175,33 +175,35 @@ const Header = () => {
                   Live Opens
                 </Text>
               </Flex>
-              <Flex alignItems={'center'} gap={1}>
+              <Flex alignItems={'center'}>
                 <Box>
                   <Image
                     src="/assets/images/giftvoucher/voucherwatch.webp"
                     alt="gift voucher"
-                    width={9}
-                    height={9}
+                    width={8}
+                    height={8}
                   />
                 </Box>
-                <Text
-                  fontSize={'16'}
-                  whiteSpace={'nowrap'}
-                  style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
-                >
-                  Audemars Patek
-                </Text>
-                <Text
-                  fontSize={'16'}
-                  whiteSpace={'nowrap'}
-                  style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
-                  color={'#a6a4a4'}
-                >
-                  Royal Oak
-                </Text>
+                <Flex gap={1}>
+                  <Text
+                    fontSize={'14'}
+                    whiteSpace={'nowrap'}
+                    style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
+                  >
+                    Audemars Patek
+                  </Text>
+                  <Text
+                    fontSize={'14'}
+                    whiteSpace={'nowrap'}
+                    style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
+                    color={'#a6a4a4'}
+                  >
+                    Royal Oak
+                  </Text>
+                </Flex>
               </Flex>
               <Text
-                fontSize={'16'}
+                fontSize={'14'}
                 color={'#7ee4a8'}
                 style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
               >
