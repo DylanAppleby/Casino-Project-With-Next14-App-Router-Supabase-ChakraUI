@@ -18,7 +18,7 @@ const WithLiveOpens = ({ children }: Readonly<IWithLiveOpens>) => {
     <Flex width="full" direction={'column'}>
       <Flex width={'full'} gap={7} my={18}>
         {children}
-        {!battleId && path != '/rewards' && (
+        {!battleId && path != '/rewards' && path != '/battles/create' && (
           <Flex width="full" display={{ base: 'none', lg: 'flex' }} maxWidth={80}>
             <Flex direction="column" width="full">
               <Flex gap={2} alignItems="center" textAlign="center" my="2.5rem">

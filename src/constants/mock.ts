@@ -13,6 +13,8 @@ import { SlotGameItem } from '@/types/slotGameItem'
 import { SlotGameRecentItem } from '@/types/slotGameRecentItem'
 import { BattlePack } from '@/types/battlePack'
 import { GiftCardDetail } from '@/types/gitCardDetail'
+import { SelectPlayers } from '@/types/SelectPlayers'
+import { BattleOptions } from '@/types/BattleOptions'
 
 export const GIFT_CARDS: Array<GiftCard> = [
   {
@@ -955,5 +957,49 @@ export const GIFT_CARD_DETAILS: Array<GiftCardDetail> = [
     imageUrl: '/assets/images/slot/10.webp',
     collection: 'Daytona Stainless...',
     price: 57672,
+  },
+]
+
+export const SELECT_PLAYERS: Array<SelectPlayers> = [
+  {
+    battleType: '1 vs 1',
+    playerNum: '2 players',
+    index: 1
+  },
+  {
+    battleType: '1 vs 1 vs 1',
+    playerNum: '3 players',
+    index: 2
+  },
+  {
+    battleType: '1 vs 1 vs 1 vs 1',
+    playerNum: '4 players',
+    index: 3
+  },
+  {
+    battleType: '2 vs 2',
+    playerNum: 'Team Battle',
+    index: 4
+  },
+]
+
+export const BATTLE_OPTIONS: Array<BattleOptions> = [
+  {
+    ImageUrl: '/assets/images/battles/upside_down.webp',
+    battleProperty: 'Upside Down',
+    Label: 'The one who uppacks the LEAST wins! Winners lose and loser win!',
+    index: 1,
+  },
+  {
+    ImageUrl: '/assets/images/battles/point_rush.webp',
+    battleProperty: 'Point Rush',
+    Label: 'The player who wins the MOST points wins!',
+    index: 2,
+  },
+  {
+    ImageUrl: '/assets/images/battles/share_mode.webp',
+    battleProperty: 'Share Mode',
+    Label: 'All players share everything equally!',
+    index: 3,
   },
 ]
