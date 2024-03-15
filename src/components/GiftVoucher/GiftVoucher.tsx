@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { Box, Flex, Text } from '@chakra-ui/react'
+import { Box, Flex, Text, keyframes } from '@chakra-ui/react'
 
 interface IGiftVoucher {
   image: string
@@ -18,6 +18,22 @@ const GiftVoucher = ({
   hoverImage,
 }: IGiftVoucher) => {
   const [hovered, setHovered] = useState<boolean>(false)
+  const bounceUpIn = keyframes`
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-15%);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-5%);
+  }
+`
 
   return (
     <Flex
@@ -34,8 +50,13 @@ const GiftVoucher = ({
           pt={6}
           pb={7}
           justify="space-between"
+          sx={{
+            '& > div': {
+              animation: `${bounceUpIn} 0.5s ease forwards`,
+            },
+          }}
         >
-          <Flex gap={2}>
+          <Flex position={'relative'} overflow={'hidden'} gap={2}>
             <Box>
               <Image
                 src={`${image}`}
@@ -69,12 +90,24 @@ const GiftVoucher = ({
           alignItems={'center'}
           overflow={'hidden'}
           height={'100px'}
+          position={'relative'}
           px={5}
           pt={6}
           pb={7}
+          _hover={{
+            '& > div': {
+              animation: `${bounceUpIn} 0.5s ease forwards`,
+            },
+          }}
         >
-          <Box mb={'-70px'}>
-            <Image src={hoverImage} alt="Your Image" width={130} height={130} />
+          <Box mb={'-70px'} overflow="hidden">
+            <Image
+              src={hoverImage}
+              alt="Your Image"
+              width={120}
+              height={120}
+              style={{ width: '100%', display: 'block' }}
+            />
           </Box>
         </Flex>
       )}
