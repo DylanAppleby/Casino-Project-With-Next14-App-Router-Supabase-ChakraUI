@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, Dispatch, SetStateAction } from 'react'
+import { useCallback, Dispatch, SetStateAction, useState, useEffect } from 'react'
 import { Flex, Box, Button, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -21,10 +21,21 @@ const PackInfoWidget = ({
   setSelectedPacks,
   setTotal,
 }: IPackInfoWidget) => {
+  const [packIds, setPackIds] = useState<string[]>([])
   const handleCancelClick = useCallback(() => {
     setSelectedPacks([])
     setTotal(0)
   }, [setSelectedPacks, setTotal])
+
+  useEffect(() => {
+    const packList = selectedPacks.map((selectedPack) => selectedPack.id)
+    setPackIds(packList)
+  }, [selectedPacks])
+
+  const searchParams = new URLSearchParams()
+  for (const id of packIds) {
+    searchParams.append('id', id)
+  }
 
   return (
     <Flex
@@ -95,7 +106,7 @@ const PackInfoWidget = ({
           </Flex>
         </Flex>
         <Flex direction={'column'} gap={4}>
-          <Link href={'/packs/id'}>
+          <Link href={`/packs/?${searchParams.toString()}`}>
             <Button
               bg={'yellow.500'}
               _hover={{ bg: 'yellow.600' }}
