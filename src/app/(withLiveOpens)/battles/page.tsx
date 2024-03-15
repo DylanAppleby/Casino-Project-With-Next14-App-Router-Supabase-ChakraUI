@@ -1,5 +1,6 @@
 import { Box, Flex, Button } from '@/components/ChakraUIComponents'
 import BattlesContainer from '@/containers/BattlesContainer'
+import Link from 'next/link'
 
 export default function Battles() {
   return (
@@ -14,17 +15,11 @@ export default function Battles() {
         <Box fontSize={28} width="full" fontWeight="black">
           Battles
         </Box>
-        <Box>
-          <Button
-            bgColor=" #FABD2D"
-            _hover={{ bgColor: 'yellow.400' }}
-            height={8}
-            padding={3}
-            fontSize={14}
-          >
-            Create Battle
-          </Button>
-        </Box>
+        <Link href={'/battles/create'}>
+          <Box margin={1}>
+            <Button bgColor=" #FABD2D">Create Battle</Button>
+          </Box>
+        </Link>
       </Flex>
       <BattlesContainer />
     </Flex>

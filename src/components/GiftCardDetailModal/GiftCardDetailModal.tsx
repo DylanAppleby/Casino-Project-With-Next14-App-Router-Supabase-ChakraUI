@@ -24,6 +24,7 @@ const GiftCardDetailModal = ({ isOpen, children, onClose }: IGiftCardDetailModal
         <ModalBody pt={8} pb={6} px={6}>
           {children}
         </ModalBody>
+        <ModalCloseButton />
       </ModalContent>
     </Modal>
   )
