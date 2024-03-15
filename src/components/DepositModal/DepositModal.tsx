@@ -2,25 +2,23 @@ import {
   Modal,
   ModalBody,
   ModalContent,
-  ModalCloseButton,
   ModalOverlay,
+  ModalCloseButton,
+  ModalHeader,
 } from '@chakra-ui/react'
 
-interface IGiftCardDetailModal {
+interface IDepositModal {
   isOpen: boolean
   onClose: () => void
   children: React.ReactNode
 }
 
-const GiftCardDetailModal = ({ isOpen, children, onClose }: IGiftCardDetailModal) => {
+const DepositModal = ({ isOpen, onClose, children }: IDepositModal) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
-      <ModalContent
-        bgColor={'#1F1F1F'}
-        maxW={{ base: '350px', md: '700px', lg: '900px' }}
-      >
-        <ModalCloseButton />
+      <ModalContent bgColor={'#1F1F1F'} maxW={{ base: '350', md: '500', lg: '672' }}>
+        <ModalHeader>Deposit Funds</ModalHeader>
         <ModalBody pt={8} pb={6} px={6}>
           {children}
         </ModalBody>
@@ -30,4 +28,4 @@ const GiftCardDetailModal = ({ isOpen, children, onClose }: IGiftCardDetailModal
   )
 }
 
-export default GiftCardDetailModal
+export default DepositModal

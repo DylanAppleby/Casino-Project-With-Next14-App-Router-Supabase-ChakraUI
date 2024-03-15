@@ -14,23 +14,26 @@ interface IUnlockCrateSlider {
 }
 const UnlockCrateSlider = ({ label }: IUnlockCrateSlider) => {
   return (
-    <Flex direction="column" gap={3}>
-      <Flex width="full" justifyContent="space-between">
+    <Flex direction="column" gap={3} width={'full'}>
+      <Flex width={'full'} justifyContent="space-between">
         <Text
           style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
           fontWeight={600}
+          fontSize={{ base: '12px', md: '16px' }}
         >
           0 XP
         </Text>
         <Text
           style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
           fontWeight={600}
+          fontSize={{ base: '12px', md: '16px' }}
         >
           {label}
         </Text>
         <Text
           style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
           fontWeight={600}
+          fontSize={{ base: '12px', md: '16px' }}
         >
           2500 XP
         </Text>
@@ -41,8 +44,9 @@ const UnlockCrateSlider = ({ label }: IUnlockCrateSlider) => {
         flexDirection="column"
         bgColor={'#393e45'}
         rounded={'full'}
+        width={'full'}
       >
-        <Slider width={'full'}>
+        <Slider>
           <SliderTrack height={'full'} rounded={'full'}>
             <SliderFilledTrack bgColor={'#d3a03e'} />
           </SliderTrack>
@@ -55,7 +59,7 @@ const UnlockCrateSlider = ({ label }: IUnlockCrateSlider) => {
           />
         </Slider>
       </Box>
-      <Flex width="full" justifyContent="space-between" alignItems={'center'} gap={7}>
+      <Flex justifyContent="space-between" alignItems={'center'} width={'full'}>
         <Flex gap={2} alignItems={'center'}>
           <Box>
             <Image
@@ -71,6 +75,7 @@ const UnlockCrateSlider = ({ label }: IUnlockCrateSlider) => {
             whiteSpace={'nowrap'}
             fontWeight="bold"
             fontStyle={'italic'}
+            fontSize={{ base: '12px', md: '16px' }}
           >
             LVL 0
           </Text>
@@ -79,6 +84,7 @@ const UnlockCrateSlider = ({ label }: IUnlockCrateSlider) => {
           style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
           fontWeight={500}
           whiteSpace={'nowrap'}
+          fontSize={{ base: '12px', md: '16px' }}
         >
           Your VIP Progress
         </Text>
@@ -87,6 +93,7 @@ const UnlockCrateSlider = ({ label }: IUnlockCrateSlider) => {
             style={{ fontFamily: 'Clash Grotesk, sans-serif', fontWeight: 500 }}
             whiteSpace={'nowrap'}
             fontStyle={'italic'}
+            fontSize={{ base: '12px', md: '16px' }}
           >
             LVL 1 UNLOCKED
           </Text>

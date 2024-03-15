@@ -4,9 +4,15 @@ import Link from 'next/link'
 
 export default function Battles() {
   return (
-    <Flex width={'full'} direction={'column'}>
-      <Flex height={'100px'} alignItems={'center'} justifyContent={'space-between'}>
-        <Box fontSize={24} width="full" fontWeight="black">
+    <Flex width="full" direction={'column'}>
+      <Flex
+        mt={'30px'}
+        mb={'32px'}
+        width="full"
+        alignItems={'center'}
+        justifyContent={'space-between'}
+      >
+        <Box fontSize={28} width="full" fontWeight="black">
           Battles
         </Box>
         <Link href={'/battles/create'}>

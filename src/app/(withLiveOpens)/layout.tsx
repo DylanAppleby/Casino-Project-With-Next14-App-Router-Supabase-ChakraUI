@@ -15,8 +15,8 @@ const WithLiveOpens = ({ children }: Readonly<IWithLiveOpens>) => {
   const { id: battleId } = useParams()
 
   return (
-    <Flex width="full" direction={'column'}>
-      <Flex width={'full'} gap={7} my={18}>
+    <Flex direction={'column'} width="full">
+      <Flex width="full" gap={7}>
         {children}
         {!battleId && path != '/rewards' && path != '/battles/create' && (
           <Flex width="full" display={{ base: 'none', lg: 'flex' }} maxWidth={80}>
@@ -39,6 +39,7 @@ const WithLiveOpens = ({ children }: Readonly<IWithLiveOpens>) => {
               </Flex>
               <GiftVoucherContainer />
             </Flex>
+            <GiftVoucherContainer />
           </Flex>
         )}
       </Flex>
