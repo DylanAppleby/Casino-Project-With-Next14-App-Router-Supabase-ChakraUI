@@ -11,14 +11,6 @@ const spaceMono = Space_Mono({ subsets: ['latin'], weight: ['700'] })
 const CratesPage = ({ index }: ICratesPage) => {
   return (
     <Flex flexDirection="column" gap={7} width={'full'}>
-      {/* <Image
-        src="/assets/images/rewards/whatisthis.webp"
-        alt=""
-        width={'full'}
-        height={'auto'}
-        // style={{ width: 'full', height: 'auto' }}
-        borderRadius={'2rem'}
-      /> */}
       <Flex
         height={'200px'}
         width={'full'}
@@ -70,7 +62,7 @@ const CratesPage = ({ index }: ICratesPage) => {
             justifyContent={'center'}
           >
             <LockIcon width={'1.3rem'} margin={'3px'} />
-            Level{`${index}`}
+            Level {`${index}`}
           </Flex>
         </Flex>
       )}

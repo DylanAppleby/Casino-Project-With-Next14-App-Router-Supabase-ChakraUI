@@ -13,7 +13,7 @@ export default function Create() {
       position="relative"
     >
       <Flex direction="column" gap={8}>
-        <Flex alignItems={'center'} gap={1} margin={-1}>
+        <Flex alignItems={'center'} gap={1} margin={-1} marginTop={5}>
           <Image
             src={'/assets/images/create/fight.webp'}
             alt="newbattle"
@@ -29,7 +29,7 @@ export default function Create() {
         <BattleOptionsContainer />
         <BattleSummary />
       </Flex>
-      <Box position="sticky" paddingTop={8} bottom={0}>
+      <Box position="sticky" paddingTop={8} bottom={0} paddingBottom={5}>
         <Button
           width="full"
           height="100px"
