@@ -288,13 +288,14 @@ const Header = () => {
                       <Button
                         rounded={'full'}
                         height={'2rem'}
-                        width={'52px'}
+                        width={'60px'}
                         fontSize={'14'}
                         onClick={onOpenCart}
                         display={{ base: 'none', md: 'block' }}
-                        px={3}
+                        pl={2.5}
+                        pr={2}
                       >
-                        Cart
+                        Vault
                       </Button>
                       <Button
                         rounded={'full'}
@@ -384,7 +385,7 @@ const Header = () => {
               <Flex justifyContent={'space-between'}>
                 <Link href={'/cart'}>
                   <Text fontSize={'14'} fontWeight={'bold'}>
-                    View Full Cart
+                    View Full Vault
                   </Text>
                 </Link>
                 <Text fontWeight={'bold'}>$0.00</Text>
@@ -401,7 +402,7 @@ const Header = () => {
                   <InfoIcon width={'40px'} height={'40px'} color={'#d3a03e'} />
                 </Box>
                 <Text fontSize={'18'} fontWeight={'bold'}>
-                  Your Cart is Empty
+                  Your Vault is Empty
                 </Text>
                 <Text fontSize={'16'} textAlign={'center'}>
                   Open packs or battle to earn XP and rewards!
