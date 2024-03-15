@@ -19,6 +19,7 @@ const SelectPlayersContainer = () => {
         {SELECT_PLAYERS.map(({ battleType, playerNum, index }) => {
           return (
             <SelectPlayers
+              key={playerNum + index}
               battleType={battleType}
               playerNum={playerNum}
               index={index}

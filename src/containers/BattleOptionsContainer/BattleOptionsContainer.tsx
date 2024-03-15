@@ -18,6 +18,7 @@ const BattleOptionsContainer = () => {
         {BATTLE_OPTIONS.map(({ ImageUrl, battleProperty, Label, index }) => {
           return (
             <BattleOptions
+              key={ImageUrl + index}
               ImageUrl={ImageUrl}
               battleProperty={battleProperty}
               Label={Label}
