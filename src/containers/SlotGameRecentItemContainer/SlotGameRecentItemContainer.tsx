@@ -1,7 +1,9 @@
+import React, { useState, useCallback, useRef } from 'react'
+
 import { Flex, Text } from '@chakra-ui/react'
 import SlotGameRecentItem from '@/components/SlotGameRecentItem'
 import { SLOT_GAME_RECENT_ITEMS } from '@/constants/mock'
-import Carousel from 'react-multi-carousel'
+import Carousel, { StateCallBack } from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 
 const responsive = {
@@ -31,42 +33,53 @@ const responsive = {
     partialVisibilityGutter: 30,
   },
   mobile1: {
-    breakpoint: { max: 600, min: 400 },
+    breakpoint: { max: 600, min: 350 },
     items: 2,
-    partialVisibilityGutter: 30,
-  },
-  mobile2: {
-    breakpoint: { max: 400, min: 320 },
-    items: 1,
     partialVisibilityGutter: 30,
   },
 }
 
-const SlotGameRecentItemContainer = () => {
+const SlotGameRecentItemContainer: React.FC = () => {
+  const [currentSlide, setCurrentSlide] = useState<number>(0)
+
+  const handleSlideChange = useCallback(
+    (previousSlide: number, currentStatus: StateCallBack) => {
+      const { currentSlide } = currentStatus
+      setCurrentSlide(currentSlide)
+    },
+    [setCurrentSlide]
+  )
   return (
-    <Flex direction={'column'} width={'full'} gap={8}>
+    <Flex direction="column" width="full" gap={8}>
+      {/* Text conditional rendering based on the net left movements */}
       <Flex
-        direction={'row'}
-        gap={{ base: '10', md: '16rem', lg: '20rem' }}
+        direction="row"
+        gap={{ base: 10, md: '16rem', lg: '20rem' }}
         justifyContent={{ base: 'center', lg: 'start' }}
       >
-        <Text
-          fontSize={{ base: 18, md: 20, lg: 24 }}
-          fontWeight={'bold'}
-          whiteSpace={'nowrap'}
-        >
-          Best unboxings
-        </Text>
-        <Text
-          fontSize={{ base: 18, md: 20, lg: 24 }}
-          fontWeight={'bold'}
-          whiteSpace={'nowrap'}
-          display={{ base: 'none', md: 'none', lg: 'inline' }}
-        >
-          Recently unboxed
-        </Text>
+        {currentSlide < 3 ? (
+          <Text
+            fontSize={{ base: 18, md: 20, lg: 24 }}
+            fontWeight="bold"
+            whiteSpace="nowrap"
+          >
+            Best unboxings
+          </Text>
+        ) : (
+          <Text
+            fontSize={{ base: 18, md: 20, lg: 24 }}
+            fontWeight="bold"
+            whiteSpace="nowrap"
+          >
+            Recently unboxed
+          </Text>
+        )}
       </Flex>
-      <Carousel responsive={responsive} itemClass="carousel-item-padding-20-px">
+      <Carousel
+        responsive={responsive}
+        itemClass="carousel-item-padding-20-px"
+        afterChange={handleSlideChange}
+      >
         {SLOT_GAME_RECENT_ITEMS.map((slotGameRecentItem, index) => (
           <SlotGameRecentItem
             key={slotGameRecentItem.imageUrl + index}
