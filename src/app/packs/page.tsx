@@ -1,6 +1,10 @@
 'use client'
-import React from 'react'
+
+import React, { ServerContext, useEffect } from 'react'
 import { useState } from 'react'
+
+import { useSearchParams } from 'next/navigation'
+
 import {
   Box,
   Image,
@@ -9,7 +13,6 @@ import {
   Button,
   useBreakpointValue,
   Switch,
-  calc,
   Container,
 } from '@chakra-ui/react'
 import { ChevronLeftIcon } from '@chakra-ui/icons'
@@ -76,6 +79,9 @@ const products = [
 ]
 
 const ProductCarousel = () => {
+  const searchParams = useSearchParams()
+  const ids = searchParams.getAll('id')
+
   const [index, setIndex] = useState<number>(0)
   const displayCount = useBreakpointValue({ base: 3, md: 5, lg: 9 }) // Responsive display
   const { isMobile } = useWindowDimensionsObserver()
@@ -117,38 +123,41 @@ const ProductCarousel = () => {
   return (
     <Flex direction={'column'} width={'full'} gap={12} mb={12}>
       <Flex direction={'column'} width={'full'}>
-        <Flex
-          align="center"
-          justify="center"
-          backgroundImage={
-            isMobile
-              ? '/assets/images/slot/mobileback.webp'
-              : '/assets/images/slot/slotback.webp'
-          }
-          backgroundSize="cover"
-          backgroundPosition="center"
-          backgroundRepeat="no-repeat"
-          marginX={'calc(calc(calc(100vw - 100%)/2) * -1)'}
-        >
-          <Flex overflow="hidden" justify="center">
-            {visibleProducts.map((product, index) => (
-              <Box
-                key={product.name + index}
-                p={5}
-                textAlign="center"
-                transform={index === centerIndex ? 'scale(1.6)' : 'none'} // Scale up the center product
-                transition="transform 1s ease-in-out" // Smooth transition for scaling
-              >
-                <Image
-                  src={product.imageUrl}
-                  alt={product.name}
-                  boxSize={index === centerIndex ? '230px' : '200px'} // Optionally increase the box size of the center product
-                  objectFit="contain"
-                />
-              </Box>
-            ))}
+        {ids.map((id, index) => (
+          <Flex
+            key={id + index}
+            align="center"
+            justify="center"
+            backgroundImage={
+              isMobile
+                ? '/assets/images/slot/mobileback.webp'
+                : '/assets/images/slot/slotback.webp'
+            }
+            backgroundSize="cover"
+            backgroundPosition="center"
+            backgroundRepeat="no-repeat"
+            marginX={'calc(calc(calc(100vw - 100%)/2) * -1)'}
+          >
+            <Flex overflow="hidden" justify="center">
+              {visibleProducts.map((product, index) => (
+                <Box
+                  key={product.name + index}
+                  p={5}
+                  textAlign="center"
+                  transform={index === centerIndex ? 'scale(1.6)' : 'none'} // Scale up the center product
+                  transition="transform 1s ease-in-out" // Smooth transition for scaling
+                >
+                  <Image
+                    src={product.imageUrl}
+                    alt={product.name}
+                    boxSize={index === centerIndex ? '230px' : '200px'} // Optionally increase the box size of the center product
+                    objectFit="contain"
+                  />
+                </Box>
+              ))}
+            </Flex>
           </Flex>
-        </Flex>
+        ))}
         <Flex gap={{ base: 2, md: 5 }} width={'full'} direction={'column'}>
           <Flex
             bg="radial-gradient(circle, rgba(80,79,80,1) 0%, rgba(54,53,54,1) 50%, rgba(33,32,33,1) 100%)"
