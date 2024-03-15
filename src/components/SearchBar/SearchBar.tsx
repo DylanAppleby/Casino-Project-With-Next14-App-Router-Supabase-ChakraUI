@@ -71,8 +71,12 @@ const SearchBar = () => {
           justifyContent="center"
           cursor="pointer"
           onClick={() => toggleButtonColor(1)}
-          bgColor={activeButton === 1 ? '#d3a03e' : '#302e30'}
-          _hover={{ bg: activeButton === 1 ? 'yellow.400' : '#434143' }}
+          bgColor={activeButton === 1 ? '#996d18' : '#302e30'}
+          borderWidth={2}
+          borderColor={activeButton === 1 ? '#dba63e' : '#4a4749'}
+          _hover={{
+            borderColor: activeButton === 1 ? '#dba63e' : '#4a4749',
+          }}
           width={{ base: 'full', lg: 'auto' }}
           minWidth="auto"
           color={'#eeeee8'}
@@ -101,8 +105,12 @@ const SearchBar = () => {
           justifyContent="center"
           cursor="pointer"
           onClick={() => toggleButtonColor(2)}
-          bgColor={activeButton === 2 ? '#d3a03e' : '#302e30'}
-          _hover={{ bg: activeButton === 2 ? 'yellow.400' : '#434143' }}
+          bgColor={activeButton === 2 ? '#996d18' : '#302e30'}
+          borderWidth={2}
+          borderColor={activeButton === 2 ? '#dba63e' : '#4a4749'}
+          _hover={{
+            borderColor: activeButton === 2 ? '#dba63e' : '#4a4749',
+          }}
           width={{ base: 'full', lg: 'auto' }}
           minWidth="auto"
           color={'#eeeee8'}
@@ -131,8 +139,12 @@ const SearchBar = () => {
           justifyContent="center"
           cursor="pointer"
           onClick={() => toggleButtonColor(3)}
-          bgColor={activeButton === 3 ? '#d3a03e' : '#302e30'}
-          _hover={{ bg: activeButton === 3 ? 'yellow.400' : '#434143' }}
+          bgColor={activeButton === 3 ? '#996d18' : '#302e30'}
+          borderWidth={2}
+          borderColor={activeButton === 3 ? '#dba63e' : '#4a4749'}
+          _hover={{
+            borderColor: activeButton === 3 ? '#dba63e' : '#4a4749',
+          }}
           width={{ base: 'full', lg: 'auto' }}
           minWidth="auto"
           color={'#eeeee8'}
@@ -164,7 +176,7 @@ const SearchBar = () => {
               id="search"
               placeholder="Search"
               borderWidth={2}
-              borderColor={'#343335'}
+              borderColor={'#4a4749'}
               color={'#4A4749'}
               borderRadius={'full'}
               textColor={'#888687'}
@@ -173,6 +185,7 @@ const SearchBar = () => {
                 outline: 'none',
                 boxShadow: '0 0 0 2px #d3a03e',
               }}
+              bg={'#302e30'}
             />
           </InputGroup>
         </FormControl>
