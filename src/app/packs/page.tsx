@@ -128,11 +128,11 @@ const ProductCarousel = () => {
             key={id + index}
             align="center"
             justify="center"
-            backgroundImage={
-              isMobile
-                ? '/assets/images/slot/mobileback.webp'
-                : '/assets/images/slot/slotback.webp'
-            }
+            // backgroundImage={
+            //   isMobile
+            //     ? '/assets/images/slot/mobileback.webp'
+            //     : '/assets/images/slot/slotback.webp'
+            // }
             backgroundSize="cover"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
