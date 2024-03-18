@@ -287,7 +287,7 @@ const Header = () => {
                     <>
                       <Button
                         rounded={'full'}
-                        height={'2rem'}
+                        height={'36px'}
                         width={'60px'}
                         fontSize={'14'}
                         onClick={onOpenCart}
@@ -297,7 +297,7 @@ const Header = () => {
                       >
                         Vault
                       </Button>
-                      <Button
+                      {/* <Button
                         rounded={'full'}
                         height={'2rem'}
                         width={'110px'}
@@ -308,7 +308,55 @@ const Header = () => {
                         _hover={{ bg: 'yellow.400' }}
                       >
                         Deposit
-                      </Button>
+                      </Button> */}
+                      <Flex
+                        rounded="full"
+                        borderWidth={2}
+                        borderColor={'#4a4749'}
+                        color={'gray.600'}
+                        fontSize="small"
+                        fontWeight="medium"
+                        alignItems="center"
+                        justifyContent="space-between"
+                        px={2}
+                        height={'36px'}
+                        bg={'#302e30'}
+                        _hover={{ cursor: 'pointer' }}
+                        onClick={onOpenDeposit}
+                      >
+                        <Flex alignItems={'center'} gap={1}>
+                          <Box>
+                            <Image
+                              src={'/assets/images/dollar.webp'}
+                              width={4}
+                              height={4}
+                            />
+                          </Box>
+                          <Box display="inline-flex">
+                            <Box color={'white'}>
+                              ${Number(24046).toLocaleString('us')}
+                            </Box>
+                            <Text color={'#a19f9f'}>.43</Text>
+                          </Box>
+                        </Flex>
+                        <Flex
+                          h={5}
+                          w={5}
+                          alignItems="center"
+                          justifyContent="center"
+                          fontSize={'md'}
+                          lineHeight="1rem"
+                          fontWeight="bold"
+                          color={useColorModeValue('white', 'white')}
+                          bg={'#e5b94a'}
+                          rounded="full"
+                          pb={0.75}
+                          cursor="pointer"
+                          ml={4}
+                        >
+                          +
+                        </Flex>
+                      </Flex>
                       <Flex fontSize={'18px'} fontWeight={'800'}>
                         <Menu closeOnSelect={false} autoSelect={false}>
                           <MenuButton>
