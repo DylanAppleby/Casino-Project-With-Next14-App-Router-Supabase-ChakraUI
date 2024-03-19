@@ -22,30 +22,21 @@ const Footer = () => {
           <Flex direction="column">
             <SimpleGrid columns={{ base: 2, md: 4 }} spacing={8}>
               <Stack align={'flex-start'}>
-                <ListHeader>About</ListHeader>
+                <ListHeader>Website name</ListHeader>
                 <Box as="a" href={'#'} color="#75728c">
-                  All Sports
-                </Box>
-                <Box as="a" href={'#'} color="#75728c">
-                  Support
-                </Box>
-                <Box as="a" href={'#'} color="#75728c">
-                  About Us
-                </Box>
-                <Box as="a" href={'#'} color="#75728c">
-                  FAQ's
+                  slogan*
                 </Box>
               </Stack>
               <Stack align={'flex-start'}>
-                <ListHeader>Social Casino</ListHeader>
+                <ListHeader>Games</ListHeader>
                 <Box as="a" href={'#'} color="#75728c">
-                  Games
+                  Packs
                 </Box>
                 <Box as="a" href={'#'} color="#75728c">
-                  VIP Club
+                  Battles
                 </Box>
                 <Box as="a" href={'#'} color="#75728c">
-                  Affiliate Program
+                  Rewards
                 </Box>
               </Stack>
               <Stack align={'flex-start'}>
@@ -56,23 +47,23 @@ const Footer = () => {
                 <Box as="a" href={'#'} color="#75728c">
                   instagram
                 </Box>
+                <Box as="a" href={'#'} color="#75728c">
+                  TikTok
+                </Box>
+                <Box as="a" href={'#'} color="#75728c">
+                  YouTube
+                </Box>
               </Stack>
               <Stack align={'flex-start'}>
-                <ListHeader>Support</ListHeader>
+                <ListHeader>Legal</ListHeader>
                 <Box as="a" href={'#'} color="#75728c">
-                  Fairness
+                  Privacy Policy
                 </Box>
                 <Box as="a" href={'#'} color="#75728c">
-                  Affiliate
+                  ToS
                 </Box>
                 <Box as="a" href={'#'} color="#75728c">
-                  Addicted to Gaming?
-                </Box>
-                <Box as="a" href={'#'} color="#75728c">
-                  Live Support
-                </Box>
-                <Box as="a" href={'#'} color="#75728c">
-                  Help Center
+                  AML
                 </Box>
               </Stack>
             </SimpleGrid>
