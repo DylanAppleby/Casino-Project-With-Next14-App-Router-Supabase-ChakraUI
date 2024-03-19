@@ -51,7 +51,6 @@ const SlotGameRecentItemContainer: React.FC = () => {
   )
   return (
     <Flex direction="column" width="full" gap={8}>
-      {/* Text conditional rendering based on the net left movements */}
       <Flex
         direction="row"
         gap={{ base: 10, md: '16rem', lg: '20rem' }}
