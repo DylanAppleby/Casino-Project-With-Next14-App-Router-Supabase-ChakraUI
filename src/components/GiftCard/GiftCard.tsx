@@ -7,12 +7,13 @@ import Image from 'next/image'
 import { IPack } from '@/types/pack'
 import GiftCardDetailModal from '../GiftCardDetailModal'
 import GiftCardDetailContentContainer from '@/containers/GiftCardDetailContentContainer'
+import { useSupabase } from '@/contexts/supabase-provider'
 interface IGiftCard {
   image: string
   label: string
   price: number
   packId: string
-  brand: string
+  name: string
   selectedPacks: IPack[]
   setSelectedPacks: Dispatch<SetStateAction<IPack[]>>
   setTotal: Dispatch<SetStateAction<number>>
@@ -24,12 +25,14 @@ const GiftCard = ({
   price,
   packId,
   selectedPacks,
-  brand,
+  name,
   setTotal,
   setSelectedPacks,
 }: IGiftCard) => {
   const [addHovered, setAddHovered] = useState<boolean>(false)
   const [packCount, setPackCount] = useState<number>(0)
+  const [packItems, setPackItems] = useState<any>([])
+  const supabase = useSupabase()
   const {
     isOpen: isOpenCardDetail,
     onOpen: onOpenCardDetail,
@@ -37,10 +40,24 @@ const GiftCard = ({
   } = useDisclosure()
 
   useEffect(() => {
+    getPackItems()
+  })
+
+  useEffect(() => {
     if (selectedPacks.length === 0) {
       setPackCount(0)
     }
   }, [selectedPacks.length])
+
+  const getPackItems = async () => {
+    const { data, error } = await supabase
+      .from('pack_to_item')
+      .select('*, pack_item (*)')
+      .eq('pack_id', packId)
+
+    if (error) console.log('this is error:', error.message)
+    else setPackItems(data)
+  }
 
   const handleCardClick = useCallback(() => {
     if (packCount === 0 && selectedPacks.length < 5) {
@@ -111,7 +128,7 @@ const GiftCard = ({
           </Button>
         )}
         <GiftCardDetailModal isOpen={isOpenCardDetail} onClose={onCloseCardDetail}>
-          <GiftCardDetailContentContainer brand={brand} price={price} />
+          <GiftCardDetailContentContainer items={packItems} name={name} price={price} />
         </GiftCardDetailModal>
         <Box>
           <Image

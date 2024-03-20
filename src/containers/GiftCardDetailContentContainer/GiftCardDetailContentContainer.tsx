@@ -3,16 +3,18 @@ import GiftCardDetailContent from '@/components/GiftCardDetailContent'
 import { GIFT_CARD_DETAILS } from '@/constants/mock'
 interface IGiftCardDetailContentContainer {
   price: number
-  brand: string
+  name: string
+  items: any
 }
 const GiftCardDetailContentContainer = ({
   price,
-  brand,
+  name,
+  items,
 }: IGiftCardDetailContentContainer) => {
   return (
     <Flex direction={'column'} alignItems={'center'} gap={6}>
       <Text fontWeight={'bold'} fontSize={'20px'}>
-        {brand + ' - $' + price.toLocaleString('us').toString()}
+        {name + ' - $' + price.toLocaleString('us').toString()}
       </Text>
       <Grid
         width="full"
@@ -21,19 +23,19 @@ const GiftCardDetailContentContainer = ({
         columnGap={{ base: 2, md: 4 }}
         mb={8}
       >
-        {GIFT_CARD_DETAILS.map((giftCardDetail, index) => {
+        {items.map((giftCardDetail: any, index: number) => {
           return (
             <GridItem
               colSpan={{ base: 6, md: 4, lg: 3 }}
               overflow="none"
               borderRadius={1}
-              key={giftCardDetail.imageUrl + index}
+              key={index}
             >
               <GiftCardDetailContent
-                percentage={giftCardDetail.percentage}
-                imageUrl={giftCardDetail.imageUrl}
-                collection={giftCardDetail.collection}
-                price={giftCardDetail.price}
+                percentage={giftCardDetail.rate}
+                imageUrl={giftCardDetail.pack_item.image_url}
+                collection={giftCardDetail.pack_item.name}
+                price={giftCardDetail.pack_item.price}
               />
             </GridItem>
           )
