@@ -1,4 +1,4 @@
-import { Flex, Text, Box, Image } from '@chakra-ui/react'
+import { Flex, Text, Box, Image, Stack } from '@chakra-ui/react'
 interface ISlotGameItem {
   percentage: string
   collection: string
@@ -26,14 +26,21 @@ const SlotGameItem = ({
         <Box>
           <Image src={imageUrl} width={'160px'} height={'200px'} />
         </Box>
-        <Text
-          color={'#fafafa'}
-          fontWeight={'bold'}
-          fontSize={{ base: 14, md: 16, lg: 20 }}
+        <Stack
           whiteSpace={'nowrap'}
+          overflow={'hidden'}
+          textOverflow={'ellipsis'}
+          width={'80%'}
+          marginX={'auto'}
         >
-          {collection}
-        </Text>
+          <Text
+            color={'#fafafa'}
+            fontWeight={'bold'}
+            fontSize={{ base: 14, md: 16, lg: 20 }}
+          >
+            {collection}
+          </Text>
+        </Stack>
         <Text
           color={'#7a7979'}
           fontWeight={'bold'}

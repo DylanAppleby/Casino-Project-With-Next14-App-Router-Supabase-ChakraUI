@@ -7,6 +7,8 @@ import { useSearchParams } from 'next/navigation'
 
 import {
   Box,
+  Grid,
+  GridItem,
   Image,
   Text,
   Flex,
@@ -19,61 +21,64 @@ import { ChevronLeftIcon } from '@chakra-ui/icons'
 import SlotUnlockCrate from '@/components/SlotUnlockCrate'
 import FunctionCardContainer from '@/containers/FunctionCardContainer'
 import RecommendedBoxConainer from '@/containers/RecommendedBoxContainer'
-import SlotGameItemContainer from '@/containers/SlotGameItemContainer'
+import SlotGameItem from '@/components/SlotGameItem'
 import SlotGameRecentItemContainer from '@/containers/SlotGameRecentItemContainer'
 
 import useWindowDimensionsObserver from '@/hooks/useWindowDimensionsObserver'
+
+//for use supabase
+import { useSupabase } from '@/contexts/supabase-provider'
 
 // Example product data (simplified for demonstration)
 const products = [
   {
     name: 'Product 1',
-    imageUrl: '/assets/images/slot/trunk.webp',
+    imageUrl: '/assets/images/slot/1.webp',
     description: '$100',
   },
   {
     name: 'Product 2',
-    imageUrl: '/assets/images/slot/watch.webp',
+    imageUrl: '/assets/images/slot/2.webp',
     description: '$200',
   },
   {
     name: 'Product 3',
-    imageUrl: '/assets/images/slot/trunk.webp',
+    imageUrl: '/assets/images/slot/3.webp',
     description: '$100',
   },
   {
     name: 'Product 4',
-    imageUrl: '/assets/images/slot/watch.webp',
+    imageUrl: '/assets/images/slot/4.webp',
     description: '$200',
   },
   {
     name: 'Product 5',
-    imageUrl: '/assets/images/slot/trunk.webp',
+    imageUrl: '/assets/images/slot/5.webp',
     description: '$100',
   },
   {
     name: 'Product 6',
-    imageUrl: '/assets/images/slot/watch.webp',
+    imageUrl: '/assets/images/slot/6.webp',
     description: '$200',
   },
   {
     name: 'Product 7',
-    imageUrl: '/assets/images/slot/trunk.webp',
+    imageUrl: '/assets/images/slot/7.webp',
     description: '$100',
   },
   {
     name: 'Product 8',
-    imageUrl: '/assets/images/slot/watch.webp',
+    imageUrl: '/assets/images/slot/8.webp',
     description: '$200',
   },
   {
     name: 'Product 9',
-    imageUrl: '/assets/images/slot/trunk.webp',
+    imageUrl: '/assets/images/slot/9.webp',
     description: '$100',
   },
   {
     name: 'Product 10',
-    imageUrl: '/assets/images/slot/watch.webp',
+    imageUrl: '/assets/images/slot/10.webp',
     description: '$200',
   },
 ]
@@ -81,10 +86,40 @@ const products = [
 const ProductCarousel = () => {
   const searchParams = useSearchParams()
   const ids = searchParams.getAll('id')
+  const supabase = useSupabase()
 
   const [index, setIndex] = useState<number>(0)
+  const [itemsInBox, setItemsInBox] = useState<any>([])
+  const [openPrice, setOpenPrice] = useState<number>(0)
   const displayCount = useBreakpointValue({ base: 3, md: 5, lg: 9 }) // Responsive display
   const { isMobile } = useWindowDimensionsObserver()
+
+  useEffect(() => {
+    getItemsInBox()
+    getOpenPrice()
+  }, [ids])
+
+  const getItemsInBox = async () => {
+    const { data, error } = await supabase
+      .from('pack_to_item')
+      .select('*, pack_item (*)')
+      .in('pack_id', ids)
+      .order('rate', { ascending: false })
+    if (error) console.log('this is error:', error.message)
+    else setItemsInBox(data)
+  }
+
+  const getOpenPrice = async () => {
+    const { data, error } = await supabase.from('pack').select('open_price').in('id', ids)
+    if (error) console.log('this is error:', error.message)
+    else {
+      let sum = 0
+      data.forEach((num) => {
+        sum += num.open_price
+      })
+      setOpenPrice(sum)
+    }
+  }
 
   const nextSlide = () => {
     let timeLimit = 0
@@ -263,7 +298,7 @@ const ProductCarousel = () => {
                       <Box width={4} height={6}>
                         <Image src="/assets/images/slot/open.webp" />
                       </Box>
-                      <Text>Open for $867.08</Text>
+                      <Text>Open for ${openPrice}</Text>
                     </Flex>
                   </Button>
                   <Button
@@ -353,7 +388,39 @@ const ProductCarousel = () => {
         </Flex>
       </Flex>
       <SlotGameRecentItemContainer />
-      <SlotGameItemContainer />
+      <Flex direction={'column'} width={'full'} gap={8}>
+        <Text
+          fontSize={{ base: 24, md: 28, lg: 32 }}
+          fontWeight={'bold'}
+          whiteSpace={'nowrap'}
+        >
+          Items in this box
+        </Text>
+        <Grid
+          width="full"
+          templateColumns="repeat(30, 1fr)"
+          rowGap={{ base: 4, md: 6 }}
+          columnGap={{ base: 2, md: 4 }}
+          mb={8}
+        >
+          {itemsInBox.map((slotGameItem: any, index: number) => (
+            <GridItem
+              colSpan={{ base: 15, md: 10, lg: 6 }}
+              overflow="none"
+              borderRadius={1}
+              key={index}
+            >
+              <SlotGameItem
+                percentage={slotGameItem.rate}
+                imageUrl={slotGameItem.pack_item.image_url}
+                collection={slotGameItem.pack_item.name}
+                brand={slotGameItem.pack_item.brand}
+                price={slotGameItem.pack_item.price}
+              />
+            </GridItem>
+          ))}
+        </Grid>
+      </Flex>
       <RecommendedBoxConainer />
       <SlotUnlockCrate />
       <FunctionCardContainer />

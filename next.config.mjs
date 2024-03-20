@@ -14,8 +14,13 @@ const nextConfig = {
         port: '3000',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'mgkbtvlkbxierraxlfqq.supabase.co',
+        pathname: '/**',
+      },
     ],
   },
 }
 
-export default nextConfig;
+export default nextConfig
